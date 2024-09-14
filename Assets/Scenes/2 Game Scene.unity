@@ -5735,6 +5735,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WateringCan
       objectReference: {fileID: 0}
+    - target: {fileID: 8855593888179825059, guid: 2e9fa134cc3eabc4ba02fdc0ff1c6486,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.023
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855593888179825059, guid: 2e9fa134cc3eabc4ba02fdc0ff1c6486,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.173
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8411,6 +8421,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1886204067}
     m_Modifications:
+    - target: {fileID: 1036609061604539600, guid: f26c6e321b50489479b8ce05321a9ece,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.033
+      objectReference: {fileID: 0}
+    - target: {fileID: 1036609061604539600, guid: f26c6e321b50489479b8ce05321a9ece,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.149
+      objectReference: {fileID: 0}
+    - target: {fileID: 1036609061604539600, guid: f26c6e321b50489479b8ce05321a9ece,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.013
+      objectReference: {fileID: 0}
     - target: {fileID: 1960616414049855359, guid: f26c6e321b50489479b8ce05321a9ece,
         type: 3}
       propertyPath: m_Name
