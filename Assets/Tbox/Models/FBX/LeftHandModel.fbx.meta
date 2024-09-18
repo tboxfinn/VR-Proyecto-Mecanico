@@ -3,7 +3,12 @@ guid: e5078e7b39cb1b643acadcdad565642b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stickman_Color
+    second: {fileID: 2100000, guid: 79d0e809bd91b274c9a76b222bd9d5f5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

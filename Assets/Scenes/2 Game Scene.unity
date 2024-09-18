@@ -8281,6 +8281,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Launcher2H
       objectReference: {fileID: 0}
+    - target: {fileID: 1960616414049855359, guid: f26c6e321b50489479b8ce05321a9ece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445319694425516712, guid: f26c6e321b50489479b8ce05321a9ece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466660175706750078, guid: f26c6e321b50489479b8ce05321a9ece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6268644901827289618, guid: f26c6e321b50489479b8ce05321a9ece,
         type: 3}
       propertyPath: m_RootOrder
