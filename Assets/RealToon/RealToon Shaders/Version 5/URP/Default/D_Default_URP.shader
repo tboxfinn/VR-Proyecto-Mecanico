@@ -1,6 +1,6 @@
 //RealToon V5.0.8 (URP)
 //MJQStudioWorks
-//©2024
+//ï¿½2024
 
 Shader "Universal Render Pipeline/RealToon/Version 5/Default/Default"
 {
