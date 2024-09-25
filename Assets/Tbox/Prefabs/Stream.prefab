@@ -4889,7 +4889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pourDistance: 2
-  pourSpeed: 1.75
+  pourSpeed: 1
 --- !u!120 &5238570228697279500
 LineRenderer:
   serializedVersion: 2
@@ -4937,7 +4937,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.05
+    widthMultiplier: 0.04
     widthCurve:
       serializedVersion: 2
       m_Curve:
