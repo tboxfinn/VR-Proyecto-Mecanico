@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.035
+      scalar: 0.06
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4854,7 +4854,7 @@ GameObject:
   - component: {fileID: 5238570228697279501}
   - component: {fileID: 5238570228697279500}
   m_Layer: 0
-  m_Name: Stream
+  m_Name: Windshield_Stream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4889,7 +4889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pourDistance: 2
-  pourSpeed: 1
+  pourSpeed: 1.7
 --- !u!120 &5238570228697279500
 LineRenderer:
   serializedVersion: 2
@@ -4911,7 +4911,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8e781c7a3f6e5894e90ce7193f68b3be, type: 2}
+  - {fileID: 2100000, guid: a918eb76544b9654cb86fd2e72bfbd90, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
