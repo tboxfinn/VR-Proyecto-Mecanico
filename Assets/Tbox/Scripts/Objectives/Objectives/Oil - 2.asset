@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf078f9f35338a42ad48a9ce4edad98, type: 3}
   m_Name: Oil - 2
   m_EditorClassIdentifier: 
-  objectiveName: Oil - 2
+  Title: 2
   description: Toma la botella de aceite
   isCompleted: 0

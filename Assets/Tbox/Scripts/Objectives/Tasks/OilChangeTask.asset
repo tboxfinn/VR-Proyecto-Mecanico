@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78794a3a1736ed6498c7b7d904a61dcc, type: 3}
   m_Name: OilChangeTask
   m_EditorClassIdentifier: 
-  objectiveName: Oil Change
-  description: Check the Oil and change it
-  isCompleted: 0
-  steps: []
+  taskName: OUGA
+  objectives:
+  - {fileID: 11400000, guid: ca58872f14f167e4ca908bdeb1d79c0f, type: 2}
+  - {fileID: 11400000, guid: f5b5da1ec5f424b4ba38cb87ca0e0f66, type: 2}
+  - {fileID: 11400000, guid: e2d30ce098e7c5748b375a924f1c72a8, type: 2}

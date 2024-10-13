@@ -1,21 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "New Task Objective", menuName = "Objective System/Task Objective")]
-public class TaskObjectiveSO : ObjectiveSO
+[CreateAssetMenu(fileName = "New Task Objective", menuName = "Objective/Task Objective")]
+public class TaskObjectiveSO : ScriptableObject
 {
-    public List<ObjectiveSO> steps; // List of steps for this task
+    public string taskName;
+    public ObjectiveSO[] objectives; // Referencia a los objetivos originales
+
+    private ObjectiveSO[] instancedObjectives; // Copias de los objetivos para no modificar los originales
+    private int currentObjectiveIndex = 0;
+
+    // Método para instanciar los objetivos y trabajar con copias
+    public void InitializeTask()
+    {
+        // Instancia los objetivos del Task
+        instancedObjectives = new ObjectiveSO[objectives.Length];
+        for (int i = 0; i < objectives.Length; i++)
+        {
+            instancedObjectives[i] = Instantiate(objectives[i]);
+        }
+    }
 
     public bool IsTaskCompleted()
     {
-        foreach (ObjectiveSO step in steps)
+        return currentObjectiveIndex >= instancedObjectives.Length;
+    }
+
+    public ObjectiveSO GetCurrentObjective()
+    {
+        if (currentObjectiveIndex < instancedObjectives.Length)
         {
-            if (!step.isCompleted)
-            {
-                return false;
-            }
+            return instancedObjectives[currentObjectiveIndex];
         }
-        return true;
+
+        return null;
+    }
+
+    public void CompleteCurrentObjective()
+    {
+        if (currentObjectiveIndex < instancedObjectives.Length)
+        {
+            instancedObjectives[currentObjectiveIndex].CompleteObjective();
+            currentObjectiveIndex++;
+        }
     }
 }
