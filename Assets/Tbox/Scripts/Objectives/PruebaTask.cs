@@ -4,18 +4,43 @@ using UnityEngine;
 
 public class PruebaTask : MonoBehaviour
 {
-    public ObjectiveManager objectiveManager;
+    public TaskObjectiveSO currentTask;
 
-    public void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (currentTask != null)
         {
-            objectiveManager.CompleteObjectiveByTaskName("Oil");
+            currentTask.InitializeTask(); // Inicializa el Task y sus objetivos
+            Debug.Log("Task inicializada: " + currentTask.taskName);
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.B))
+    void Update()
+    {
+        // Si haces una acción específica que completa un objetivo, llamas al método
+        if (Input.GetKeyDown(KeyCode.Space)) // Ejemplo de acción
         {
-            objectiveManager.CompleteObjectiveByTaskName("Wheel");
+            CompleteObjective();
+        }
+    }
+
+    private void CompleteObjective()
+    {
+        if (currentTask != null)
+        {
+            if (!currentTask.IsTaskCompleted())
+            {
+                currentTask.CompleteCurrentObjective();
+                Debug.Log("Completado el objetivo en: " + currentTask.taskName);
+            }
+            else
+            {
+                Debug.Log("Task " + currentTask.taskName + " ya está completada.");
+            }
+        }
+        else
+        {
+            Debug.LogError("No se ha asignado un Task para completar.");
         }
     }
 }

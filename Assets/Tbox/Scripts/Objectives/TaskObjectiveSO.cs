@@ -20,6 +20,7 @@ public class TaskObjectiveSO : ScriptableObject
         {
             instancedObjectives[i] = Instantiate(objectives[i]);
         }
+        currentObjectiveIndex = 0; // Asegurarse de que el índice esté en 0
     }
 
     public bool IsTaskCompleted()
@@ -44,5 +45,13 @@ public class TaskObjectiveSO : ScriptableObject
             instancedObjectives[currentObjectiveIndex].CompleteObjective();
             currentObjectiveIndex++;
         }
+    }
+
+    public void ResetTask()
+    {
+        // Reinicializa las copias de los objetivos
+        InitializeTask();
+        currentObjectiveIndex = 0;
+        Debug.Log("Task reiniciado: " + taskName);
     }
 }

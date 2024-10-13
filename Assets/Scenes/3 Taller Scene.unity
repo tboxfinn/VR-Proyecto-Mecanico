@@ -1734,57 +1734,6 @@ MonoBehaviour:
   desinflandoPrefab: {fileID: 1457354194744212920, guid: 0d43048f1384cd147b02e06a6a863728,
     type: 3}
   desinflandoSpawnPoint: {fileID: 1458504247}
---- !u!1 &376592133
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 376592135}
-  - component: {fileID: 376592134}
-  m_Layer: 0
-  m_Name: Objective Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &376592134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 376592133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a27a5864d43a9643b12db4a99a7de77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  availableTasks:
-  - {fileID: 11400000, guid: 3e802e697b713f8479009f4c54fb96d3, type: 2}
-  - {fileID: 11400000, guid: 22308226f0902f6418a822f3c507f525, type: 2}
-  selectedTasks: []
-  minRandomTasks: 1
-  maxRandomTasks: 2
-  debugCompleteObjective: 0
---- !u!4 &376592135
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 376592133}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &433104826
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,8 +2988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7eaa70868de91f4eb7a9c961ea6a432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveManager: {fileID: 376592134}
-  task: {fileID: 11400000, guid: 3e802e697b713f8479009f4c54fb96d3, type: 2}
+  currentTask: {fileID: 11400000, guid: 22308226f0902f6418a822f3c507f525, type: 2}
 --- !u!1 &830476262
 GameObject:
   m_ObjectHideFlags: 0
@@ -10791,7 +10739,6 @@ SceneRoots:
   - {fileID: 939637387}
   - {fileID: 1929243319}
   - {fileID: 1495111708}
-  - {fileID: 376592135}
   - {fileID: 616528833}
   - {fileID: 1831201552}
   - {fileID: 1283807537}
