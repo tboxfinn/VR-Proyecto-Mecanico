@@ -1763,7 +1763,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a27a5864d43a9643b12db4a99a7de77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalTask: {fileID: 11400000, guid: 3e802e697b713f8479009f4c54fb96d3, type: 2}
+  availableTasks:
+  - {fileID: 11400000, guid: 3e802e697b713f8479009f4c54fb96d3, type: 2}
+  - {fileID: 11400000, guid: 22308226f0902f6418a822f3c507f525, type: 2}
+  selectedTasks: []
+  minRandomTasks: 1
+  maxRandomTasks: 2
   debugCompleteObjective: 0
 --- !u!4 &376592135
 Transform:
