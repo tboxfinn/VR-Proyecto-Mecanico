@@ -36,33 +36,91 @@ public class ObjectiveManager : MonoBehaviour
 
     void Update()
     {
-        if (debugCompleteObjective && currentTask != null && !currentTask.IsTaskCompleted())
+        if (debugCompleteObjective)
         {
-            ObjectiveSO currentObjective = currentTask.GetCurrentObjective();
-
-            // Completar el objetivo actual
-            currentTask.CompleteCurrentObjective();
-            Debug.Log("Objetivo completado: " + currentObjective.Title);
-
-            // Resetear el bool de debug
+            CompleteCurrentObjective();
             debugCompleteObjective = false;
+        }
+    }
 
-            // Verificar si la Task está completada
-            if (currentTask.IsTaskCompleted())
+    // Método para completar un objetivo en un task específico
+    private void CompleteObjective(TaskObjectiveSO task)
+    {
+        if (task != null)
+        {
+            ObjectiveSO currentObjective = task.GetCurrentObjective();
+            if (currentObjective != null)
             {
-                Debug.Log("Task completada: " + currentTask.taskName);
+                task.CompleteCurrentObjective();
+                Debug.Log("Objetivo completado en Task: " + task.taskName);
 
-                // Ir a la siguiente Task si hay más disponibles
-                currentTaskIndex++;
-                if (currentTaskIndex < selectedTasks.Count)
+                // Verificar si la Task está completada
+                if (task.IsTaskCompleted())
                 {
-                    SetCurrentTask(selectedTasks[currentTaskIndex]);
-                }
-                else
-                {
-                    Debug.Log("¡Todos los Tasks seleccionados han sido completados!");
+                    Debug.Log("Task completada: " + task.taskName);
+                    MoveToNextTask(); // Mover al siguiente task si hay uno
                 }
             }
+            else
+            {
+                Debug.LogError("No hay objetivo actual en la Task seleccionada.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Task no puede ser nulo.");
+        }
+    }
+
+    public void CompleteObjectiveByTaskName(string taskName)
+    {
+        // Buscar el Task en la lista de tasks seleccionados
+        TaskObjectiveSO taskToComplete = selectedTasks.Find(task => task.taskName.Equals(taskName, System.StringComparison.OrdinalIgnoreCase));
+
+        if (taskToComplete != null)
+        {
+            CompleteObjective(taskToComplete); // Llama al método que completa el objetivo
+        }
+        else
+        {
+            Debug.LogError("No se encontró el Task con nombre: " + taskName);
+        }
+    }
+
+    private void CompleteCurrentObjective()
+    {
+        if (currentTask != null && !currentTask.IsTaskCompleted())
+        {
+            ObjectiveSO currentObjective = currentTask.GetCurrentObjective();
+            
+            if (currentObjective != null)
+            {
+                currentTask.CompleteCurrentObjective();
+                Debug.Log("Objetivo completado: " + currentObjective.Title);
+
+                if (currentTask.IsTaskCompleted())
+                {
+                    Debug.Log("Task completada: " + currentTask.taskName);
+                    MoveToNextTask();
+                }
+            }
+            else
+            {
+                Debug.LogError("No hay objetivo actual para completar.");
+            }
+        }
+    }
+
+    private void MoveToNextTask()
+    {
+        currentTaskIndex++;
+        if (currentTaskIndex < selectedTasks.Count)
+        {
+            SetCurrentTask(selectedTasks[currentTaskIndex]);
+        }
+        else
+        {
+            Debug.Log("¡Todos los Tasks seleccionados han sido completados!");
         }
     }
 
@@ -71,7 +129,7 @@ public class ObjectiveManager : MonoBehaviour
     {
         if (task != null)
         {
-            currentTask = Instantiate(task);
+            currentTask = task;
             currentTask.InitializeTask();
             Debug.Log("Iniciando Task: " + currentTask.taskName);
         }
@@ -103,9 +161,5 @@ public class ObjectiveManager : MonoBehaviour
         Debug.Log(countToSelect + " Tasks seleccionadas aleatoriamente.");
     }
 
-    // Lógica para verificar si un objetivo está completado
-    private bool CheckIfObjectiveCompleted(ObjectiveSO objective)
-    {
-        return objective.isCompleted;
-    }
+    public List<TaskObjectiveSO> ActiveTasks => selectedTasks;
 }

@@ -8,6 +8,7 @@ public class TaskObjectiveSO : ScriptableObject
     public ObjectiveSO[] objectives; // Referencia a los objetivos originales
 
     private ObjectiveSO[] instancedObjectives; // Copias de los objetivos para no modificar los originales
+    
     private int currentObjectiveIndex = 0;
 
     // Método para instanciar los objetivos y trabajar con copias

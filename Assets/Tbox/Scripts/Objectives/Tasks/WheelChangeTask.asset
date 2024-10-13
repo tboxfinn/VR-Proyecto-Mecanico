@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78794a3a1736ed6498c7b7d904a61dcc, type: 3}
   m_Name: WheelChangeTask
   m_EditorClassIdentifier: 
-  taskName: BUGA
+  taskName: Wheel
   objectives:
   - {fileID: 11400000, guid: a5f0c3d40c82f51429d133861f4db2c5, type: 2}
   - {fileID: 11400000, guid: 4637f2906ffe34e47a35b2d725817bab, type: 2}
