@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "New Task Objective", menuName = "Objective/Task Objective")]
+[CreateAssetMenu(fileName = "New Task Objective", menuName = "Objective System/Task Objective")]
 public class TaskObjectiveSO : ScriptableObject
 {
     public string title;

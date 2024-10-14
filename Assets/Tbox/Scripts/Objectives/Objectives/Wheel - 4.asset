@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bf078f9f35338a42ad48a9ce4edad98, type: 3}
-  m_Name: Oil - 3
+  m_Name: Wheel - 4
   m_EditorClassIdentifier: 
-  description: Toma el bote de aceite
+  Title: 7
+  description: "Cambia las llantas da\xF1adas por nuevas llantas"
   isCompleted: 0
