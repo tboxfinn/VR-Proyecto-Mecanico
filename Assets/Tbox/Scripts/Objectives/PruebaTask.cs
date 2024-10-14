@@ -11,7 +11,7 @@ public class PruebaTask : MonoBehaviour
         if (currentTask != null)
         {
             currentTask.InitializeTask(); // Inicializa el Task y sus objetivos
-            Debug.Log("Task inicializada: " + currentTask.taskName);
+            Debug.Log("Task inicializada: " + currentTask.title);
         }
     }
 
@@ -31,11 +31,11 @@ public class PruebaTask : MonoBehaviour
             if (!currentTask.IsTaskCompleted())
             {
                 currentTask.CompleteCurrentObjective();
-                Debug.Log("Completado el objetivo en: " + currentTask.taskName);
+                Debug.Log("Completado el objetivo en: " + currentTask.title);
             }
             else
             {
-                Debug.Log("Task " + currentTask.taskName + " ya está completada.");
+                Debug.Log("Task " + currentTask.title + " ya está completada.");
             }
         }
         else
