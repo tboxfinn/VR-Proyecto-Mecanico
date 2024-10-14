@@ -13,6 +13,14 @@ public class TaskObjectiveSO : ScriptableObject
     
     private int currentObjectiveIndex = 0;
 
+    public delegate void OnObjectiveCompleted();
+    public event OnObjectiveCompleted ObjectiveCompletedEvent;
+
+    public void Start()
+    {
+        InitializeTask();
+    }
+
     // Método para instanciar los objetivos y trabajar con copias
     public void InitializeTask()
     {
@@ -48,6 +56,8 @@ public class TaskObjectiveSO : ScriptableObject
         {
             instancedObjectives[currentObjectiveIndex].CompleteObjective();
             currentObjectiveIndex++;
+
+            ObjectiveCompletedEvent?.Invoke();
         }
     }
 

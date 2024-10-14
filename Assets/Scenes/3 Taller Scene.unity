@@ -2989,6 +2989,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTask: {fileID: 11400000, guid: 22308226f0902f6418a822f3c507f525, type: 2}
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
 --- !u!1 &830476262
 GameObject:
   m_ObjectHideFlags: 0
@@ -7074,8 +7076,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -9523,9 +9525,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24800868e27ccac4eb8a3291d4350e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskObjectiveSO: {fileID: 0}
-  TitleText: {fileID: 0}
-  DescriptionText: {fileID: 0}
+  allTasks:
+  - {fileID: 11400000, guid: 3e802e697b713f8479009f4c54fb96d3, type: 2}
+  - {fileID: 11400000, guid: 22308226f0902f6418a822f3c507f525, type: 2}
+  minTasks: 2
+  maxTasks: 3
+  taskUIPrefab: {fileID: 8884002884489758558, guid: 726207f05610e324aa05bdb7dab19bd7,
+    type: 3}
+  taskUIHolder: {fileID: 735650693}
+  selectedTasks: []
 --- !u!33 &29822116771394373
 MeshFilter:
   m_ObjectHideFlags: 0

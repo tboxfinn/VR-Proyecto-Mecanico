@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PruebaTask : MonoBehaviour
 {
     public TaskObjectiveSO currentTask;
+    public TMP_Text titleText;         // Texto del título del Task
+    public TMP_Text descriptionText;   // Texto de la descripción del objetivo
 
     void Start()
     {
         if (currentTask != null)
         {
             currentTask.InitializeTask(); // Inicializa el Task y sus objetivos
-            Debug.Log("Task inicializada: " + currentTask.title);
+            UpdateTaskUI();               // Actualiza el UI con el primer objetivo
         }
     }
 
@@ -31,16 +34,25 @@ public class PruebaTask : MonoBehaviour
             if (!currentTask.IsTaskCompleted())
             {
                 currentTask.CompleteCurrentObjective();
-                Debug.Log("Completado el objetivo en: " + currentTask.title);
+                UpdateTaskUI(); // Actualiza el UI cuando se completa un objetivo
+            }
+        }
+    }
+
+    // Actualiza el UI con el objetivo actual
+    private void UpdateTaskUI()
+    {
+        if (currentTask != null && descriptionText != null)
+        {
+            ObjectiveSO currentObjective = currentTask.GetCurrentObjective();
+            if (currentObjective != null)
+            {
+                descriptionText.text = currentObjective.description;
             }
             else
             {
-                Debug.Log("Task " + currentTask.title + " ya está completada.");
+                descriptionText.text = "Task Completed!";
             }
-        }
-        else
-        {
-            Debug.LogError("No se ha asignado un Task para completar.");
         }
     }
 }
