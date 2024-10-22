@@ -82,13 +82,27 @@ public class TaskUIManager : MonoBehaviour
             titleText.fontStyle = FontStyles.Strikethrough;
             descriptionText.fontStyle = FontStyles.Strikethrough;
 
+            SoundManager.instance.PlaySound("TaskCompleted");
+
             // Actualiza la UI para mostrar la siguiente tarea si hay más tareas disponibles
-            ShowNextTask();
+            if (selectedTasks.Count > instantiatedPrefabs.Count)
+            {
+                // Inicia la corrutina para mostrar la siguiente tarea después de un retraso
+                StartCoroutine(ShowNextTaskWithDelay());
+            }
         }
         else
         {
             descriptionText.text = task.GetCurrentObjective()?.description;
         }
+    }
+
+    IEnumerator ShowNextTaskWithDelay()
+    {
+        // Espera un breve momento antes de cambiar a la siguiente tarea
+        yield return new WaitForSeconds(1.0f);
+
+        ShowNextTask();
     }
 
     void ShowNextTask()
@@ -119,15 +133,12 @@ public class TaskUIManager : MonoBehaviour
             instantiatedPrefabs.Add(taskUIInstance);
 
             // Busca los objetos de texto dentro del prefab instanciado
-            TMP_Text titleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
-            TMP_Text descriptionText = taskUIInstance.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
+            TMP_Text newTitleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
+            TMP_Text newDescriptionText = taskUIInstance.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
 
-            // Asigna el título y la descripción del Task activo
-            titleText.text = nextTask.title;
-            descriptionText.text = nextTask.GetCurrentObjective()?.description;
-
-            // Suscríbete al evento para actualizar la UI cuando un objetivo sea completado
-            nextTask.ObjectiveCompletedEvent += () => UpdateTaskUI(nextTask, taskUIInstance);
+            // Actualiza los textos con la información del nuevo Task
+            newTitleText.text = nextTask.title;
+            newDescriptionText.text = nextTask.GetCurrentObjective()?.description;
         }
     }
 }

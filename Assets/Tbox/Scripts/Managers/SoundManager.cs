@@ -29,9 +29,17 @@ public class SoundManager : MonoBehaviour
         Sounds sound = System.Array.Find(sounds, s => s.name == name);
         if (sound != null)
         {
+            if (sound.randomPitch)
+            {
+                audioSource.pitch = Random.Range(sound.rPitchMinValue, sound.rPitchMaxValue);
+            }
+            else
+            {
+                audioSource.pitch = sound.pitch;
+            }
+
             audioSource.clip = sound.clip;
             audioSource.volume = sound.volume;
-            audioSource.pitch = sound.pitch;
             audioSource.loop = sound.loop;
             audioSource.Play();
         }
@@ -63,5 +71,8 @@ public class Sounds
     public AudioClip clip;
     [Range(0f, 1f)] public float volume = 1f;
     [Range(-3,3)] public float pitch = 1;
+    public float rPitchMinValue = 0.8f;
+    public float rPitchMaxValue = 1.2f;
     public bool loop = false;
+    public bool randomPitch = false;
 }

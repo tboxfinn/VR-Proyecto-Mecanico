@@ -57,6 +57,8 @@ public class TaskObjectiveSO : ScriptableObject
             instancedObjectives[currentObjectiveIndex].CompleteObjective();
             currentObjectiveIndex++;
 
+            SoundManager.instance.PlaySound("ObjectiveCompleted");
+
             ObjectiveCompletedEvent?.Invoke();
         }
     }
