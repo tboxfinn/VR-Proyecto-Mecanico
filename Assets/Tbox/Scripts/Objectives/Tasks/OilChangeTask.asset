@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Cambio de aceite
   descriptions:
-  - Revisa el deposito de aceite
-  - Toma la botella de aceite
-  - Vierte aceite en el desposito
+  - Localiza la bayoneta
+  - Retira la bayoneta y revisa el nivel de aceite
+  - Toma el bote de aceite
+  - Localiza el Oil tank
+  - Vierte aceite dentro del contenedor
+  - Asegurate de cerrar bien el Tanque de aceite
   objectives:
   - {fileID: 11400000, guid: ca58872f14f167e4ca908bdeb1d79c0f, type: 2}
   - {fileID: 11400000, guid: f5b5da1ec5f424b4ba38cb87ca0e0f66, type: 2}

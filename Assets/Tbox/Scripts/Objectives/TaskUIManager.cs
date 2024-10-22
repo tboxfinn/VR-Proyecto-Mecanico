@@ -44,8 +44,12 @@ public class TaskUIManager : MonoBehaviour
 
     void InstantiateTaskUI()
     {
-        foreach (TaskObjectiveSO task in selectedTasks)
+        int tasksToInstantiate = Mathf.Min(selectedTasks.Count, 3); // Limita a 3 tareas
+
+        for (int i = 0; i < tasksToInstantiate; i++)
         {
+            TaskObjectiveSO task = selectedTasks[i];
+
             // Inicializa el Task antes de tomar el primer objetivo
             task.InitializeTask();
 
@@ -77,10 +81,53 @@ public class TaskUIManager : MonoBehaviour
             // Cambia el estilo de la fuente al completar el Task
             titleText.fontStyle = FontStyles.Strikethrough;
             descriptionText.fontStyle = FontStyles.Strikethrough;
+
+            // Actualiza la UI para mostrar la siguiente tarea si hay más tareas disponibles
+            ShowNextTask();
         }
         else
         {
             descriptionText.text = task.GetCurrentObjective()?.description;
+        }
+    }
+
+    void ShowNextTask()
+    {
+        // Encuentra el primer prefab completado y destrúyelo
+        for (int i = 0; i < instantiatedPrefabs.Count; i++)
+        {
+            TMP_Text titleText = instantiatedPrefabs[i].transform.Find("TaskTitle").GetComponent<TMP_Text>();
+            if (titleText.fontStyle == FontStyles.Strikethrough)
+            {
+                Destroy(instantiatedPrefabs[i]);
+                instantiatedPrefabs.RemoveAt(i);
+                break;
+            }
+        }
+
+        // Instancia la siguiente tarea si hay más tareas disponibles
+        if (selectedTasks.Count > instantiatedPrefabs.Count)
+        {
+            int nextTaskIndex = instantiatedPrefabs.Count;
+            TaskObjectiveSO nextTask = selectedTasks[nextTaskIndex];
+
+            // Inicializa el Task antes de tomar el primer objetivo
+            nextTask.InitializeTask();
+
+            // Instancia el prefab en el holder
+            GameObject taskUIInstance = Instantiate(taskUIPrefab, taskUIHolder);
+            instantiatedPrefabs.Add(taskUIInstance);
+
+            // Busca los objetos de texto dentro del prefab instanciado
+            TMP_Text titleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
+            TMP_Text descriptionText = taskUIInstance.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
+
+            // Asigna el título y la descripción del Task activo
+            titleText.text = nextTask.title;
+            descriptionText.text = nextTask.GetCurrentObjective()?.description;
+
+            // Suscríbete al evento para actualizar la UI cuando un objetivo sea completado
+            nextTask.ObjectiveCompletedEvent += () => UpdateTaskUI(nextTask, taskUIInstance);
         }
     }
 }
