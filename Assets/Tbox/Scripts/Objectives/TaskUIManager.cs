@@ -141,4 +141,5 @@ public class TaskUIManager : MonoBehaviour
             newDescriptionText.text = nextTask.GetCurrentObjective()?.description;
         }
     }
+    
 }
