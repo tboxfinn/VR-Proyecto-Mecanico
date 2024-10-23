@@ -19,6 +19,7 @@ MonoBehaviour:
   - Retira las llantas ponchadas
   - "Cambia las llantas da\xF1adas por nuevas llantas"
   - Regresa el auto a su posicion
+  isVisible: 0
   objectives:
   - {fileID: 11400000, guid: a5f0c3d40c82f51429d133861f4db2c5, type: 2}
   - {fileID: 11400000, guid: 4637f2906ffe34e47a35b2d725817bab, type: 2}

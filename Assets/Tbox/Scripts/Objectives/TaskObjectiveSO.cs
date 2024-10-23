@@ -7,6 +7,8 @@ public class TaskObjectiveSO : ScriptableObject
     public string title;
     [TextArea(3, 10)]
     public string[] descriptions;
+    public bool isVisible;
+
     public ObjectiveSO[] objectives; // Referencia a los objetivos originales
 
     private ObjectiveSO[] instancedObjectives; // Copias de los objetivos para no modificar los originales
@@ -52,7 +54,7 @@ public class TaskObjectiveSO : ScriptableObject
 
     public void CompleteCurrentObjective()
     {
-        if (currentObjectiveIndex < instancedObjectives.Length)
+        if (isVisible && currentObjectiveIndex < instancedObjectives.Length)
         {
             instancedObjectives[currentObjectiveIndex].CompleteObjective();
             currentObjectiveIndex++;

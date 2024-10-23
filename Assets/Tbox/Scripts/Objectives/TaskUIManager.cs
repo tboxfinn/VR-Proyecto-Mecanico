@@ -17,11 +17,22 @@ public class TaskUIManager : MonoBehaviour
 
     void Start()
     {
+        // Resetear la visibilidad de todas las tareas
+        ResetAllTasksVisibility();
+
         // Selecciona una cantidad aleatoria de Task
         SelectRandomTasks();
 
         // Instancia los Tasks seleccionados en el UI
         InstantiateTaskUI();
+    }
+
+    void ResetAllTasksVisibility()
+    {
+        foreach (var task in allTasks)
+        {
+            task.isVisible = false;
+        }
     }
 
     void SelectRandomTasks()
@@ -52,6 +63,7 @@ public class TaskUIManager : MonoBehaviour
 
             // Inicializa el Task antes de tomar el primer objetivo
             task.InitializeTask();
+            task.isVisible = true;
 
             // Instancia el prefab en el holder
             GameObject taskUIInstance = Instantiate(taskUIPrefab, taskUIHolder);
@@ -81,6 +93,7 @@ public class TaskUIManager : MonoBehaviour
             // Cambia el estilo de la fuente al completar el Task
             titleText.fontStyle = FontStyles.Strikethrough;
             descriptionText.fontStyle = FontStyles.Strikethrough;
+            task.isVisible = false;
 
             SoundManager.instance.PlaySound("TaskCompleted");
 
