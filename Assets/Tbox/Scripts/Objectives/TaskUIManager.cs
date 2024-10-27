@@ -8,6 +8,7 @@ public class TaskUIManager : MonoBehaviour
     public List<TaskObjectiveSO> allTasks; // Lista de todos los Task disponibles
     public int minTasks = 1; // Mínimo de Task que se seleccionarán
     public int maxTasks = 3; // Máximo de Task que se seleccionarán
+    public int taskOnUI = 3;
     public GameObject taskUIPrefab; // Prefab con los textos de título y descripción
     public Transform taskUIHolder; // Holder donde se instanciarán los prefabs
 
@@ -55,11 +56,12 @@ public class TaskUIManager : MonoBehaviour
 
     void InstantiateTaskUI()
     {
-        int tasksToInstantiate = Mathf.Min(selectedTasks.Count, 2); // Limita a 3 tareas
+        
+        int tasksToInstantiate = Mathf.Min(selectedTasks.Count, taskOnUI); // Limita a 3 tareas
 
         for (int i = 0; i < tasksToInstantiate; i++)
         {
-            TaskObjectiveSO task = selectedTasks[i];
+            TaskObjectiveSO task = selectedTasks[0]; // Toma el primer task de la lista
 
             // Inicializa el Task antes de tomar el primer objetivo
             task.InitializeTask();
@@ -79,6 +81,9 @@ public class TaskUIManager : MonoBehaviour
 
             // Suscríbete al evento para actualizar la UI cuando un objetivo sea completado
             task.ObjectiveCompletedEvent += () => UpdateTaskUI(task, taskUIInstance);
+
+            // Elimina el task de la lista de selectedTasks
+            selectedTasks.RemoveAt(0);
         }
     }
 
@@ -98,7 +103,7 @@ public class TaskUIManager : MonoBehaviour
             SoundManager.instance.PlaySound("TaskCompleted");
 
             // Actualiza la UI para mostrar la siguiente tarea si hay más tareas disponibles
-            if (selectedTasks.Count > instantiatedPrefabs.Count)
+            if (selectedTasks.Count > 0)
             {
                 // Inicia la corrutina para mostrar la siguiente tarea después de un retraso
                 StartCoroutine(ShowNextTaskWithDelay());
@@ -133,10 +138,9 @@ public class TaskUIManager : MonoBehaviour
         }
 
         // Instancia la siguiente tarea si hay más tareas disponibles
-        if (selectedTasks.Count > instantiatedPrefabs.Count)
+        if (selectedTasks.Count > 0)
         {
-            int nextTaskIndex = instantiatedPrefabs.Count;
-            TaskObjectiveSO nextTask = selectedTasks[nextTaskIndex];
+            TaskObjectiveSO nextTask = selectedTasks[0];
 
             // Inicializa el Task antes de tomar el primer objetivo
             nextTask.InitializeTask();
@@ -152,7 +156,12 @@ public class TaskUIManager : MonoBehaviour
             // Actualiza los textos con la información del nuevo Task
             newTitleText.text = nextTask.title;
             newDescriptionText.text = nextTask.GetCurrentObjective()?.description;
+
+            // Suscríbete al evento para actualizar la UI cuando un objetivo sea completado
+            nextTask.ObjectiveCompletedEvent += () => UpdateTaskUI(nextTask, taskUIInstance);
+
+            // Elimina el task de la lista de selectedTasks
+            selectedTasks.RemoveAt(0);
         }
     }
-    
 }
