@@ -55,7 +55,7 @@ public class TaskUIManager : MonoBehaviour
 
     void InstantiateTaskUI()
     {
-        int tasksToInstantiate = Mathf.Min(selectedTasks.Count, 3); // Limita a 3 tareas
+        int tasksToInstantiate = Mathf.Min(selectedTasks.Count, 2); // Limita a 3 tareas
 
         for (int i = 0; i < tasksToInstantiate; i++)
         {
