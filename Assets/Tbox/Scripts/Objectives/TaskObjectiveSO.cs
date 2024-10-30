@@ -7,6 +7,7 @@ public class TaskObjectiveSO : ScriptableObject
     public string title;
     [TextArea(3, 10)]
     public string[] descriptions;
+    public Sprite taskImage;
     public bool isVisible;
 
     public ObjectiveSO[] objectives; // Referencia a los objetivos originales

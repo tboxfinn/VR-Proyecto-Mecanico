@@ -16,6 +16,7 @@ MonoBehaviour:
   descriptions:
   - Revisa la carga del auto
   - Localiza la bateria
+  taskImage: {fileID: 21300000, guid: 65e8e7787f2bce744a5b1eab022d57be, type: 3}
   isVisible: 0
   objectives:
   - {fileID: 11400000, guid: 80adfc15584fee545a504c8c44183a5f, type: 2}

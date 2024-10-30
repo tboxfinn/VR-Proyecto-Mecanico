@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class TaskUIManager : MonoBehaviour
 {
@@ -74,10 +75,25 @@ public class TaskUIManager : MonoBehaviour
             // Busca los objetos de texto dentro del prefab instanciado
             TMP_Text titleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
             TMP_Text descriptionText = taskUIInstance.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
+            Image taskImage = taskUIInstance.transform.Find("TaskImage").GetComponent<Image>();
 
-            // Asigna el título y la descripción del Task activo
-            titleText.text = task.title;
-            descriptionText.text = task.GetCurrentObjective()?.description;
+            // Asigna el título del Task activo si no es nulo
+            if (titleText != null)
+            {
+                titleText.text = task.title ?? "No Title";
+            }
+
+            // Asigna la descripción del Task activo si no es nula
+            if (descriptionText != null)
+            {
+                descriptionText.text = task.GetCurrentObjective()?.description ?? "No Description";
+            }
+
+            // Asigna la imagen del Task activo si no es nula
+            if (taskImage != null)
+            {
+                taskImage.sprite = task.taskImage ?? null; // Puedes asignar una imagen por defecto si es nula
+            }
 
             // Suscríbete al evento para actualizar la UI cuando un objetivo sea completado
             task.ObjectiveCompletedEvent += () => UpdateTaskUI(task, taskUIInstance);
