@@ -570,7 +570,7 @@ MonoBehaviour:
   resetTime: 3
   floorLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 2147483712
 --- !u!1 &32094566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,7 +2477,7 @@ GameObject:
   - component: {fileID: 637258340}
   - component: {fileID: 637258339}
   - component: {fileID: 637258338}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3459,7 +3459,7 @@ MonoBehaviour:
   resetTime: 3
   floorLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 2147483712
 --- !u!1 &857322771
 GameObject:
   m_ObjectHideFlags: 0
@@ -5981,7 +5981,7 @@ MonoBehaviour:
   resetTime: 3
   floorLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 2147483712
 --- !u!1 &1626962936
 GameObject:
   m_ObjectHideFlags: 0
@@ -6866,7 +6866,7 @@ MonoBehaviour:
   resetTime: 3
   floorLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 2147483712
 --- !u!1 &1784024513
 GameObject:
   m_ObjectHideFlags: 0
@@ -10160,7 +10160,7 @@ MonoBehaviour:
   resetTime: 3
   floorLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 2147483712
 --- !u!114 &3469287837075883862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10663,8 +10663,8 @@ SceneRoots:
   - {fileID: 194569947}
   - {fileID: 2060207814}
   - {fileID: 1539206880}
-  - {fileID: 637258341}
   - {fileID: 517817824}
+  - {fileID: 637258341}
   - {fileID: 2077211663}
   - {fileID: 1831201552}
   - {fileID: 1283807537}
