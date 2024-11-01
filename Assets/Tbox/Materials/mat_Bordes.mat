@@ -14,7 +14,7 @@ Material:
   m_ValidKeywords:
   - N_F_DNO_ON
   - N_F_EAL_ON
-  - N_F_NM_ON
+  - N_F_O_ON
   - N_F_RDC_ON
   - N_F_RELGI_ON
   - N_F_TRANSAFFSHA_ON
@@ -49,8 +49,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Opaque
-  disabledShaderPasses:
-  - SRPDEFAULTUNLIT
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -68,11 +67,11 @@ Material:
     - _DynamicNoisyOutline: 1
     - _Glossiness: 0
     - _MaiColPo: 1
-    - _N_F_NM: 1
-    - _N_F_O: 0
+    - _N_F_NM: 0
+    - _N_F_O: 1
     - _N_F_SS: 0
     - _OutlineExtrudeMethod: 0
-    - _OutlineWidth: 0.5
+    - _OutlineWidth: 3
     m_Colors:
     - _MainColor: {r: 0.066037714, g: 0.05513526, b: 0.05077428, a: 1}
   m_BuildTextureStacks: []

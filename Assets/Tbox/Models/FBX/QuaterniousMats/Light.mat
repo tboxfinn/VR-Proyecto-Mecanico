@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - N_F_EAL_ON
+  - N_F_O_ON
   - N_F_RDC_ON
   - N_F_RELGI_ON
   - N_F_SS_ON
@@ -47,8 +48,7 @@ Material:
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
-  - SRPDEFAULTUNLIT
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -244,7 +244,7 @@ Material:
     - _N_F_NFD: 0
     - _N_F_NLASOBF: 0
     - _N_F_NM: 0
-    - _N_F_O: 0
+    - _N_F_O: 1
     - _N_F_OFLMB: 0
     - _N_F_PT: 0
     - _N_F_R: 0
@@ -265,7 +265,7 @@ Material:
     - _Opacity: 1
     - _Oper: 0
     - _OutlineExtrudeMethod: 0
-    - _OutlineWidth: 0.5
+    - _OutlineWidth: 1
     - _OutlineWidthAffectedByViewDistance: 0
     - _OutlineZPostionInCamera: 0
     - _OverallShadowColorPower: 1
@@ -296,7 +296,7 @@ Material:
     - _SelfShadowAffectedByLightShadowStrength: 0
     - _SelfShadowHardness: 1
     - _SelfShadowRealTimeShadowColorPower: 1
-    - _SelfShadowRealtimeShadowIntensity: 1
+    - _SelfShadowRealtimeShadowIntensity: 0.5
     - _SelfShadowShadowTAtViewDirection: 0
     - _SelfShadowThreshold: 0.93
     - _ShadowColorTexturePower: 0
@@ -341,7 +341,7 @@ Material:
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _Glow_Color: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 1, g: 0.9105086, b: 0.4481132, a: 1}
+    - _MainColor: {r: 4.483848, g: 3.9393811, b: 1.120962, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
     - _OverallShadowColor: {r: 0, g: 0, b: 0, a: 1}
