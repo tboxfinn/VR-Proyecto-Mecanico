@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf078f9f35338a42ad48a9ce4edad98, type: 3}
   m_Name: Battery - 2
   m_EditorClassIdentifier: 
-  description: Localiza la bateria
+  description: Revisa la carga del auto
   isCompleted: 0

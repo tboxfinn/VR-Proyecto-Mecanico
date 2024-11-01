@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: BatteryChange
   m_EditorClassIdentifier: 
   title: Carga esa bateria
-  descriptions:
-  - Revisa la carga del auto
-  - Localiza la bateria
+  descriptions: []
   taskImage: {fileID: 21300000, guid: 65e8e7787f2bce744a5b1eab022d57be, type: 3}
   isVisible: 0
   objectives:
