@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_Floor
+  m_Name: mat_Techo
   m_Shader: {fileID: 4800000, guid: 6459b2db96a08ca41b0f9b39dc7ad59e, type: 3}
   m_Parent: {fileID: 2100000, guid: 7631e4fa32f6ce04b823bae44ff4d833, type: 2}
   m_ModifiedSerializedProperties: 2
@@ -56,7 +56,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 807d2555378ab7b4182e94f5a8a45429, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7b47712a4fb773446801e19cc9bc6d05, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
@@ -74,7 +74,7 @@ Material:
     - _OutlineExtrudeMethod: 0
     - _OutlineWidth: 0.5
     m_Colors:
-    - _MainColor: {r: 0.16513224, g: 0.1470273, b: 0.12213881, a: 1}
+    - _MainColor: {r: 0.47353154, g: 0.52711535, b: 0.57112503, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6285509194062100883
 MonoBehaviour:
