@@ -9,11 +9,6 @@ public class GameManager : MonoBehaviour
     public enum GameState { Menu, Playing, Paused, GameOver }
     public GameState currentState;
 
-    [Header("Wheels")]
-    public Wheels[] wheels;
-    public int minWheelsDes = 1;
-    public int maxWheelsDes = 3;
-
     private void Awake()
     {
         // Asegurar que solo haya un GameManager
@@ -65,7 +60,6 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Playing:
                 // Empezar o reanudar el juego
-                DesinflarWheels();
                 break;
             case GameState.Paused:
                 // Pausar el juego
@@ -89,33 +83,5 @@ public class GameManager : MonoBehaviour
     public void ReturnToMenu()
     {
         ChangeState(GameState.Menu);
-    }
-
-    private void DesinflarWheels()
-    {
-        maxWheelsDes = Mathf.Min(maxWheelsDes, wheels.Length);
-        
-        int numWheelsDes = Random.Range(minWheelsDes, maxWheelsDes + 1);
-
-        // Convert the array to a list and shuffle it
-        List<Wheels> shuffledWheels = new List<Wheels>(wheels);
-        ShuffleList(shuffledWheels);
-
-        // Activate the method on the selected number of wheels
-        for (int i = 0; i < numWheelsDes; i++)
-        {
-            shuffledWheels[i].StartDesinflando();
-        }
-    }
-
-    private void ShuffleList<T>(List<T> list)
-    {
-        for (int i = 0; i < list.Count; i++)
-        {
-            T temp = list[i];
-            int randomIndex = Random.Range(i, list.Count);
-            list[i] = list[randomIndex];
-            list[randomIndex] = temp;
-        }
     }
 }

@@ -11,12 +11,17 @@ public class TaskStepController : MonoBehaviour
     public delegate void OnStepCompleted(string step);
     public event OnStepCompleted StepCompletedEvent;
 
-    void Start()
+    public virtual void Start()
     {
         if (targetTask != null)
         {
             targetTask.InitializeTask(); // Asegura que el task esté inicializado
         }
+    }
+
+    public virtual void Update()
+    {
+        
     }
 
     public void CompleteStep(string step)

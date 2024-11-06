@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78794a3a1736ed6498c7b7d904a61dcc, type: 3}
   m_Name: WheelChangeTask
   m_EditorClassIdentifier: 
-  title: Cambio de ruedas
+  title: Cambio de neumatico
   descriptions:
-  - Revisa por fugas en las ruedas
-  - Utiliza el gato para levantar el vehiculo
-  - Retira las llantas ponchadas
-  - "Cambia las llantas da\xF1adas por nuevas llantas"
-  - Regresa el auto a su posicion
+  - Afloja las ruedas con la LLAVE DE CRUZ
+  - Coloca el GATO debajo del vehiculo para levantarlo
+  - Retira las RUEDAS con fugas
+  - Reemplaza las RUEDAS en mal estado
+  - Ajusta las nuevas ruedas con la LLAVE DE CRUZ
+  - Regresa el AUTO a su posicion inicial
+  - Regresa el AUTO a su posicion inicial
+  taskImage: {fileID: 0}
   isVisible: 0
   objectives:
   - {fileID: 11400000, guid: a5f0c3d40c82f51429d133861f4db2c5, type: 2}
@@ -26,3 +29,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f9eaad464f4830f409ab955b9888ef31, type: 2}
   - {fileID: 11400000, guid: 1a84d4b080fb1b24093f6b541d148d39, type: 2}
   - {fileID: 11400000, guid: 56fbfe609e9ab5343b9a22ad0da8db4d, type: 2}
+  - {fileID: 11400000, guid: 56e50e20667d4e34f80a4aa5a8500834, type: 2}
+  - {fileID: 11400000, guid: 271eb28a6d9886d41b03353b35599faf, type: 2}
+  - {fileID: 11400000, guid: 23647d515463af14c9aae8d35592e2a8, type: 2}
