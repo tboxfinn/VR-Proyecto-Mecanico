@@ -12,7 +12,6 @@ public class Wheels : MonoBehaviour
 
     public void StartDesinflando()
     {
-        Debug.Log("Rueda desinflada: " + gameObject.name);
         if (desinflandoPrefab != null && desinflandoInstance == null)
         {
             desinflandoInstance = Instantiate(desinflandoPrefab, desinflandoSpawnPoint.position, Quaternion.identity, transform);
@@ -26,5 +25,10 @@ public class Wheels : MonoBehaviour
             Destroy(desinflandoInstance);
             desinflandoInstance = null; // Asegurarse de que la referencia se elimine después de destruir el objeto
         }
+    }
+
+    public void TrashWheel()
+    {
+        Destroy(gameObject);
     }
 }

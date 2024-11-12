@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78794a3a1736ed6498c7b7d904a61dcc, type: 3}
   m_Name: WheelChangeTask
   m_EditorClassIdentifier: 
-  title: Cambio de neumatico
+  title: Cambio de ruedas
   descriptions:
+  - Toma la LLAVE DE CRUZ
   - Afloja las ruedas con la LLAVE DE CRUZ
+  - Toma el GATO
   - Coloca el GATO debajo del vehiculo para levantarlo
   - Retira las RUEDAS con fugas
   - Reemplaza las RUEDAS en mal estado
   - Ajusta las nuevas ruedas con la LLAVE DE CRUZ
-  - Regresa el AUTO a su posicion inicial
   - Regresa el AUTO a su posicion inicial
   taskImage: {fileID: 0}
   isVisible: 0
