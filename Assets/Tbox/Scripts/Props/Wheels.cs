@@ -31,4 +31,12 @@ public class Wheels : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("TrashCan"))
+        {
+            TrashWheel();
+        }
+    }
 }
