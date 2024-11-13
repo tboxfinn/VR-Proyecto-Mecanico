@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78794a3a1736ed6498c7b7d904a61dcc, type: 3}
-  m_Name: TaskPrueba2
+  m_Name: WindshieldTask
   m_EditorClassIdentifier: 
-  title: Prueba 2
+  title: Limpia ese parabrisas
   descriptions:
   - Revisa la carga del auto
   - Localiza la bateria
+  taskImage: {fileID: -675242600, guid: bddd8830a68be3947bfe52a4d8671126, type: 3}
   isVisible: 0
   objectives:
   - {fileID: 11400000, guid: 80adfc15584fee545a504c8c44183a5f, type: 2}

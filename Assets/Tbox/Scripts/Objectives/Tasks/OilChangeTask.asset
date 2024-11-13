@@ -20,7 +20,7 @@ MonoBehaviour:
   - Localiza el Oil tank
   - Vierte aceite dentro del contenedor
   - Asegurate de cerrar bien el Tank
-  taskImage: {fileID: 21300000, guid: 290d158031622c645aa55f8bd981be12, type: 3}
+  taskImage: {fileID: 633236992, guid: bddd8830a68be3947bfe52a4d8671126, type: 3}
   isVisible: 0
   objectives:
   - {fileID: 11400000, guid: ca58872f14f167e4ca908bdeb1d79c0f, type: 2}

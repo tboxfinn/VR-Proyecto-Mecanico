@@ -22,7 +22,7 @@ MonoBehaviour:
   - Reemplaza las RUEDAS en mal estado
   - Ajusta las nuevas ruedas con la LLAVE DE CRUZ
   - Regresa el AUTO a su posicion inicial
-  taskImage: {fileID: 0}
+  taskImage: {fileID: -1916328565, guid: bddd8830a68be3947bfe52a4d8671126, type: 3}
   isVisible: 0
   objectives:
   - {fileID: 11400000, guid: a5f0c3d40c82f51429d133861f4db2c5, type: 2}
