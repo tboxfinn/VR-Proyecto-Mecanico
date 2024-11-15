@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 269008120}
   - component: {fileID: 269008122}
   - component: {fileID: 269008121}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4890,6 +4890,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pourDistance: 2
   pourSpeed: 1.7
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 4026531911
 --- !u!120 &5238570228697279500
 LineRenderer:
   serializedVersion: 2

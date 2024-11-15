@@ -14,6 +14,8 @@ public class Stream : MonoBehaviour
     
     private Vector3 targetPosition = Vector3.zero;
 
+    public LayerMask collisionLayers;
+
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -69,10 +71,15 @@ public class Stream : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);
 
-        Physics.Raycast(ray, out hit, pourDistance);
-        Vector3 endPoint = hit.collider ? hit.point : ray.GetPoint(pourDistance);
-
-        return endPoint;
+        // Usa el LayerMask para filtrar las colisiones con los layers deseados
+        if (Physics.Raycast(ray, out hit, pourDistance, collisionLayers))
+        {
+            return hit.point;
+        }
+        else
+        {
+            return ray.GetPoint(pourDistance);
+        }
     }
 
     private void MoveToPosition(int index, Vector3 targetPosition)

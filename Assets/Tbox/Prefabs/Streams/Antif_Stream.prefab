@@ -48,6 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pourDistance: 2
   pourSpeed: 1.5
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 4026531911
 --- !u!120 &5238570228697279500
 LineRenderer:
   serializedVersion: 2
