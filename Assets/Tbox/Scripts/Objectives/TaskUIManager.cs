@@ -11,7 +11,9 @@ public class TaskUIManager : MonoBehaviour
     public int maxTasks = 3; // Máximo de Task que se seleccionarán
     public int taskOnUI = 3;
     public GameObject taskUIPrefab; // Prefab con los textos de título y descripción
+    public GameObject taskUIPrefab2; // Segundo prefab con los textos de título y descripción
     public Transform taskUIHolder; // Holder donde se instanciarán los prefabs
+    public Transform taskUIHolder2; // Segundo holder donde se instanciarán los prefabs
 
     [SerializeField] private List<TaskObjectiveSO> selectedTasks; // Lista de Tasks seleccionados
 
@@ -57,7 +59,6 @@ public class TaskUIManager : MonoBehaviour
 
     void InstantiateTaskUI()
     {
-        
         int tasksToInstantiate = Mathf.Min(selectedTasks.Count, taskOnUI); // Limita a 3 tareas
 
         for (int i = 0; i < tasksToInstantiate; i++)
@@ -68,35 +69,57 @@ public class TaskUIManager : MonoBehaviour
             task.InitializeTask();
             task.isVisible = true;
 
-            // Instancia el prefab en el holder
-            GameObject taskUIInstance = Instantiate(taskUIPrefab, taskUIHolder);
-            instantiatedPrefabs.Add(taskUIInstance);
+            // Instancia el prefab en el primer holder
+            GameObject taskUIInstance1 = Instantiate(taskUIPrefab, taskUIHolder);
+            instantiatedPrefabs.Add(taskUIInstance1);
 
-            // Busca los objetos de texto dentro del prefab instanciado
-            TMP_Text titleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
-            TMP_Text descriptionText = taskUIInstance.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
-            Image taskImage = taskUIInstance.transform.Find("TaskImage").GetComponent<Image>();
+            // Instancia el prefab en el segundo holder
+            GameObject taskUIInstance2 = Instantiate(taskUIPrefab2, taskUIHolder2);
+            instantiatedPrefabs.Add(taskUIInstance2);
+
+            // Busca los objetos de texto dentro del primer prefab instanciado
+            TMP_Text titleText1 = taskUIInstance1.transform.Find("TaskTitle").GetComponent<TMP_Text>();
+            TMP_Text descriptionText1 = taskUIInstance1.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
+            Image taskImage1 = taskUIInstance1.transform.Find("TaskImage").GetComponent<Image>();
+
+            // Busca los objetos de texto dentro del segundo prefab instanciado
+            TMP_Text titleText2 = taskUIInstance2.transform.Find("TaskTitle").GetComponent<TMP_Text>();
+            TMP_Text descriptionText2 = taskUIInstance2.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
+            Image taskImage2 = taskUIInstance2.transform.Find("TaskImage").GetComponent<Image>();
 
             // Asigna el título del Task activo si no es nulo
-            if (titleText != null)
+            if (titleText1 != null)
             {
-                titleText.text = task.title ?? "No Title";
+                titleText1.text = task.title ?? "No Title";
+            }
+            if (titleText2 != null)
+            {
+                titleText2.text = task.title ?? "No Title";
             }
 
             // Asigna la descripción del Task activo si no es nula
-            if (descriptionText != null)
+            if (descriptionText1 != null)
             {
-                descriptionText.text = task.GetCurrentObjective()?.description ?? "No Description";
+                descriptionText1.text = task.GetCurrentObjective()?.description ?? "No Description";
+            }
+            if (descriptionText2 != null)
+            {
+                descriptionText2.text = task.GetCurrentObjective()?.description ?? "No Description";
             }
 
             // Asigna la imagen del Task activo si no es nula
-            if (taskImage != null)
+            if (taskImage1 != null)
             {
-                taskImage.sprite = task.taskImage ?? null; // Puedes asignar una imagen por defecto si es nula
+                taskImage1.sprite = task.taskImage ?? null; // Puedes asignar una imagen por defecto si es nula
+            }
+            if (taskImage2 != null)
+            {
+                taskImage2.sprite = task.taskImage ?? null; // Puedes asignar una imagen por defecto si es nula
             }
 
             // Suscríbete al evento para actualizar la UI cuando un objetivo sea completado
-            task.ObjectiveCompletedEvent += () => UpdateTaskUI(task, taskUIInstance);
+            task.ObjectiveCompletedEvent += () => UpdateTaskUI(task, taskUIInstance1);
+            task.ObjectiveCompletedEvent += () => UpdateTaskUI(task, taskUIInstance2);
 
             // Elimina el task de la lista de selectedTasks
             selectedTasks.RemoveAt(0);
@@ -161,20 +184,32 @@ public class TaskUIManager : MonoBehaviour
             // Inicializa el Task antes de tomar el primer objetivo
             nextTask.InitializeTask();
 
-            // Instancia el prefab en el holder
-            GameObject taskUIInstance = Instantiate(taskUIPrefab, taskUIHolder);
-            instantiatedPrefabs.Add(taskUIInstance);
+            // Instancia el prefab en el primer holder
+            GameObject taskUIInstance1 = Instantiate(taskUIPrefab, taskUIHolder);
+            instantiatedPrefabs.Add(taskUIInstance1);
 
-            // Busca los objetos de texto dentro del prefab instanciado
-            TMP_Text newTitleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
-            TMP_Text newDescriptionText = taskUIInstance.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
+            // Instancia el prefab en el segundo holder
+            GameObject taskUIInstance2 = Instantiate(taskUIPrefab2, taskUIHolder2);
+            instantiatedPrefabs.Add(taskUIInstance2);
+
+            // Busca los objetos de texto dentro del primer prefab instanciado
+            TMP_Text newTitleText1 = taskUIInstance1.transform.Find("TaskTitle").GetComponent<TMP_Text>();
+            TMP_Text newDescriptionText1 = taskUIInstance1.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
+
+            // Busca los objetos de texto dentro del segundo prefab instanciado
+            TMP_Text newTitleText2 = taskUIInstance2.transform.Find("TaskTitle").GetComponent<TMP_Text>();
+            TMP_Text newDescriptionText2 = taskUIInstance2.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
 
             // Actualiza los textos con la información del nuevo Task
-            newTitleText.text = nextTask.title;
-            newDescriptionText.text = nextTask.GetCurrentObjective()?.description;
+            newTitleText1.text = nextTask.title;
+            newDescriptionText1.text = nextTask.GetCurrentObjective()?.description;
+
+            newTitleText2.text = nextTask.title;
+            newDescriptionText2.text = nextTask.GetCurrentObjective()?.description;
 
             // Suscríbete al evento para actualizar la UI cuando un objetivo sea completado
-            nextTask.ObjectiveCompletedEvent += () => UpdateTaskUI(nextTask, taskUIInstance);
+            nextTask.ObjectiveCompletedEvent += () => UpdateTaskUI(nextTask, taskUIInstance1);
+            nextTask.ObjectiveCompletedEvent += () => UpdateTaskUI(nextTask, taskUIInstance2);
 
             // Elimina el task de la lista de selectedTasks
             selectedTasks.RemoveAt(0);
