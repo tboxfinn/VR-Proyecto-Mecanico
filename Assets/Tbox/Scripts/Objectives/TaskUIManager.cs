@@ -195,6 +195,7 @@ public class TaskUIManager : MonoBehaviour
             // Busca los objetos de texto dentro del prefab instanciado
             TMP_Text newTitleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
             TMP_Text newDescriptionText = taskUIInstance.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
+            Image newTaskImage = taskUIInstance.transform.Find("TaskImage").GetComponent<Image>();
 
             // // Busca los objetos de texto dentro del segundo prefab instanciado
             // TMP_Text newTitleText2 = taskUIInstance2.transform.Find("TaskTitle").GetComponent<TMP_Text>();
@@ -203,6 +204,11 @@ public class TaskUIManager : MonoBehaviour
             // Actualiza los textos con la información del nuevo Task
             newTitleText.text = nextTask.title;
             newDescriptionText.text = nextTask.GetCurrentObjective()?.description;
+
+            if (newTaskImage != null)
+            {
+                newTaskImage.sprite = nextTask.taskImage ?? null; // Puedes asignar una imagen por defecto si es nula
+            }
 
             // newTitleText2.text = nextTask.title;
             // newDescriptionText2.text = nextTask.GetCurrentObjective()?.description;

@@ -29,7 +29,6 @@ public class TaskStepController : MonoBehaviour
         // Verifica si el paso actual es el esperado en el orden correcto
         if (currentStepIndex < taskSteps.Count && taskSteps[currentStepIndex] == step && targetTask != null)
         {
-            Debug.Log("Paso completado: " + step);
             StepCompletedEvent?.Invoke(step); // Opcional: notificar la finalización del paso
             currentStepIndex++;
 
@@ -39,12 +38,12 @@ public class TaskStepController : MonoBehaviour
             // Verifica si se completaron todos los pasos
             if (currentStepIndex >= taskSteps.Count)
             {
-                Debug.Log("Todos los pasos completados para el task: " + targetTask.title);
+                //All steps completed
             }
         }
         else
         {
-            Debug.LogWarning("Paso no completado o fuera de orden: " + step);
+            //Step not completed
         }
     }
 
@@ -56,6 +55,5 @@ public class TaskStepController : MonoBehaviour
     public void ResetSteps()
     {
         currentStepIndex = 0;
-        Debug.Log("Steps reiniciados.");
     }
 }
