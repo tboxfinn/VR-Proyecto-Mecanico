@@ -19,5 +19,8 @@ MonoBehaviour:
   taskImage: {fileID: -1497277593, guid: bddd8830a68be3947bfe52a4d8671126, type: 3}
   isVisible: 0
   objectives:
-  - {fileID: 11400000, guid: 80adfc15584fee545a504c8c44183a5f, type: 2}
-  - {fileID: 11400000, guid: 243b0dc4c902f8c4797c57529c4be2b2, type: 2}
+  - {fileID: 11400000, guid: 4b811aa6ed1e4cc42ad9ebcfe72be2b9, type: 2}
+  - {fileID: 11400000, guid: fcb0e02db6fb5044da1af5f38c07dc9c, type: 2}
+  - {fileID: 11400000, guid: 3416dfc8c1456da44ae86b5886745ade, type: 2}
+  - {fileID: 11400000, guid: 173edb5b4b4bde74392f79d609b01357, type: 2}
+  - {fileID: 11400000, guid: 7e4b7c709228615419c4d5c84a03ba39, type: 2}

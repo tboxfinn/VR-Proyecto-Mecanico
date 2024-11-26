@@ -11,6 +11,7 @@ TagManager:
   - TrashCan
   - OilStream
   - WindshieldStream
+  - AnticongStream
   layers:
   - Default
   - TransparentFX
