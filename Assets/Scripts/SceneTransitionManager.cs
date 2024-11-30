@@ -14,6 +14,10 @@ public class SceneTransitionManager : MonoBehaviour
             Destroy(singleton);
 
         singleton = this;
+
+        // Esconde el cursor y lo bloquea al centro de la pantalla
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void GoToScene(int sceneIndex)
