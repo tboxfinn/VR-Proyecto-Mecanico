@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf078f9f35338a42ad48a9ce4edad98, type: 3}
   m_Name: Wheel - 7
   m_EditorClassIdentifier: 
-  description: Ajusta las nuevas ruedas con la LLAVE DE CRUZ
+  description: Ajusta las nuevas ruedas con la llave de cruz
   isCompleted: 0

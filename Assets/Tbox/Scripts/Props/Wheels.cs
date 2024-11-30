@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Wheels : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Wheels : MonoBehaviour
     public GameObject desinflandoPrefab;
     public Transform desinflandoSpawnPoint;
     private GameObject desinflandoInstance;
+    public XRGrabInteractable grabInteractable;
+    public TaskStepController taskStepController;
 
     public void StartDesinflando()
     {
@@ -29,6 +32,7 @@ public class Wheels : MonoBehaviour
 
     public void TrashWheel()
     {
+        taskStepController.CompleteStep("RetiraRuedas");
         Destroy(gameObject);
     }
 
@@ -38,5 +42,24 @@ public class Wheels : MonoBehaviour
         {
             TrashWheel();
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Llave"))
+        {
+            AddInteractionLayer(LayerMask.NameToLayer("Default"));
+            taskStepController.CompleteStep("AflojaRuedas");
+        }
+    }
+
+    public void AddInteractionLayer(int layer)
+    {
+        grabInteractable.interactionLayers |= (1 << layer);
+    }
+
+    public void RemoveInteractionLayer(int layer)
+    {
+        grabInteractable.interactionLayers &= ~(1 << layer);
     }
 }

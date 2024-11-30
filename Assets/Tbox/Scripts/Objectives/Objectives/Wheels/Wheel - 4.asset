@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf078f9f35338a42ad48a9ce4edad98, type: 3}
   m_Name: Wheel - 4
   m_EditorClassIdentifier: 
-  description: Coloca el GATO debajo del vehiculo para levantarlo
+  description: Coloca el gato debajo del vehiculo para levantarlo
   isCompleted: 0
