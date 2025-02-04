@@ -6,6 +6,7 @@ using TMPro;
 public class PopUpManager : MonoBehaviour
 {
     public GameObject popUpPrefab;
+    public float popupHeightOffset = 0.2f;
     private GameObject currentPopUp;
 
     public void ShowPopUp(GameObject targetObject)
@@ -23,7 +24,8 @@ public class PopUpManager : MonoBehaviour
         }
 
         // Instantiate a new popup as a child of the PopUpManager
-        currentPopUp = Instantiate(popUpPrefab, targetObject.transform.position + Vector3.up * 0.5f, Quaternion.identity, transform);
+        Vector3 popupPosition = targetObject.transform.position + Vector3.up * popupHeightOffset;
+        currentPopUp = Instantiate(popUpPrefab, popupPosition, Quaternion.identity, transform);
         currentPopUp.transform.LookAt(Camera.main.transform); // Make the popup face the camera
 
         // Get the TextMeshProUGUI component from the children of the popup

@@ -2511,6 +2511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpPrefab: {fileID: 4896728276447505319, guid: deac38ea27938a1439809635b69d65cc,
     type: 3}
+  popupHeightOffset: 0.2
 --- !u!4 &535571550
 Transform:
   m_ObjectHideFlags: 0
@@ -9506,7 +9507,7 @@ GameObject:
   - component: {fileID: 1621231152}
   - component: {fileID: 1621231154}
   m_Layer: 0
-  m_Name: "Liquido de direccion hidr\xE1ulica"
+  m_Name: Liquido de direccion hidraulica
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15292,7 +15293,19 @@ MonoBehaviour:
   m_AllowGazeAssistance: 0
   m_FirstHoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 535571549}
+        m_TargetAssemblyTypeName: PopUpManager, Assembly-CSharp
+        m_MethodName: ShowPopUp
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 919132149569983057}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_LastHoverExited:
     m_PersistentCalls:
       m_Calls: []
@@ -15309,18 +15322,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: HoverSound
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 535571549}
-        m_TargetAssemblyTypeName: PopUpManager, Assembly-CSharp
-        m_MethodName: ShowPopUp
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 919132149569983057}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   m_HoverExited:
@@ -15846,7 +15847,7 @@ GameObject:
   - component: {fileID: 4300950339458784346}
   - component: {fileID: 4300950339458784347}
   m_Layer: 0
-  m_Name: "Gato hidr\xE1ulico"
+  m_Name: Gato hidraulico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
