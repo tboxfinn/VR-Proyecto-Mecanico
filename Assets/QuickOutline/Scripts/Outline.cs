@@ -15,6 +15,7 @@ using UnityEngine;
 
 public class Outline : MonoBehaviour {
   private static HashSet<Mesh> registeredMeshes = new HashSet<Mesh>();
+  public Outline outline;
 
   public enum Mode {
     OutlineAll,
@@ -97,6 +98,8 @@ public class Outline : MonoBehaviour {
 
     // Apply material properties immediately
     needsUpdate = true;
+
+    outline = GetComponent<Outline>();
     
   }
 
@@ -111,6 +114,11 @@ public class Outline : MonoBehaviour {
 
       renderer.materials = materials.ToArray();
     }
+  }
+
+  void Start() 
+  {
+    DiseableOutline();
   }
 
   void OnValidate() {
@@ -306,5 +314,15 @@ public class Outline : MonoBehaviour {
         outlineFillMaterial.SetFloat("_OutlineWidth", 0f);
         break;
     }
+  }
+
+  public void DiseableOutline()
+  {
+    outline.enabled = false;
+  }
+
+  public void EnableOutline()
+  {
+    outline.enabled = true;
   }
 }
