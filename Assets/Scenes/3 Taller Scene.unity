@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 11245949}
   - component: {fileID: 11245956}
   - component: {fileID: 11245958}
+  - component: {fileID: 11245959}
   m_Layer: 0
   m_Name: Liquido limpiaparabrisas
   m_TagString: Untagged
@@ -509,6 +510,24 @@ MonoBehaviour:
   floorLayer:
     serializedVersion: 2
     m_Bits: 2147483856
+--- !u!114 &11245959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11245948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &16587576
 GameObject:
   m_ObjectHideFlags: 0
@@ -5203,6 +5222,7 @@ MonoBehaviour:
   popUpPrefab: {fileID: 4896728276447505319, guid: deac38ea27938a1439809635b69d65cc,
     type: 3}
   popupHeightOffset: 0.3
+  guidePrefab: {fileID: 0}
 --- !u!4 &535571550
 Transform:
   m_ObjectHideFlags: 0
@@ -8233,6 +8253,7 @@ GameObject:
   - component: {fileID: 795779296}
   - component: {fileID: 795779299}
   - component: {fileID: 795779300}
+  - component: {fileID: 795779301}
   m_Layer: 0
   m_Name: GatoSocket
   m_TagString: Untagged
@@ -8459,6 +8480,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.636376, y: 1.8767381, z: 0.84711486}
   m_Center: {x: 0.00035415092, y: 0.035572648, z: 0.046969667}
+--- !u!114 &795779301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795779291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8980392, b: 0.16470589, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &813755062
 GameObject:
   m_ObjectHideFlags: 0
@@ -8610,6 +8649,7 @@ GameObject:
   - component: {fileID: 830476270}
   - component: {fileID: 830476272}
   - component: {fileID: 830476273}
+  - component: {fileID: 830476274}
   m_Layer: 0
   m_Name: Liquido de frenos
   m_TagString: Untagged
@@ -8977,7 +9017,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15532f78d76434785c16045dafbd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Peque;o bote de frenos
+  description: "Peque\xF1o bote de frenos"
+--- !u!114 &830476274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830476262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &838006872
 GameObject:
   m_ObjectHideFlags: 0
@@ -10887,8 +10945,9 @@ GameObject:
   - component: {fileID: 1111300233}
   - component: {fileID: 1111300232}
   - component: {fileID: 1111300231}
+  - component: {fileID: 1111300237}
   m_Layer: 0
-  m_Name: TapaWindshield
+  m_Name: Tapa liquido limpiaparabrisas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10994,6 +11053,18 @@ MonoBehaviour:
           m_StringArgument: HoverSound
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 535571549}
+        m_TargetAssemblyTypeName: PopUpManager, Assembly-CSharp
+        m_MethodName: ShowPopUp
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1111300229}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
@@ -11007,6 +11078,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Localiza
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 535571549}
+        m_TargetAssemblyTypeName: PopUpManager, Assembly-CSharp
+        m_MethodName: HidePopUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   m_FirstSelectEntered:
@@ -11208,6 +11291,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111300229}
   m_Mesh: {fileID: 4978077087163630961, guid: 46e7fb291f2b54b4085780d03eac5c4f, type: 3}
+--- !u!114 &1111300237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111300229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8980392, b: 0.16470589, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1113023810
 GameObject:
   m_ObjectHideFlags: 0
@@ -14857,6 +14958,7 @@ GameObject:
   - component: {fileID: 1621231145}
   - component: {fileID: 1621231152}
   - component: {fileID: 1621231154}
+  - component: {fileID: 1621231155}
   m_Layer: 0
   m_Name: Liquido de direccion hidraulica
   m_TagString: Untagged
@@ -15212,6 +15314,24 @@ MonoBehaviour:
   floorLayer:
     serializedVersion: 2
     m_Bits: 2147483856
+--- !u!114 &1621231155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621231144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1625492618
 GameObject:
   m_ObjectHideFlags: 0
@@ -16197,6 +16317,7 @@ GameObject:
   - component: {fileID: 1719153669}
   - component: {fileID: 1719153670}
   - component: {fileID: 1719153672}
+  - component: {fileID: 1719153673}
   m_Layer: 0
   m_Name: Liquido anticongelante
   m_TagString: Untagged
@@ -16564,6 +16685,24 @@ MonoBehaviour:
   floorLayer:
     serializedVersion: 2
     m_Bits: 2147483856
+--- !u!114 &1719153673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719153662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1721152618
 GameObject:
   m_ObjectHideFlags: 0
@@ -20268,8 +20407,9 @@ GameObject:
   - component: {fileID: 2147061029}
   - component: {fileID: 2147061028}
   - component: {fileID: 2147061027}
+  - component: {fileID: 2147061033}
   m_Layer: 0
-  m_Name: TapaAnticongelante
+  m_Name: Tapa del anticongelante
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20375,6 +20515,18 @@ MonoBehaviour:
           m_StringArgument: HoverSound
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 535571549}
+        m_TargetAssemblyTypeName: PopUpManager, Assembly-CSharp
+        m_MethodName: ShowPopUp
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2147061025}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
@@ -20388,6 +20540,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Localiza
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 535571549}
+        m_TargetAssemblyTypeName: PopUpManager, Assembly-CSharp
+        m_MethodName: HidePopUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   m_FirstSelectEntered:
@@ -20589,6 +20753,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147061025}
   m_Mesh: {fileID: 4978077087163630961, guid: 46e7fb291f2b54b4085780d03eac5c4f, type: 3}
+--- !u!114 &2147061033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147061025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8980392, b: 0.16470589, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!33 &6722759156395890
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20785,8 +20967,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149177990473}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5000008, y: -0.49999923, z: -0.49999928, w: 0.5000007}
-  m_LocalPosition: {x: -3.47, y: 0, z: -2.3}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: -3.455982, y: 0.000006556511, z: -2.2998877}
   m_LocalScale: {x: 90.86311, y: 69.21849, z: 69.21849}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20897,8 +21079,9 @@ GameObject:
   - component: {fileID: 8961140934306674847}
   - component: {fileID: 8961140934306674846}
   - component: {fileID: 8961140934306674849}
+  - component: {fileID: 8961140934306674850}
   m_Layer: 0
-  m_Name: TapaAceite
+  m_Name: Tapa del aceite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21052,6 +21235,7 @@ GameObject:
   - component: {fileID: 3469287837075883857}
   - component: {fileID: 3469287837075883859}
   - component: {fileID: 3469287837075883861}
+  - component: {fileID: 3469287837075883862}
   m_Layer: 0
   m_Name: Aceite de motor
   m_TagString: Untagged
@@ -22014,6 +22198,24 @@ MonoBehaviour:
   floorLayer:
     serializedVersion: 2
     m_Bits: 2147483856
+--- !u!114 &3469287837075883862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149569983057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!33 &3469287837501384790
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22367,6 +22569,7 @@ GameObject:
   - component: {fileID: 4300950339458784344}
   - component: {fileID: 4300950339458784346}
   - component: {fileID: 4300950339458784347}
+  - component: {fileID: 4300950339458784348}
   m_Layer: 0
   m_Name: Gato hidraulico
   m_TagString: Untagged
@@ -22787,6 +22990,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: GATO PARA LEVANTAR
+--- !u!114 &4300950339458784348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3529655694711654127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!23 &4428956969608166500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22844,6 +23065,7 @@ GameObject:
   - component: {fileID: 8797508228777244907}
   - component: {fileID: 8797508228777244909}
   - component: {fileID: 8797508228777244910}
+  - component: {fileID: 8797508228777244911}
   m_Layer: 0
   m_Name: Desarmador plano
   m_TagString: Untagged
@@ -23116,6 +23338,7 @@ GameObject:
   - component: {fileID: 6137916117315265648}
   - component: {fileID: 6137916117315265650}
   - component: {fileID: 6137916117315265651}
+  - component: {fileID: 6137916117315265652}
   m_Layer: 0
   m_Name: Desarmador de cruz
   m_TagString: Untagged
@@ -23371,6 +23594,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62fb9fb1177925e4b8a383be2b9db66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6137916117315265652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6137916117315265647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &6285715400633402994
 Transform:
   m_ObjectHideFlags: 0
@@ -23962,6 +24203,7 @@ GameObject:
   - component: {fileID: 8606398055281651327}
   - component: {fileID: 8606398055281651328}
   - component: {fileID: 8606398055281651330}
+  - component: {fileID: 8606398055281651331}
   m_Layer: 0
   m_Name: Bayoneta de aceite
   m_TagString: Untagged
@@ -23984,6 +24226,7 @@ GameObject:
   - component: {fileID: 8608457044912488919}
   - component: {fileID: 8608457044912488918}
   - component: {fileID: 8608457044912488922}
+  - component: {fileID: 8608457044912488923}
   m_Layer: 0
   m_Name: Llave de cruz
   m_TagString: Llave
@@ -24528,6 +24771,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62fb9fb1177925e4b8a383be2b9db66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8606398055281651331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814006070720024491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8980392, b: 0.16470589, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!23 &8608457044912488917
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24830,6 +25091,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.036895, y: 3.2123933, z: 0.20289554}
   m_Center: {x: 0.0000019073486, y: -3.4805527e-13, z: 0.00000047683704}
+--- !u!114 &8608457044912488923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815889824561782784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &8694414923155393359
 Transform:
   m_ObjectHideFlags: 0
@@ -25171,6 +25450,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62fb9fb1177925e4b8a383be2b9db66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8797508228777244911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4600470863684661248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!33 &8916044903704831077
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25293,6 +25590,18 @@ MonoBehaviour:
           m_StringArgument: HoverSound
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 535571549}
+        m_TargetAssemblyTypeName: PopUpManager, Assembly-CSharp
+        m_MethodName: ShowPopUp
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 857349324281326982}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
@@ -25306,6 +25615,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Tapa
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 535571549}
+        m_TargetAssemblyTypeName: PopUpManager, Assembly-CSharp
+        m_MethodName: HidePopUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   m_FirstSelectEntered:
@@ -25457,6 +25778,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62fb9fb1177925e4b8a383be2b9db66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8961140934306674850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857349324281326982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8980392, b: 0.16470589, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &9126184806814486741
 Transform:
   m_ObjectHideFlags: 0

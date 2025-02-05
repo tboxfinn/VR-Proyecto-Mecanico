@@ -5,9 +5,14 @@ using TMPro;
 
 public class PopUpManager : MonoBehaviour
 {
+    [Header("NamePopUp")]
     public GameObject popUpPrefab;
     public float popupHeightOffset = 0.2f;
     private GameObject currentPopUp;
+
+    [Header("Guide")]
+    public GameObject guidePrefab;
+    private GameObject currentGuidePopUp;
 
     public void ShowPopUp(GameObject targetObject)
     {
@@ -50,6 +55,49 @@ public class PopUpManager : MonoBehaviour
         if (currentPopUp != null)
         {
             Destroy(currentPopUp);
+        }
+    }
+
+    public void ShowGuidePopUp(string guideText)
+    {
+        if (guidePrefab == null)
+        {
+            Debug.LogWarning("Guide popUpPrefab is null");
+            return;
+        }
+
+        // Destroy any existing guide popup
+        if (currentGuidePopUp != null)
+        {
+            Destroy(currentGuidePopUp);
+        }
+
+        // Instantiate a new guide popup as a child of the PopUpManager
+        currentGuidePopUp = Instantiate(guidePrefab, transform);
+        currentGuidePopUp.transform.SetParent(Camera.main.transform, false); // Attach to the camera
+
+        // Get the TextMeshProUGUI component from the children of the guide popup
+        var guideTextComponent = currentGuidePopUp.transform.Find("Panel/GuideText").GetComponent<TextMeshProUGUI>();
+
+        if (guideTextComponent == null)
+        {
+            Debug.LogError("GuideText component not found in the guide popup prefab");
+            return;
+        }
+
+        // Set the guide text value
+        guideTextComponent.text = guideText;
+
+        Debug.Log("Showing guide popup");
+
+        currentGuidePopUp.SetActive(true);
+    }
+
+    public void HideGuidePopUp()
+    {
+        if (currentGuidePopUp != null)
+        {
+            Destroy(currentGuidePopUp);
         }
     }
 }
