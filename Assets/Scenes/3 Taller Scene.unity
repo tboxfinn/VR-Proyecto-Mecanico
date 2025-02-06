@@ -1632,6 +1632,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabInteractable: {fileID: 171655997}
   taskStepController: {fileID: 1435964873}
+--- !u!114 &171656010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171655995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  outlineMode: 1
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &190719459
 GameObject:
   m_ObjectHideFlags: 0
@@ -5788,6 +5807,7 @@ GameObject:
   - component: {fileID: 593545991}
   - component: {fileID: 593545990}
   - component: {fileID: 593545994}
+  - component: {fileID: 593545995}
   m_Layer: 0
   m_Name: RuedaTrasIzq
   m_TagString: Untagged
@@ -6117,6 +6137,25 @@ MonoBehaviour:
   desinflandoSpawnPoint: {fileID: 550614766}
   grabInteractable: {fileID: 593545991}
   taskStepController: {fileID: 1435964873}
+--- !u!114 &593545995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593545986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  outlineMode: 1
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &604088976
 GameObject:
   m_ObjectHideFlags: 0
@@ -6573,6 +6612,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabInteractable: {fileID: 632700489}
   taskStepController: {fileID: 1435964873}
+--- !u!114 &632700502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632700487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  outlineMode: 1
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &635380226
 GameObject:
   m_ObjectHideFlags: 0
@@ -8405,7 +8463,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ColocaGato
+          m_StringArgument: D
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -8444,7 +8502,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: RegresaAuto
+          m_StringArgument: H
           m_BoolArgument: 0
         m_CallState: 2
   m_StartingHoverFilters: []
@@ -9089,32 +9147,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7535565758397536210}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &847724473 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3400501281010563593, guid: 176a1d47510d1344c88459568b60e4bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7535565758397536210}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847724471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &847724479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847724471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b931ffa73525bd94fb219ddc73f1ff68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabInteractable: {fileID: 847724473}
-  taskStepController: {fileID: 1435964873}
 --- !u!1 &849863372
 GameObject:
   m_ObjectHideFlags: 0
@@ -10534,6 +10566,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 171656003}
+    - targetCorrespondingSourceObject: {fileID: 2459284039605216604, guid: 176a1d47510d1344c88459568b60e4bd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 171656010}
   m_SourcePrefab: {fileID: 100100000, guid: 176a1d47510d1344c88459568b60e4bd, type: 3}
 --- !u!1 &1055611178
 GameObject:
@@ -12244,6 +12280,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 632700495}
+    - targetCorrespondingSourceObject: {fileID: 2459284039605216604, guid: 176a1d47510d1344c88459568b60e4bd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 632700502}
   m_SourcePrefab: {fileID: 100100000, guid: 176a1d47510d1344c88459568b60e4bd, type: 3}
 --- !u!1 &1277711645
 GameObject:
@@ -13269,7 +13309,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ReemplazaRuedas
+          m_StringArgument: F
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -13770,7 +13810,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1435964872
 Transform:
@@ -13801,22 +13841,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTask: {fileID: 11400000, guid: 22308226f0902f6418a822f3c507f525, type: 2}
   taskSteps:
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
+  - description: A
+    objectsToOutline:
+    - {fileID: 7815889824561782784}
+  - description: B
+    objectsToOutline:
+    - {fileID: 2114665859}
+    - {fileID: 593545986}
+  - description: C
+    objectsToOutline:
+    - {fileID: 3529655694711654127}
+  - description: D
+    objectsToOutline:
+    - {fileID: 795779291}
+  - description: E
+    objectsToOutline:
+    - {fileID: 919132147571244043}
+  - description: F
+    objectsToOutline:
+    - {fileID: 847724471}
+    - {fileID: 171655995}
+    - {fileID: 632700487}
+  - description: G
+    objectsToOutline:
+    - {fileID: 7815889824561782784}
+    - {fileID: 2114665859}
+    - {fileID: 593545986}
   wheels:
   - {fileID: 2114665867}
   - {fileID: 593545994}
@@ -18410,7 +18460,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ReemplazaRuedas
+          m_StringArgument: F
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -19903,6 +19953,7 @@ GameObject:
   - component: {fileID: 2114665864}
   - component: {fileID: 2114665863}
   - component: {fileID: 2114665867}
+  - component: {fileID: 2114665868}
   m_Layer: 0
   m_Name: RuedaDelIzq
   m_TagString: Untagged
@@ -20232,6 +20283,25 @@ MonoBehaviour:
   desinflandoSpawnPoint: {fileID: 944583710}
   grabInteractable: {fileID: 2114665864}
   taskStepController: {fileID: 1435964873}
+--- !u!114 &2114665868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114665859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  outlineMode: 1
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2121895992
 GameObject:
   m_ObjectHideFlags: 0
@@ -21174,6 +21244,7 @@ GameObject:
   - component: {fileID: 1711813855103917534}
   - component: {fileID: 3469287838026000662}
   - component: {fileID: 3469287838026000661}
+  - component: {fileID: 3469287838026000663}
   m_Layer: 0
   m_Name: Trashcan_Large
   m_TagString: TrashCan
@@ -22345,6 +22416,25 @@ CapsuleCollider:
   m_Height: 0.020139128
   m_Direction: 2
   m_Center: {x: -8.0942586e-10, y: -0.000000002428279, z: 0.009181397}
+--- !u!114 &3469287838026000663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147571244043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  outlineMode: 1
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!33 &3469287838111377143
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22898,7 +22988,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TomaGato
+          m_StringArgument: C
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -23953,62 +24043,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3400501281010563593, guid: 176a1d47510d1344c88459568b60e4bd,
         type: 3}
-      propertyPath: m_MovementType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3400501281010563593, guid: 176a1d47510d1344c88459568b60e4bd,
-        type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3400501281010563593, guid: 176a1d47510d1344c88459568b60e4bd,
-        type: 3}
-      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3400501281010563593, guid: 176a1d47510d1344c88459568b60e4bd,
-        type: 3}
-      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3400501281010563593, guid: 176a1d47510d1344c88459568b60e4bd,
-        type: 3}
       propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1929243318}
-    - target: {fileID: 3400501281010563593, guid: 176a1d47510d1344c88459568b60e4bd,
+    - target: {fileID: 9130713905982055845, guid: 176a1d47510d1344c88459568b60e4bd,
         type: 3}
-      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3400501281010563593, guid: 176a1d47510d1344c88459568b60e4bd,
-        type: 3}
-      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySound
-      objectReference: {fileID: 0}
-    - target: {fileID: 3400501281010563593, guid: 176a1d47510d1344c88459568b60e4bd,
-        type: 3}
-      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SoundManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3400501281010563593, guid: 176a1d47510d1344c88459568b60e4bd,
-        type: 3}
-      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: HoverSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 3400501281010563593, guid: 176a1d47510d1344c88459568b60e4bd,
-        type: 3}
-      propertyPath: m_HoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
+      propertyPath: taskStepController
+      value: 
+      objectReference: {fileID: 1435964873}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2459284039605216604, guid: 176a1d47510d1344c88459568b60e4bd,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 847724479}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 176a1d47510d1344c88459568b60e4bd, type: 3}
 --- !u!23 &7540247610894928518
 MeshRenderer:
@@ -25000,7 +25046,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TomaLlave
+          m_StringArgument: A
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:

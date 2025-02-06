@@ -11,7 +11,7 @@ public class WheelsBuenas : MonoBehaviour
 
     public void TrashWheel()
     {
-        taskStepController.CompleteStep("RetiraRuedas");
+        //taskStepController.CompleteStep("RetiraRuedas");
         Destroy(gameObject);
     }
 
@@ -19,7 +19,7 @@ public class WheelsBuenas : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Llave"))
         {
-            taskStepController.CompleteStep("AjustaRuedas");
+            taskStepController.CompleteStep("G");
         }
     }
 

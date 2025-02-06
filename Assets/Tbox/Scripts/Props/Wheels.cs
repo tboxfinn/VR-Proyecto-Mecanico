@@ -32,7 +32,7 @@ public class Wheels : MonoBehaviour
 
     public void TrashWheel()
     {
-        taskStepController.CompleteStep("RetiraRuedas");
+        taskStepController.CompleteStep("E");
         Destroy(gameObject);
     }
 
@@ -49,7 +49,7 @@ public class Wheels : MonoBehaviour
         if (collision.gameObject.CompareTag("Llave"))
         {
             AddInteractionLayer(LayerMask.NameToLayer("Default"));
-            taskStepController.CompleteStep("AflojaRuedas");
+            taskStepController.CompleteStep("B");
         }
     }
 
