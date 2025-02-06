@@ -11,7 +11,7 @@ public class WheelsBuenas : MonoBehaviour
 
     public void TrashWheel()
     {
-        //taskStepController.CompleteStep("RetiraRuedas");
+        taskStepController.CompleteStep("F");
         Destroy(gameObject);
     }
 

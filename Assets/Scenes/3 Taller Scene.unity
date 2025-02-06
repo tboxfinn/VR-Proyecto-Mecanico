@@ -258,7 +258,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Bote
+          m_StringArgument: C
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -7010,7 +7010,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Cerrar
+          m_StringArgument: E
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -9900,6 +9900,7 @@ GameObject:
   - component: {fileID: 923619349}
   - component: {fileID: 923619348}
   - component: {fileID: 923619347}
+  - component: {fileID: 923619350}
   m_Layer: 0
   m_Name: WindshieldDepositGib
   m_TagString: Untagged
@@ -9973,6 +9974,25 @@ Transform:
   - {fileID: 6639372533393240830}
   m_Father: {fileID: 1652389805}
   m_LocalEulerAnglesHint: {x: 0, y: 170.137, z: 90}
+--- !u!114 &923619350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923619346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  outlineMode: 1
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &937752227
 GameObject:
   m_ObjectHideFlags: 0
@@ -10324,16 +10344,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTask: {fileID: 11400000, guid: afe7d44f545057947ab1d6e3f7b179ea, type: 2}
   taskSteps:
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
+  - description: A
+    objectsToOutline:
+    - {fileID: 2147061025}
+  - description: B
+    objectsToOutline:
+    - {fileID: 2147061025}
+  - description: C
+    objectsToOutline:
+    - {fileID: 1719153662}
+  - description: D
+    objectsToOutline:
+    - {fileID: 586941748180437232}
+  - description: E
+    objectsToOutline:
+    - {fileID: 2147061025}
 --- !u!4 &989208805
 Transform:
   m_ObjectHideFlags: 0
@@ -11133,7 +11158,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Localiza
+          m_StringArgument: A
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 535571549}
@@ -11166,7 +11191,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tapa
+          m_StringArgument: B
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -11540,7 +11565,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Cerrar
+          m_StringArgument: E
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -13865,8 +13890,11 @@ MonoBehaviour:
   - description: G
     objectsToOutline:
     - {fileID: 7815889824561782784}
-    - {fileID: 2114665859}
-    - {fileID: 593545986}
+    - {fileID: 1885811489}
+    - {fileID: 1370240604}
+  - description: H
+    objectsToOutline:
+    - {fileID: 3529655694711654127}
   wheels:
   - {fileID: 2114665867}
   - {fileID: 593545994}
@@ -14214,7 +14242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: AnticongStream
-  taskName: Vertir
+  taskName: D
   taskToComplete: {fileID: 989208804}
 --- !u!54 &1472281232
 Rigidbody:
@@ -15998,16 +16026,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTask: {fileID: 11400000, guid: fba919c371d60c1409972b5bd5706da0, type: 2}
   taskSteps:
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
-  - description: 
-    objectsToOutline: []
+  - description: A
+    objectsToOutline:
+    - {fileID: 1111300229}
+  - description: B
+    objectsToOutline:
+    - {fileID: 1111300229}
+  - description: C
+    objectsToOutline:
+    - {fileID: 11245948}
+  - description: D
+    objectsToOutline:
+    - {fileID: 923619346}
+    - {fileID: 6298313254369486916}
+  - description: E
+    objectsToOutline:
+    - {fileID: 1111300229}
 --- !u!4 &1652747461
 Transform:
   m_ObjectHideFlags: 0
@@ -16622,7 +16656,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Bote
+          m_StringArgument: C
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -19049,7 +19083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: WindshieldStream
-  taskName: Vertir
+  taskName: D
   taskToComplete: {fileID: 1652747460}
 --- !u!54 &2006844073
 Rigidbody:
@@ -20645,7 +20679,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Localiza
+          m_StringArgument: A
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 535571549}
@@ -20678,7 +20712,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tapa
+          m_StringArgument: B
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -21093,6 +21127,7 @@ GameObject:
   - component: {fileID: 3801380380848365039}
   - component: {fileID: 1379720075313670437}
   - component: {fileID: 3801380380848365040}
+  - component: {fileID: 3801380380848365041}
   m_Layer: 0
   m_Name: AnticongelanteBote
   m_TagString: Untagged
@@ -22778,6 +22813,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1337985173226870149, guid: 3bf12452603575f458dd6581f6e7f4e2, type: 3}
+--- !u!114 &3801380380848365041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586941748180437232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  outlineMode: 1
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &4261532094551569019
 Transform:
   m_ObjectHideFlags: 0
@@ -23789,6 +23843,7 @@ GameObject:
   - component: {fileID: 6639372533393240830}
   - component: {fileID: 7749588511483542875}
   - component: {fileID: 5505904500583188881}
+  - component: {fileID: 7749588511483542876}
   m_Layer: 0
   m_Name: WindshieldDeposit
   m_TagString: Untagged
@@ -24106,6 +24161,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6298313254369486916}
   m_Mesh: {fileID: 1369374821331727082, guid: d85d62e2f5e166a4480a1e7b359f43e9, type: 3}
+--- !u!114 &7749588511483542876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6298313254369486916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  outlineMode: 1
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &7795180786564413225
 Transform:
   m_ObjectHideFlags: 0

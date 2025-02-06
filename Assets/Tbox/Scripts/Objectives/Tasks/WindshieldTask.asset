@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Limpia ese parabrisas
   descriptions:
-  - Revisa la carga del auto
-  - Localiza la bateria
+  - Localiza la tapa del tanque de liquido limpia parabrisas
+  - Retira la tapa del deposito
+  - Toma el bote de liquido limpia parabrisas
+  - Vierte el liquido en el deposito
+  - Cierra el deposito con la tapa
   taskImage: {fileID: -675242600, guid: bddd8830a68be3947bfe52a4d8671126, type: 3}
   isVisible: 0
   objectives:
