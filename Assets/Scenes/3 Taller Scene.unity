@@ -6879,10 +6879,13 @@ MonoBehaviour:
   allTasks:
   - {fileID: 11400000, guid: 3e802e697b713f8479009f4c54fb96d3, type: 2}
   - {fileID: 11400000, guid: fba919c371d60c1409972b5bd5706da0, type: 2}
-  - {fileID: 11400000, guid: afe7d44f545057947ab1d6e3f7b179ea, type: 2}
   - {fileID: 11400000, guid: 22308226f0902f6418a822f3c507f525, type: 2}
+  - {fileID: 11400000, guid: afe7d44f545057947ab1d6e3f7b179ea, type: 2}
+  - {fileID: 11400000, guid: afe7d44f545057947ab1d6e3f7b179ea, type: 2}
+  - {fileID: 11400000, guid: afe7d44f545057947ab1d6e3f7b179ea, type: 2}
+  - {fileID: 11400000, guid: afe7d44f545057947ab1d6e3f7b179ea, type: 2}
   minTasks: 4
-  maxTasks: 4
+  maxTasks: 7
   taskOnUI: 2
   taskUIPrefab: {fileID: 7871707545187194370, guid: 64a929a8648a0064382dd31b9cb8eba3,
     type: 3}
