@@ -524,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -6508,12 +6508,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTask: {fileID: 11400000, guid: 3e802e697b713f8479009f4c54fb96d3, type: 2}
   taskSteps:
-  - Localiza
-  - Retira
-  - Tapa
-  - Bote
-  - Vertir
-  - Cerrar
+  - description: A
+    objectsToOutline:
+    - {fileID: 7814006070720024491}
+  - description: B
+    objectsToOutline:
+    - {fileID: 7814006070720024491}
+  - description: C
+    objectsToOutline:
+    - {fileID: 857349324281326982}
+  - description: D
+    objectsToOutline:
+    - {fileID: 919132149569983057}
+  - description: E
+    objectsToOutline:
+    - {fileID: 1550471489246829687}
+  - description: F
+    objectsToOutline:
+    - {fileID: 857349324281326982}
 --- !u!4 &621622776
 Transform:
   m_ObjectHideFlags: 0
@@ -8495,7 +8507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8980392, b: 0.16470589, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -9034,7 +9046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -10280,11 +10292,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTask: {fileID: 11400000, guid: afe7d44f545057947ab1d6e3f7b179ea, type: 2}
   taskSteps:
-  - Localiza
-  - Tapa
-  - Bote
-  - Vertir
-  - Cerrar
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
 --- !u!4 &989208805
 Transform:
   m_ObjectHideFlags: 0
@@ -11308,7 +11325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8980392, b: 0.16470589, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -12334,7 +12351,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Cerrar
+          m_StringArgument: F
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -13576,7 +13593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: OilStream
-  taskName: Vertir
+  taskName: E
   taskToComplete: {fileID: 621622775}
 --- !u!1 &1413649023
 GameObject:
@@ -13683,7 +13700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1422660485}
   m_Layer: 0
-  m_Name: PourDetectors
+  m_Name: --PourDetectors--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13784,14 +13801,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTask: {fileID: 11400000, guid: 22308226f0902f6418a822f3c507f525, type: 2}
   taskSteps:
-  - TomaLlave
-  - AflojaRuedas
-  - TomaGato
-  - ColocaGato
-  - RetiraRuedas
-  - ReemplazaRuedas
-  - AjustaRuedas
-  - RegresaAuto
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
   wheels:
   - {fileID: 2114665867}
   - {fileID: 593545994}
@@ -15332,7 +15357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -15923,11 +15948,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTask: {fileID: 11400000, guid: fba919c371d60c1409972b5bd5706da0, type: 2}
   taskSteps:
-  - Localiza
-  - Tapa
-  - Bote
-  - Vertir
-  - Cerrar
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
+  - description: 
+    objectsToOutline: []
 --- !u!4 &1652747461
 Transform:
   m_ObjectHideFlags: 0
@@ -16704,7 +16734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -20773,7 +20803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8980392, b: 0.16470589, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -21359,6 +21389,7 @@ GameObject:
   - component: {fileID: 654662017764562560}
   - component: {fileID: 5704155903220012890}
   - component: {fileID: 5704155903220012891}
+  - component: {fileID: 5704155903220012892}
   m_Layer: 7
   m_Name: Motor
   m_TagString: Untagged
@@ -22069,7 +22100,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Bote
+          m_StringArgument: D
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -22219,7 +22250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -23012,7 +23043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
@@ -23282,6 +23313,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5041565236075717657, guid: 46e7fb291f2b54b4085780d03eac5c4f, type: 3}
+--- !u!114 &5704155903220012892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550471489246829687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  outlineMode: 1
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!33 &5710740289764834892
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23617,7 +23667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -24605,7 +24655,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Localiza
+          m_StringArgument: A
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 535571549}
@@ -24638,7 +24688,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Retira
+          m_StringArgument: B
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -24795,7 +24845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8980392, b: 0.16470589, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -25116,7 +25166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -25476,7 +25526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8994579, b: 0.16509432, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -25627,7 +25677,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tapa
+          m_StringArgument: C
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 535571549}
@@ -25805,7 +25855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   outlineMode: 1
-  outlineColor: {r: 1, g: 0.8980392, b: 0.16470589, a: 1}
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -25857,8 +25907,8 @@ SceneRoots:
   - {fileID: 1929243319}
   - {fileID: 1495111708}
   - {fileID: 535571550}
-  - {fileID: 616528833}
   - {fileID: 646478417}
+  - {fileID: 616528833}
   - {fileID: 604088977}
   - {fileID: 204805887}
   - {fileID: 4300950339458784341}

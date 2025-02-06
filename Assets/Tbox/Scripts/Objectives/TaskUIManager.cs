@@ -117,6 +117,8 @@ public class TaskUIManager : MonoBehaviour
             //     taskImage2.sprite = task.taskImage ?? null; // Puedes asignar una imagen por defecto si es nula
             // }
 
+            EnableOutline(task);
+
             // Suscríbete al evento para actualizar la UI cuando un objetivo sea completado
             task.ObjectiveCompletedEvent += () => UpdateTaskUI(task, taskUIInstance);
             // task.ObjectiveCompletedEvent += () => UpdateTaskUI(task, taskUIInstance2);
@@ -138,6 +140,8 @@ public class TaskUIManager : MonoBehaviour
             titleText.fontStyle = FontStyles.Strikethrough;
             descriptionText.fontStyle = FontStyles.Strikethrough;
             task.isVisible = false;
+
+            DisableOutline(task);
 
             SoundManager.instance.PlaySound("TaskCompleted");
 
@@ -210,6 +214,8 @@ public class TaskUIManager : MonoBehaviour
                 newTaskImage.sprite = nextTask.taskImage ?? null; // Puedes asignar una imagen por defecto si es nula
             }
 
+            EnableOutline(nextTask);
+
             // newTitleText2.text = nextTask.title;
             // newDescriptionText2.text = nextTask.GetCurrentObjective()?.description;
 
@@ -219,6 +225,36 @@ public class TaskUIManager : MonoBehaviour
 
             // Elimina el task de la lista de selectedTasks
             selectedTasks.RemoveAt(0);
+        }
+    }
+
+    void EnableOutline(TaskObjectiveSO task)
+    {
+        foreach (var objective in task.objectives)
+        {
+            foreach (var obj in objective.objectsToOutline)
+            {
+                var outline = obj.GetComponent<Outline>();
+                if (outline != null)
+                {
+                    outline.enabled = true;
+                }
+            }
+        }
+    }
+
+    void DisableOutline(TaskObjectiveSO task)
+    {
+        foreach (var objective in task.objectives)
+        {
+            foreach (var obj in objective.objectsToOutline)
+            {
+                var outline = obj.GetComponent<Outline>();
+                if (outline != null)
+                {
+                    outline.enabled = false;
+                }
+            }
         }
     }
 }
