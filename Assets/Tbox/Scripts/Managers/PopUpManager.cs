@@ -10,10 +10,17 @@ public class PopUpManager : MonoBehaviour
     public float popupHeightOffset = 0.2f;
     private GameObject currentPopUp;
 
-    [Header("Guide")]
-    public GameObject guidePrefab;
-    private GameObject currentGuidePopUp;
+    [Header("Advice")]
+    public GameObject adviceHolder;
+    public TMP_Text adviceText;
+    public float adviceDuration = 5f;
+    public float fadeInDuration = 0.2f;
+    public float fadeOutDuration = 0.5f;
 
+    public void Start()
+    {
+        adviceHolder.SetActive(false);
+    }
     public void ShowPopUp(GameObject targetObject)
     {
         if (targetObject == null || popUpPrefab == null)
@@ -58,46 +65,68 @@ public class PopUpManager : MonoBehaviour
         }
     }
 
-    public void ShowGuidePopUp(string guideText)
+    public void ShowAdvice(string message)
     {
-        if (guidePrefab == null)
-        {
-            Debug.LogWarning("Guide popUpPrefab is null");
-            return;
-        }
-
-        // Destroy any existing guide popup
-        if (currentGuidePopUp != null)
-        {
-            Destroy(currentGuidePopUp);
-        }
-
-        // Instantiate a new guide popup as a child of the PopUpManager
-        currentGuidePopUp = Instantiate(guidePrefab, transform);
-        currentGuidePopUp.transform.SetParent(Camera.main.transform, false); // Attach to the camera
-
-        // Get the TextMeshProUGUI component from the children of the guide popup
-        var guideTextComponent = currentGuidePopUp.transform.Find("Panel/GuideText").GetComponent<TextMeshProUGUI>();
-
-        if (guideTextComponent == null)
-        {
-            Debug.LogError("GuideText component not found in the guide popup prefab");
-            return;
-        }
-
-        // Set the guide text value
-        guideTextComponent.text = guideText;
-
-        Debug.Log("Showing guide popup");
-
-        currentGuidePopUp.SetActive(true);
+        StopAllCoroutines(); // Stop any existing coroutines to prevent overlapping
+        StartCoroutine(ShowAdviceCoroutine(message, adviceDuration));
     }
 
-    public void HideGuidePopUp()
+    private IEnumerator ShowAdviceCoroutine(string message, float duration)
     {
-        if (currentGuidePopUp != null)
-        {
-            Destroy(currentGuidePopUp);
-        }
+        adviceText.text = message;
+        yield return StartCoroutine(FadeInAdviceHolder());
+
+        yield return new WaitForSeconds(duration);
+
+        StartCoroutine(FadeOutAdviceHolder());
     }
+
+    private IEnumerator FadeInAdviceHolder()
+    {
+        CanvasGroup canvasGroup = adviceHolder.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            canvasGroup = adviceHolder.AddComponent<CanvasGroup>();
+        }
+
+        adviceHolder.SetActive(true);
+        float startAlpha = canvasGroup.alpha;
+        float rate = 1.0f / fadeInDuration;
+        float progress = 0.0f;
+
+        while (progress < 1.0f)
+        {
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 1, progress);
+            progress += rate * Time.deltaTime;
+
+            yield return null;
+        }
+
+        canvasGroup.alpha = 1;
+    }
+
+    private IEnumerator FadeOutAdviceHolder()
+    {
+        CanvasGroup canvasGroup = adviceHolder.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            canvasGroup = adviceHolder.AddComponent<CanvasGroup>();
+        }
+
+        float startAlpha = canvasGroup.alpha;
+        float rate = 1.0f / fadeOutDuration;
+        float progress = 0.0f;
+
+        while (progress < 1.0f)
+        {
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0, progress);
+            progress += rate * Time.deltaTime;
+
+            yield return null;
+        }
+
+        canvasGroup.alpha = 0;
+        adviceHolder.SetActive(false);
+    }
+
 }
