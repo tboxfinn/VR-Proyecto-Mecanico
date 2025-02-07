@@ -70,7 +70,7 @@ public class TaskStepController : MonoBehaviour
 
     private void ActivateCurrentStepOutlines()
     {
-        if (currentStepIndex < taskSteps.Count)
+        if (currentStepIndex < taskSteps.Count && targetTask.isVisible)
         {
             foreach (GameObject obj in taskSteps[currentStepIndex].objectsToOutline)
             {

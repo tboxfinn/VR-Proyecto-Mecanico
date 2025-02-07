@@ -15,7 +15,7 @@ public class TaskUIManager : MonoBehaviour
 
     [SerializeField] private List<TaskObjectiveSO> selectedTasks; // Lista de Tasks seleccionados
 
-    private List<GameObject> instantiatedPrefabs = new List<GameObject>();
+    [SerializeField] private List<GameObject> instantiatedPrefabs = new List<GameObject>();
 
     void Start()
     {
@@ -163,6 +163,7 @@ public class TaskUIManager : MonoBehaviour
 
             // Inicializa el Task antes de tomar el primer objetivo
             nextTask.InitializeTask();
+            nextTask.isVisible = true;
 
             // Instancia el prefab en el holder
             GameObject taskUIInstance = Instantiate(taskUIPrefab, taskUIHolder);

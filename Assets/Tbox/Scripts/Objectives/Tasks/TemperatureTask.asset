@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Temperatura elevada
   descriptions:
-  - Revisa la carga del auto
-  - Localiza la bateria
+  - Localiza la tapa del tanque de liquido refrigerante
+  - Retira la tapa del tanque
+  - Toma el bote de liquido refrigerante
+  - Vierte el liquido en el tanque
+  - Cierra el deposito con la tapa
   taskImage: {fileID: -1497277593, guid: bddd8830a68be3947bfe52a4d8671126, type: 3}
   isVisible: 0
   objectives:
@@ -24,3 +27,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3416dfc8c1456da44ae86b5886745ade, type: 2}
   - {fileID: 11400000, guid: 173edb5b4b4bde74392f79d609b01357, type: 2}
   - {fileID: 11400000, guid: 7e4b7c709228615419c4d5c84a03ba39, type: 2}
+  instancedObjectives:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
