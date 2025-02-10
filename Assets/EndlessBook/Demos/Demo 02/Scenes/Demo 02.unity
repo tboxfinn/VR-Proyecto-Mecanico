@@ -6487,6 +6487,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoverFrontExtras
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 00bb0d13facb2df4399c7f3042cb3fab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 00bb0d13facb2df4399c7f3042cb3fab, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -13224,7 +13228,7 @@ MonoBehaviour:
   tableOfContentsCollider: {fileID: 1303797807}
   pageTouchPadLayerMask:
     serializedVersion: 2
-    m_Bits: 32768
+    m_Bits: 0
 --- !u!4 &2033642788
 Transform:
   m_ObjectHideFlags: 0
