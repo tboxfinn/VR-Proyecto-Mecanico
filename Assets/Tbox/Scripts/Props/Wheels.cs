@@ -53,6 +53,11 @@ public class Wheels : MonoBehaviour
         }
     }
 
+    public void AcercarLlanta()
+    {
+        
+    }
+
     public void AddInteractionLayer(int layer)
     {
         grabInteractable.interactionLayers |= (1 << layer);
