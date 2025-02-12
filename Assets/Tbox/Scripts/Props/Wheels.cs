@@ -13,6 +13,11 @@ public class Wheels : MonoBehaviour
     public XRGrabInteractable grabInteractable;
     public TaskStepController taskStepController;
 
+    [Header("CloseUp")]
+    public GameObject[] pernos;
+    public Transform closeUpPosition;
+    private bool isCloseUp = false;
+
     public void StartDesinflando()
     {
         if (desinflandoPrefab != null && desinflandoInstance == null)
@@ -55,7 +60,7 @@ public class Wheels : MonoBehaviour
 
     public void AcercarLlanta()
     {
-        
+
     }
 
     public void AddInteractionLayer(int layer)
