@@ -3722,16 +3722,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312100123}
-  m_LocalRotation: {x: -0, y: -0, z: -0.24346133, w: 0.9699106}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.25558516, y: 0.25558516, z: 0.25558516}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0.000000022351735, y: -0.00000008940694, z: -0.16675553, w: 0.9859983}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000022867}
+  m_LocalScale: {x: 0.17425796, y: 0.17425796, z: 0.17425796}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 852749068}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -28.182}
+  m_Father: {fileID: 1781278207}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.198}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -853, y: -404}
+  m_AnchoredPosition: {x: -824.9, y: 68.8}
   m_SizeDelta: {x: 396, y: 630}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &312100125
@@ -7410,16 +7410,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717683935}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000021513713}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 852749068}
+  m_Father: {fileID: 1781278207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 151, y: 93}
+  m_AnchoredPosition: {x: 118.76299, y: 83.00001}
   m_SizeDelta: {x: 159.519, y: 73.011}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &717683937
@@ -9203,8 +9203,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1781278207}
-  - {fileID: 312100124}
-  - {fileID: 717683936}
   m_Father: {fileID: 2060207821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19028,6 +19026,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1606132642}
+  - {fileID: 312100124}
+  - {fileID: 717683936}
   m_Father: {fileID: 852749068}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -19081,7 +19081,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781278206}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -26508,7 +26508,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Bayoneta
+          m_StringArgument: "\"La herramienta para medir el nivel de aceite. S\xE1cala,
+            l\xEDmpiala, vuelve a introducirla y verifica el nivel antes de encender
+            el motor.\""
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
