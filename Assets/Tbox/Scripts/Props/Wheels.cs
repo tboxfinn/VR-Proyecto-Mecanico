@@ -16,7 +16,18 @@ public class Wheels : MonoBehaviour
     [Header("CloseUp")]
     public GameObject[] pernos;
     public Transform closeUpPosition;
-    private bool isCloseUp = false;
+    [SerializeField] private bool isCloseUp = false;
+    private bool[] pernosQuitados;
+
+    [SerializeField] private ActionBasedContinuousMoveProvider moveProvider;
+    [SerializeField] private ActionBasedSnapTurnProvider snapTurnProvider;
+
+    public void Start()
+    {
+        pernosQuitados = new bool[pernos.Length];
+        moveProvider = FindObjectOfType<ActionBasedContinuousMoveProvider>();
+        snapTurnProvider = FindObjectOfType<ActionBasedSnapTurnProvider>();
+    }
 
     public void StartDesinflando()
     {
@@ -60,7 +71,33 @@ public class Wheels : MonoBehaviour
 
     public void AcercarLlanta()
     {
+        if (!isCloseUp)
+        {
+            transform.position = closeUpPosition.position;
+            transform.rotation = closeUpPosition.rotation;
+            isCloseUp = true;
 
+            if (moveProvider != null)
+                moveProvider.enabled = false;
+
+            if (snapTurnProvider != null)
+                snapTurnProvider.enabled = false;
+        }
+    }
+
+    public void AlejarLlanta()
+    {
+        if (isCloseUp)
+        {
+            // Lógica para alejar la llanta (si es necesario)
+            isCloseUp = false;
+
+            if (moveProvider != null)
+                moveProvider.enabled = true;
+
+            if (snapTurnProvider != null)
+                snapTurnProvider.enabled = true;
+        }
     }
 
     public void AddInteractionLayer(int layer)
@@ -71,5 +108,15 @@ public class Wheels : MonoBehaviour
     public void RemoveInteractionLayer(int layer)
     {
         grabInteractable.interactionLayers &= ~(1 << layer);
+    }
+
+    public bool CanInteractWithWheel()
+    {
+        foreach (bool pernoQuitado in pernosQuitados)
+        {
+            if (!pernoQuitado)
+                return false;
+        }
+        return true;
     }
 }
