@@ -13,20 +13,19 @@ public class Wheels : MonoBehaviour
     public XRGrabInteractable grabInteractable;
     public TaskStepController taskStepController;
 
-    [Header("CloseUp")]
+    [Header("Pernos")]
     public GameObject[] pernos;
-    public Transform closeUpPosition;
-    [SerializeField] private bool isCloseUp = false;
     private bool[] pernosQuitados;
 
-    [SerializeField] private ActionBasedContinuousMoveProvider moveProvider;
-    [SerializeField] private ActionBasedSnapTurnProvider snapTurnProvider;
+    private CloseUpAttachModifier closeUpAttachModifier;
+    private RayAttachModifier rayAttachModifier;
 
     public void Start()
     {
         pernosQuitados = new bool[pernos.Length];
-        moveProvider = FindObjectOfType<ActionBasedContinuousMoveProvider>();
-        snapTurnProvider = FindObjectOfType<ActionBasedSnapTurnProvider>();
+
+        closeUpAttachModifier = GetComponent<CloseUpAttachModifier>();
+        rayAttachModifier = GetComponent<RayAttachModifier>();
     }
 
     public void StartDesinflando()
@@ -69,45 +68,9 @@ public class Wheels : MonoBehaviour
         }
     }
 
-    public void AcercarLlanta()
-    {
-        if (!isCloseUp)
-        {
-            transform.position = closeUpPosition.position;
-            transform.rotation = closeUpPosition.rotation;
-            isCloseUp = true;
-
-            if (moveProvider != null)
-                moveProvider.enabled = false;
-
-            if (snapTurnProvider != null)
-                snapTurnProvider.enabled = false;
-        }
-    }
-
-    public void AlejarLlanta()
-    {
-        if (isCloseUp)
-        {
-            // Lógica para alejar la llanta (si es necesario)
-            isCloseUp = false;
-
-            if (moveProvider != null)
-                moveProvider.enabled = true;
-
-            if (snapTurnProvider != null)
-                snapTurnProvider.enabled = true;
-        }
-    }
-
     public void AddInteractionLayer(int layer)
     {
         grabInteractable.interactionLayers |= (1 << layer);
-    }
-
-    public void RemoveInteractionLayer(int layer)
-    {
-        grabInteractable.interactionLayers &= ~(1 << layer);
     }
 
     public bool CanInteractWithWheel()
@@ -118,5 +81,24 @@ public class Wheels : MonoBehaviour
                 return false;
         }
         return true;
+    }
+
+    public void DesatornillarPerno(int index)
+    {
+        if (index >= 0 && index < pernosQuitados.Length)
+        {
+            pernosQuitados[index] = true;
+            Debug.Log($"Perno {index} desatornillado.");
+            if (CanInteractWithWheel())
+            {
+                Debug.Log("Todos los pernos han sido desatornillados. Saliendo del close-up.");
+                closeUpAttachModifier.ExitCloseUp();
+                rayAttachModifier.enabled = true;
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Índice de perno {index} fuera de rango.");
+        }
     }
 }
