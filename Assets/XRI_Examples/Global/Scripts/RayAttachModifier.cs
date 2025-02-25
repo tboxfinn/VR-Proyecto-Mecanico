@@ -11,6 +11,7 @@ public class RayAttachModifier : MonoBehaviour
     IXRSelectInteractable m_SelectInteractable;
     private Vector3 originalScale;
     public Vector3 grabbedScale = Vector3.one; // Tamaño deseado al ser tomado
+    public bool shouldChangeSize = true; // Determina si el tamaño debe cambiar al ser tomado
 
     protected void OnEnable()
     {
@@ -39,11 +40,14 @@ public class RayAttachModifier : MonoBehaviour
         if (!(args.interactorObject is XRRayInteractor))
             return;
 
-        // Guardar el tamaño original
-        originalScale = transform.localScale;
+        if (shouldChangeSize)
+        {
+            // Guardar el tamaño original
+            originalScale = transform.localScale;
 
-        // Cambiar el tamaño al ser tomado
-        transform.localScale = grabbedScale;
+            // Cambiar el tamaño al ser tomado
+            transform.localScale = grabbedScale;
+        }
 
         var attachTransform = args.interactorObject.GetAttachTransform(m_SelectInteractable);
         var originalAttachPose = args.interactorObject.GetLocalAttachPoseOnSelect(m_SelectInteractable);
@@ -52,8 +56,11 @@ public class RayAttachModifier : MonoBehaviour
 
     void OnSelectExited(SelectExitEventArgs args)
     {
-        // Regresar al tamaño original al ser soltado
-        transform.localScale = originalScale;
+        if (shouldChangeSize)
+        {
+            // Regresar al tamaño original al ser soltado
+            transform.localScale = originalScale;
+        }
     }
 }
 

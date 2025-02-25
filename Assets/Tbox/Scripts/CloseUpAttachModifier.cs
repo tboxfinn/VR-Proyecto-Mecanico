@@ -2,8 +2,6 @@ using Unity.XR.CoreUtils;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine;
 
-
-
 /// <summary>
 /// Add this to your interactable to make it snap to the close-up position instead of staying at a distance.
 /// </summary>
@@ -48,9 +46,11 @@ public class CloseUpAttachModifier : MonoBehaviour
         if (!(args.interactorObject is XRRayInteractor))
             return;
 
-        // Guardar la posición y rotación originales
+        // Guardar la posición, rotación y escala originales
         originalPosition = transform.position;
         originalRotation = transform.rotation;
+        originalScale = transform.localScale;
+        Debug.Log($"Original Scale: {originalScale}");
 
         // Mover el objeto a la posición de close-up
         if (closeUpPosition != null)
@@ -58,6 +58,10 @@ public class CloseUpAttachModifier : MonoBehaviour
             transform.position = closeUpPosition.position;
             transform.rotation = closeUpPosition.rotation;
         }
+
+        // Cambiar el tamaño al ser tomado
+        transform.localScale = closeUpScale;
+        Debug.Log($"Close-Up Scale: {closeUpScale}");
 
         // Desactivar temporalmente el XRGrabInteractable para evitar que el objeto se mueva a las manos
         if (grabInteractable != null)
@@ -91,9 +95,11 @@ public class CloseUpAttachModifier : MonoBehaviour
 
     public void ExitCloseUp()
     {
-        // Devolver el objeto a su posición y rotación originales
+        // Devolver el objeto a su posición, rotación y escala originales
         transform.position = originalPosition;
         transform.rotation = originalRotation;
+        transform.localScale = originalScale;
+        Debug.Log($"Restored Scale: {originalScale}");
 
         // Reactivar el XRGrabInteractable
         if (grabInteractable != null)

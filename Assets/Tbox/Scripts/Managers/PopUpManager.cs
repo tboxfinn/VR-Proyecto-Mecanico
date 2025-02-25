@@ -52,8 +52,6 @@ public class PopUpManager : MonoBehaviour
         // Set the text value
         nameText.text = targetObject.name;
 
-        Debug.Log($"Showing popup for: {targetObject.name}");
-
         currentPopUp.SetActive(true);
     }
 
