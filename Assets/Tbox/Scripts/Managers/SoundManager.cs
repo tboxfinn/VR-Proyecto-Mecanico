@@ -25,10 +25,6 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // Añadir dos AudioSource componentes
-        soundEffectsSource = gameObject.AddComponent<AudioSource>();
-        musicSource = gameObject.AddComponent<AudioSource>();
-
         PlayRandomMusic();
     }
 
