@@ -16,6 +16,8 @@ public class CloseUpAttachModifier : MonoBehaviour
     private Vector3 originalScale;
     private LocomotionSystem locomotionSystem;
 
+    public GameObject[] objetosDesaparecer;
+
     [Header("Debug")]
     public bool isCloseUp = false;
     public bool debugExitCloseUp = false; // Booleano para depuración
@@ -75,6 +77,15 @@ public class CloseUpAttachModifier : MonoBehaviour
             locomotionSystem.enabled = false;
         }
 
+        // Desactivar los objetos especificados
+        foreach (var objeto in objetosDesaparecer)
+        {
+            if (objeto != null)
+            {
+                objeto.SetActive(false);
+            }
+        }
+
         // Ajustar la posición de adjunto
         var attachTransform = args.interactorObject.GetAttachTransform(m_SelectInteractable);
         var originalAttachPose = args.interactorObject.GetLocalAttachPoseOnSelect(m_SelectInteractable);
@@ -111,6 +122,15 @@ public class CloseUpAttachModifier : MonoBehaviour
         if (locomotionSystem != null)
         {
             locomotionSystem.enabled = true;
+        }
+
+        // Reactivar los objetos especificados
+        foreach (var objeto in objetosDesaparecer)
+        {
+            if (objeto != null)
+            {
+                objeto.SetActive(true);
+            }
         }
 
         isCloseUp = false; // Actualizar el estado de close-up

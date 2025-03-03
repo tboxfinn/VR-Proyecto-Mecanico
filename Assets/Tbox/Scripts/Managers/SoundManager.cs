@@ -7,7 +7,11 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
 
     public Sounds[] sounds;
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource soundEffectsSource;
+    [SerializeField] private AudioSource musicSource;
+
+    [Header("Music")]
+    public List<string> musicTracks; // Lista de nombres de canciones
 
     private void Awake()
     {
@@ -21,7 +25,11 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        audioSource = GetComponent<AudioSource>();
+        // Añadir dos AudioSource componentes
+        soundEffectsSource = gameObject.AddComponent<AudioSource>();
+        musicSource = gameObject.AddComponent<AudioSource>();
+
+        PlayRandomMusic();
     }
 
     public void PlaySound(string name)
@@ -31,23 +39,22 @@ public class SoundManager : MonoBehaviour
         {
             if (sound.randomPitch)
             {
-                audioSource.pitch = Random.Range(sound.rPitchMinValue, sound.rPitchMaxValue);
+                soundEffectsSource.pitch = Random.Range(sound.rPitchMinValue, sound.rPitchMaxValue);
             }
             else
             {
-                audioSource.pitch = sound.pitch;
+                soundEffectsSource.pitch = sound.pitch;
             }
 
-            audioSource.clip = sound.clip;
-            audioSource.volume = sound.volume;
-            audioSource.loop = sound.loop;
-            audioSource.Play();
+            soundEffectsSource.clip = sound.clip;
+            soundEffectsSource.volume = sound.volume;
+            soundEffectsSource.loop = sound.loop;
+            soundEffectsSource.Play();
         }
         else
         {
             Debug.LogWarning("Sound: " + name + " not found!");
         }
-        
     }
 
     public void PlayRandomSound(List<string> soundNames)
@@ -62,6 +69,39 @@ public class SoundManager : MonoBehaviour
         PlaySound(randomSoundName);
     }
 
+    public void PlayMusic(string name)
+    {
+        Sounds sound = System.Array.Find(sounds, s => s.name == name);
+        if (sound != null)
+        {
+            musicSource.clip = sound.clip;
+            musicSource.volume = sound.volume; // Asegúrate de que el volumen se está configurando aquí
+            musicSource.loop = sound.loop;
+Debug.Log("Playing music: " + name + " with volume: " + sound.volume);
+            musicSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("Music: " + name + " not found!");
+        }
+    }
+
+    public void PlayRandomMusic()
+    {
+        if (musicTracks == null || musicTracks.Count == 0)
+        {
+            Debug.LogWarning("Music track list is empty or null!");
+            return;
+        }
+
+        string randomMusicName = musicTracks[Random.Range(0, musicTracks.Count)];
+        PlayMusic(randomMusicName);
+    }
+
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
 }
 
 [System.Serializable]
