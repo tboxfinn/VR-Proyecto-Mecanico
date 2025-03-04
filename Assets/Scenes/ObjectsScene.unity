@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17882366, g: 0.2239115, b: 0.30579773, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -288,6 +288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: JumperCables
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b0a6fe437fcc9642af5578c32e615de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -688,6 +693,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cable_Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 387ec07fa201be442b690d1160d6f02a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1137,6 +1147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerVR
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861078718021449587, guid: e533a92daaf1e2f4c80bda1fc393ed19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7870116458759539326, guid: e533a92daaf1e2f4c80bda1fc393ed19,
         type: 3}
@@ -2790,6 +2805,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cable_37
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e98c80bef2db3c4e8eb76e7dbefd285,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

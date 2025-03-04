@@ -17,9 +17,6 @@ public class Wheels : MonoBehaviour
     public GameObject[] pernos;
     private bool[] pernosQuitados;
 
-    [Header("Animación")]
-    public float pernoRotationDuration = 2.0f; // Duración de la rotación en segundos
-
     private CloseUpAttachModifier closeUpAttachModifier;
     private RayAttachModifier rayAttachModifier;
 
@@ -90,50 +87,34 @@ public class Wheels : MonoBehaviour
     {
         if (index >= 0 && index < pernosQuitados.Length)
         {
-            StartCoroutine(RotatePerno(pernos[index], index));
+            pernosQuitados[index] = true;
+            Debug.Log($"Perno {index} desatornillado.");
+
+            // Desvincular el perno de la rueda y añadir un Rigidbody para que caiga
+            GameObject perno = pernos[index];
+            perno.transform.parent = null;
+            Rigidbody rb = perno.GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+
+            // Desactivar el isTrigger del Collider
+            Collider collider = perno.GetComponent<Collider>();
+            if (collider != null)
+            {
+                collider.isTrigger = false;
+            }
+
+            if (CanInteractWithWheel())
+            {
+                Debug.Log("Todos los pernos han sido desatornillados. Saliendo del close-up.");
+                closeUpAttachModifier.ExitCloseUp();
+                rayAttachModifier.enabled = true;
+                closeUpAttachModifier.enabled = false;
+                
+            }
         }
         else
         {
             Debug.LogWarning($"Índice de perno {index} fuera de rango.");
-        }
-    }
-
-    private IEnumerator RotatePerno(GameObject perno, int index)
-    {
-        float elapsed = 0.0f;
-        Quaternion initialRotation = perno.transform.localRotation;
-        Quaternion targetRotation = initialRotation * Quaternion.Euler(360, 0, 0); // Rotar 360 grados en el eje X
-
-        SoundManager.instance.PlaySound("Perno");
-
-        while (elapsed < pernoRotationDuration)
-        {
-            perno.transform.localRotation = Quaternion.Slerp(initialRotation, targetRotation, elapsed / pernoRotationDuration);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        perno.transform.localRotation = targetRotation;
-        pernosQuitados[index] = true;
-        Debug.Log($"Perno {index} desatornillado.");
-
-        // Desvincular el perno de la rueda y añadir un Rigidbody para que caiga
-        perno.transform.parent = null;
-        Rigidbody rb = perno.AddComponent<Rigidbody>();
-        rb.mass = 0.1f; // Ajusta la masa según sea necesario
-
-        // Desactivar el isTrigger del Collider
-        Collider collider = perno.GetComponent<Collider>();
-        if (collider != null)
-        {
-            collider.isTrigger = false;
-        }
-
-        if (CanInteractWithWheel())
-        {
-            Debug.Log("Todos los pernos han sido desatornillados. Saliendo del close-up.");
-            closeUpAttachModifier.ExitCloseUp();
-            rayAttachModifier.enabled = true;
         }
     }
 }
