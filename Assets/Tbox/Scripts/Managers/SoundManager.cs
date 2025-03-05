@@ -12,6 +12,10 @@ public class SoundManager : MonoBehaviour
 
     [Header("Music")]
     public List<string> musicTracks; // Lista de nombres de canciones
+    private string lastMusicName;
+
+    [Header("Debug")]
+    public bool nextSong;
 
     private void Awake()
     {
@@ -25,7 +29,27 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        musicSource.loop = false; // Asegúrate de que el loop esté desactivado para que podamos controlar manualmente la reproducción
+        musicSource.playOnAwake = false; // Desactivar la reproducción automática al iniciar
+    }
+
+    private void Start()
+    {
         PlayRandomMusic();
+    }
+
+    private void Update()
+    {
+        if (!musicSource.isPlaying)
+        {
+            PlayRandomMusic();
+        }
+
+        if (nextSong)
+        {
+            NextMusic();
+            nextSong = false;
+        }
     }
 
     public void PlaySound(string name)
@@ -73,8 +97,9 @@ public class SoundManager : MonoBehaviour
             musicSource.clip = sound.clip;
             musicSource.volume = sound.volume; // Asegúrate de que el volumen se está configurando aquí
             musicSource.loop = sound.loop;
-Debug.Log("Playing music: " + name + " with volume: " + sound.volume);
+            Debug.Log("Playing music: " + name + " with volume: " + sound.volume);
             musicSource.Play();
+            lastMusicName = name;
         }
         else
         {
@@ -90,8 +115,18 @@ Debug.Log("Playing music: " + name + " with volume: " + sound.volume);
             return;
         }
 
-        string randomMusicName = musicTracks[Random.Range(0, musicTracks.Count)];
+        string randomMusicName;
+        do
+        {
+            randomMusicName = musicTracks[Random.Range(0, musicTracks.Count)];
+        } while (randomMusicName == lastMusicName);
+
         PlayMusic(randomMusicName);
+    }
+
+    public void NextMusic()
+    {
+        PlayRandomMusic();
     }
 
     public void StopMusic()
