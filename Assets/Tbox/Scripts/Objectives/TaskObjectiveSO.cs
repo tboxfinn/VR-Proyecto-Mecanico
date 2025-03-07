@@ -53,6 +53,16 @@ public class TaskObjectiveSO : ScriptableObject
         return null;
     }
 
+    public ObjectiveSO GetObjective(int index)
+    {
+        if (index < instancedObjectives.Length)
+        {
+            return instancedObjectives[index];
+        }
+
+        return null;
+    }
+
     public void CompleteCurrentObjective()
     {
         if (isVisible && currentObjectiveIndex < instancedObjectives.Length)

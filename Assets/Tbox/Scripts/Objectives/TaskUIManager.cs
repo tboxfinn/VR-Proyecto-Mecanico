@@ -17,6 +17,8 @@ public class TaskUIManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> instantiatedPrefabs = new List<GameObject>();
 
+    public int secondTaskIndex = 1;
+
     void Start()
     {
         // Resetear la visibilidad de todas las tareas
@@ -74,6 +76,7 @@ public class TaskUIManager : MonoBehaviour
             // Busca los objetos de texto dentro del primer prefab instanciado
             TMP_Text titleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
             TMP_Text descriptionText = taskUIInstance.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
+            TMP_Text secondDescriptionText = taskUIInstance.transform.Find("SecondDescription").GetComponent<TMP_Text>();
             Image taskImage = taskUIInstance.transform.Find("TaskImage").GetComponent<Image>();
 
             // Asigna el título del Task activo si no es nulo
@@ -82,10 +85,16 @@ public class TaskUIManager : MonoBehaviour
                 titleText.text = task.title ?? "No Title";
             }
 
-            // Asigna la descripción del Task activo si no es nula
+            // Asigna la descripción del primer objetivo del Task activo si no es nula
             if (descriptionText != null)
             {
-                descriptionText.text = task.GetCurrentObjective()?.description ?? "No Description";
+                descriptionText.text = "1- " + (task.GetCurrentObjective()?.description ?? "No Description");
+            }
+
+            // Asigna la descripción del segundo objetivo del Task activo si no es nula
+            if (secondDescriptionText != null)
+            {
+                secondDescriptionText.text = "2- " + (task.GetObjective(secondTaskIndex)?.description) ?? " ";
             }
 
             // Asigna la imagen del Task activo si no es nula
@@ -106,15 +115,18 @@ public class TaskUIManager : MonoBehaviour
 
     void UpdateTaskUI(TaskObjectiveSO task, GameObject taskUIInstance)
     {
-        TMP_Text titleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
         TMP_Text descriptionText = taskUIInstance.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
+        TMP_Text secondDescriptionText = taskUIInstance.transform.Find("SecondDescription").GetComponent<TMP_Text>();
 
         // Actualiza la descripción con el siguiente objetivo o indica que el Task está completado
         if (task.IsTaskCompleted())
-        {   
+        {
+            TMP_Text titleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
+
             // Cambia el estilo de la fuente al completar el Task
             titleText.fontStyle = FontStyles.Strikethrough;
             descriptionText.fontStyle = FontStyles.Strikethrough;
+            secondDescriptionText.fontStyle = FontStyles.Strikethrough;
             task.isVisible = false;
 
             DisableOutline(task);
@@ -130,7 +142,9 @@ public class TaskUIManager : MonoBehaviour
         }
         else
         {
-            descriptionText.text = task.GetCurrentObjective()?.description;
+            descriptionText.text = "1- " + (task.GetCurrentObjective()?.description ?? "No Description");
+            secondTaskIndex++;
+            secondDescriptionText.text = "2- " + (task.GetObjective(secondTaskIndex)?.description) ?? "";
         }
     }
 
@@ -172,11 +186,16 @@ public class TaskUIManager : MonoBehaviour
             // Busca los objetos de texto dentro del prefab instanciado
             TMP_Text newTitleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
             TMP_Text newDescriptionText = taskUIInstance.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
+            TMP_Text newSecondDescriptionText = taskUIInstance.transform.Find("SecondDescription").GetComponent<TMP_Text>();
             Image newTaskImage = taskUIInstance.transform.Find("TaskImage").GetComponent<Image>();
 
             // Actualiza los textos con la información del nuevo Task
             newTitleText.text = nextTask.title;
-            newDescriptionText.text = nextTask.GetCurrentObjective()?.description;
+            newDescriptionText.text = "1- " + (nextTask.GetCurrentObjective()?.description);
+            newSecondDescriptionText.text = "2- " + (nextTask.GetObjective(secondTaskIndex)?.description) ?? " ";
+
+            // Resetear el índice de la segunda tarea
+            secondTaskIndex = 1;
 
             if (newTaskImage != null)
             {
