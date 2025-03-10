@@ -94,7 +94,8 @@ public class TaskUIManager : MonoBehaviour
             // Asigna la descripción del segundo objetivo del Task activo si no es nula
             if (secondDescriptionText != null)
             {
-                secondDescriptionText.text = "2- " + (task.GetObjective(secondTaskIndex)?.description) ?? " ";
+                var secondObjective = task.GetObjective(secondTaskIndex);
+                secondDescriptionText.text = secondObjective != null ? "2- " + secondObjective.description : "";
             }
 
             // Asigna la imagen del Task activo si no es nula
@@ -144,7 +145,8 @@ public class TaskUIManager : MonoBehaviour
         {
             descriptionText.text = "1- " + (task.GetCurrentObjective()?.description ?? "No Description");
             secondTaskIndex++;
-            secondDescriptionText.text = "2- " + (task.GetObjective(secondTaskIndex)?.description) ?? "";
+            var secondObjective = task.GetObjective(secondTaskIndex);
+            secondDescriptionText.text = secondObjective != null ? "2- " + secondObjective.description : "";
         }
     }
 
@@ -192,7 +194,8 @@ public class TaskUIManager : MonoBehaviour
             // Actualiza los textos con la información del nuevo Task
             newTitleText.text = nextTask.title;
             newDescriptionText.text = "1- " + (nextTask.GetCurrentObjective()?.description);
-            newSecondDescriptionText.text = "2- " + (nextTask.GetObjective(secondTaskIndex)?.description) ?? " ";
+            var secondObjective = nextTask.GetObjective(1); // Reiniciar el índice para el segundo objetivo
+            newSecondDescriptionText.text = secondObjective != null ? "2- " + secondObjective.description : "";
 
             // Resetear el índice de la segunda tarea
             secondTaskIndex = 1;
