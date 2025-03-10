@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Cambio de aceite
   descriptions:
-  - Localiza la bayoneta
-  - Retira la bayoneta y revisa el nivel de aceite
-  - Toma el bote de aceite
-  - Localiza el Oil tank
-  - Vierte aceite dentro del contenedor
-  - Asegurate de cerrar bien el Tank
+  - Localiza la varilla de aceite.
+  - Retira la varilla y revisa el nivel de aceite.
+  - Toma el bote de aceite.
+  - "Encuentra el dep\xF3sito de aceite."
+  - "Vierte el aceite en el dep\xF3sito."
+  - "Cierra bien la tapa del dep\xF3sito."
   taskImage: {fileID: 633236992, guid: bddd8830a68be3947bfe52a4d8671126, type: 3}
   isVisible: 0
   objectives:
@@ -29,3 +29,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 618c8def3ed127b4eacca17d0986ce0a, type: 2}
   - {fileID: 11400000, guid: 628623af63d00f64c9d4981c8456858a, type: 2}
   - {fileID: 11400000, guid: 8114031cf90877646902088f9c8c2401, type: 2}
+  instancedObjectives: []

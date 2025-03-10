@@ -14,6 +14,8 @@ public class TaskStepController : MonoBehaviour
     public List<TaskStep> taskSteps; // Descripciones de los pasos específicos
     private int currentStepIndex = 0; // Índice del paso actual que se espera completar
 
+    public UISpriteAnimation spriteAnimation; // Referencia al componente UISpriteAnimation
+
     public delegate void OnStepCompleted(string step);
     public event OnStepCompleted StepCompletedEvent;
 
@@ -23,6 +25,7 @@ public class TaskStepController : MonoBehaviour
         {
             targetTask.InitializeTask(); // Asegura que el task esté inicializado
             ActivateCurrentStepOutlines();
+            StartSpriteAnimation();
         }
     }
 
@@ -47,12 +50,13 @@ public class TaskStepController : MonoBehaviour
             // Verifica si se completaron todos los pasos
             if (currentStepIndex >= taskSteps.Count)
             {
-                //All steps completed
+                StopSpriteAnimation();
+                // All steps completed
             }
         }
         else
         {
-            //Step not completed
+            // Step not completed
         }
     }
 
@@ -66,6 +70,7 @@ public class TaskStepController : MonoBehaviour
         DeactivateCurrentStepObjects();
         currentStepIndex = 0;
         ActivateCurrentStepOutlines();
+        StartSpriteAnimation();
     }
 
     private void ActivateCurrentStepOutlines()
@@ -95,6 +100,23 @@ public class TaskStepController : MonoBehaviour
                     outline.enabled = false;
                 }
             }
+        }
+    }
+
+    private void StartSpriteAnimation()
+    {
+        if (spriteAnimation != null)
+        {
+            spriteAnimation.Func_PlayUIAnim();
+        }
+    }
+
+    private void StopSpriteAnimation()
+    {
+        if (spriteAnimation != null)
+        {
+            spriteAnimation.Func_StopUIAnim();
+            spriteAnimation.SetSpriteAtIndex(0);
         }
     }
 }

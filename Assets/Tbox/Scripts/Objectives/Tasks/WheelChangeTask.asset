@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78794a3a1736ed6498c7b7d904a61dcc, type: 3}
   m_Name: WheelChangeTask
   m_EditorClassIdentifier: 
-  title: Cambio de ruedas
+  title: Cambio de llanta
   descriptions:
-  - Toma la LLAVE DE CRUZ
-  - Afloja las ruedas con la LLAVE DE CRUZ
-  - Toma el GATO
-  - Coloca el GATO debajo del vehiculo para levantarlo
-  - Retira las RUEDAS con fugas
-  - Reemplaza las RUEDAS en mal estado
-  - Ajusta las nuevas ruedas con la LLAVE DE CRUZ
-  - Regresa el AUTO a su posicion inicial
+  - Localiza la llave de cruz.
+  - Afloja las tuercas de la llanta con la llave de cruz.
+  - "Toma el gato hidr\xE1ulico."
+  - "Coloca el gato debajo del veh\xEDculo y el\xE9valo."
+  - "Retira la llanta da\xF1ada."
+  - Coloca la llanta de repuesto.
+  - Ajusta las tuercas con la llave de cruz.
+  - "Baja el auto a su posici\xF3n inicial."
   taskImage: {fileID: -1916328565, guid: bddd8830a68be3947bfe52a4d8671126, type: 3}
   isVisible: 0
   objectives:
@@ -33,3 +33,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 56e50e20667d4e34f80a4aa5a8500834, type: 2}
   - {fileID: 11400000, guid: 271eb28a6d9886d41b03353b35599faf, type: 2}
   - {fileID: 11400000, guid: 23647d515463af14c9aae8d35592e2a8, type: 2}
+  instancedObjectives: []
