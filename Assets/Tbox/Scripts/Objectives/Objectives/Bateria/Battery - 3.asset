@@ -10,13 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bf078f9f35338a42ad48a9ce4edad98, type: 3}
-  m_Name: Battery - 2
+  m_Name: Battery - 3
   m_EditorClassIdentifier: 
-  description: 'Identifica las terminales de la bateria
-
-    Positivo -> Rojo
-
-    Negativo
-    -> Negro'
+  description: Localiza y toma las pinzas caiman
   isCompleted: 0
   objectsToOutline: []

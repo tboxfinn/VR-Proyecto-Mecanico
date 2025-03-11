@@ -10025,6 +10025,7 @@ GameObject:
   - component: {fileID: 851639158}
   - component: {fileID: 851639160}
   - component: {fileID: 851639159}
+  - component: {fileID: 851639161}
   m_Layer: 0
   m_Name: Rojo
   m_TagString: Untagged
@@ -10098,6 +10099,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851639157}
   m_Mesh: {fileID: 7992082377941609188, guid: b2b62944bc2888848bb5634f58a24c6a, type: 3}
+--- !u!114 &851639161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851639157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  outlineMode: 1
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &852749067
 GameObject:
   m_ObjectHideFlags: 0
@@ -27545,6 +27565,7 @@ GameObject:
   - component: {fileID: 6822475594072636434}
   - component: {fileID: 3226888788095368170}
   - component: {fileID: 370150457393174142}
+  - component: {fileID: 6822475594072636435}
   m_Layer: 0
   m_Name: Negro
   m_TagString: Untagged
@@ -28373,6 +28394,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 343679964}
   m_LocalEulerAnglesHint: {x: 3.737, y: 31.522, z: 2.289}
+--- !u!114 &6822475594072636435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658003202782531092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  outlineMode: 1
+  outlineColor: {r: 0.34903678, g: 0.8018868, b: 0.10969208, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &7159811191603642426
 Transform:
   m_ObjectHideFlags: 0

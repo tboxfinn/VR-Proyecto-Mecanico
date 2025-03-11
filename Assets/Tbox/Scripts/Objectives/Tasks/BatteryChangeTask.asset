@@ -13,10 +13,31 @@ MonoBehaviour:
   m_Name: BatteryChangeTask
   m_EditorClassIdentifier: 
   title: Carga la bateria
-  descriptions: []
+  descriptions:
+  - Localiza la bateria
+  - 'Identifica las terminales de la bateria
+
+    Positivo -> Rojo
+
+    Negativo
+    -> Negro'
+  - Localiza y toma las pinzas caiman
+  - Coloca las pinzas en las terminales correspondientes
+  - Espera hasta que la bateria se cargue
+  - Retira las pinzas de la bateria
   taskImage: {fileID: 21300000, guid: 65e8e7787f2bce744a5b1eab022d57be, type: 3}
-  isVisible: 0
+  isVisible: 1
   objectives:
   - {fileID: 11400000, guid: 80adfc15584fee545a504c8c44183a5f, type: 2}
   - {fileID: 11400000, guid: 243b0dc4c902f8c4797c57529c4be2b2, type: 2}
-  instancedObjectives: []
+  - {fileID: 11400000, guid: 9fca2ed45532a7543bb15b1c0f96e892, type: 2}
+  - {fileID: 11400000, guid: 8d72daefee0dc5e43bcdc17d31a0e691, type: 2}
+  - {fileID: 11400000, guid: 3ce97ed096d2ac742b36c8488f387e15, type: 2}
+  - {fileID: 11400000, guid: edc77305b14f58944adf1725a41c236d, type: 2}
+  instancedObjectives:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

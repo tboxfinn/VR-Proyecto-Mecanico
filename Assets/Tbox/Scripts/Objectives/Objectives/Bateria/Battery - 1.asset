@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Localiza la bateria
   isCompleted: 0
+  objectsToOutline:
+  - {fileID: 0}
