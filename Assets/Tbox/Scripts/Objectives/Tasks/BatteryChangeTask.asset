@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78794a3a1736ed6498c7b7d904a61dcc, type: 3}
   m_Name: BatteryChangeTask
   m_EditorClassIdentifier: 
-  title: Carga la bateria
+  title: Bateria muerta
   descriptions:
   - Localiza la bateria
   - 'Identifica las terminales de la bateria
@@ -25,8 +25,8 @@ MonoBehaviour:
   - Coloca las pinzas en las terminales correspondientes
   - Espera hasta que la bateria se cargue
   - Retira las pinzas de la bateria
-  taskImage: {fileID: 21300000, guid: 65e8e7787f2bce744a5b1eab022d57be, type: 3}
-  isVisible: 1
+  taskImage: {fileID: 21300000, guid: 290d158031622c645aa55f8bd981be12, type: 3}
+  isVisible: 0
   objectives:
   - {fileID: 11400000, guid: 80adfc15584fee545a504c8c44183a5f, type: 2}
   - {fileID: 11400000, guid: 243b0dc4c902f8c4797c57529c4be2b2, type: 2}

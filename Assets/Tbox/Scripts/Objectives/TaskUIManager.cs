@@ -104,7 +104,7 @@ public class TaskUIManager : MonoBehaviour
                 taskImage.sprite = task.taskImage ?? null; // Puedes asignar una imagen por defecto si es nula
             }
 
-            EnableOutline(task);
+            // EnableOutline(task);
 
             // Suscríbete al evento para actualizar la UI cuando un objetivo sea completado
             task.ObjectiveCompletedEvent += () => UpdateTaskUI(task, taskUIInstance);
@@ -205,7 +205,7 @@ public class TaskUIManager : MonoBehaviour
                 newTaskImage.sprite = nextTask.taskImage ?? null; // Puedes asignar una imagen por defecto si es nula
             }
 
-            EnableOutline(nextTask);
+            // EnableOutline(nextTask);
 
             // Suscríbete al evento para actualizar la UI cuando un objetivo sea completado
             nextTask.ObjectiveCompletedEvent += () => UpdateTaskUI(nextTask, taskUIInstance);
@@ -215,20 +215,20 @@ public class TaskUIManager : MonoBehaviour
         }
     }
 
-    void EnableOutline(TaskObjectiveSO task)
-    {
-        foreach (var objective in task.objectives)
-        {
-            foreach (var obj in objective.objectsToOutline)
-            {
-                var outline = obj.GetComponent<Outline>();
-                if (outline != null)
-                {
-                    outline.enabled = true;
-                }
-            }
-        }
-    }
+    // void EnableOutline(TaskObjectiveSO task)
+    // {
+    //     foreach (var objective in task.objectives)
+    //     {
+    //         foreach (var obj in objective.objectsToOutline)
+    //         {
+    //             var outline = obj.GetComponent<Outline>();
+    //             if (outline != null)
+    //             {
+    //                 outline.enabled = true;
+    //             }
+    //         }
+    //     }
+    // }
 
     void DisableOutline(TaskObjectiveSO task)
     {

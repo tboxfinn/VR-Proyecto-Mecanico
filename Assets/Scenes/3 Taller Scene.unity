@@ -1173,6 +1173,7 @@ GameObject:
   - component: {fileID: 88047312}
   - component: {fileID: 88047311}
   - component: {fileID: 88047314}
+  - component: {fileID: 88047315}
   m_Layer: 0
   m_Name: Red
   m_TagString: Untagged
@@ -1285,6 +1286,120 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &88047315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88047309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 357901967}
+        m_TargetAssemblyTypeName: TaskStepController, Assembly-CSharp
+        m_MethodName: CompleteStep
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: B
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &91346994
 GameObject:
   m_ObjectHideFlags: 0
@@ -4508,7 +4623,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 357901967}
+        m_TargetAssemblyTypeName: TaskStepController, Assembly-CSharp
+        m_MethodName: CompleteStep
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: C
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -4786,8 +4913,7 @@ MonoBehaviour:
   targetTask: {fileID: 11400000, guid: 624f24be69ad867418d5f3e0c583ccac, type: 2}
   taskSteps:
   - description: A
-    objectsToOutline:
-    - {fileID: 1432281101981443402}
+    objectsToOutline: []
   - description: B
     objectsToOutline:
     - {fileID: 88047309}
@@ -4806,7 +4932,6 @@ MonoBehaviour:
     objectsToOutline:
     - {fileID: 851639157}
     - {fileID: 4658003202782531092}
-  spriteAnimation: {fileID: 0}
   redClamp: {fileID: 1561940442}
   blackClamp: {fileID: 343679960}
   redClampTarget: {fileID: 88047310}
@@ -6713,7 +6838,6 @@ GameObject:
   m_Component:
   - component: {fileID: 621622776}
   - component: {fileID: 621622775}
-  - component: {fileID: 621622777}
   m_Layer: 0
   m_Name: TaskOilManager
   m_TagString: Untagged
@@ -6753,7 +6877,6 @@ MonoBehaviour:
   - description: F
     objectsToOutline:
     - {fileID: 857349324281326982}
-  spriteAnimation: {fileID: 621622777}
 --- !u!4 &621622776
 Transform:
   m_ObjectHideFlags: 0
@@ -6769,25 +6892,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &621622777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621622774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 940e3acbf316e914cb2e27519d5c62df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Image: {fileID: 0}
-  m_SpriteArray:
-  - {fileID: -481380104, guid: aacff5903a18de44e892f101452a6df3, type: 3}
-  - {fileID: -415316181, guid: ddd59132b994e4149ab0eb607f50601a, type: 3}
-  m_Speed: 1
-  m_Loop: 1
-  m_PlayOnStart: 0
 --- !u!1 &632700487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2459284039605216604, guid: 176a1d47510d1344c88459568b60e4bd,
@@ -7085,12 +7189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allTasks:
-  - {fileID: 11400000, guid: 3e802e697b713f8479009f4c54fb96d3, type: 2}
-  - {fileID: 11400000, guid: fba919c371d60c1409972b5bd5706da0, type: 2}
-  - {fileID: 11400000, guid: 22308226f0902f6418a822f3c507f525, type: 2}
-  - {fileID: 11400000, guid: afe7d44f545057947ab1d6e3f7b179ea, type: 2}
   - {fileID: 11400000, guid: 624f24be69ad867418d5f3e0c583ccac, type: 2}
-  minTasks: 4
+  minTasks: 1
   maxTasks: 7
   taskOnUI: 1
   taskUIPrefab: {fileID: 7871707545187194370, guid: 64a929a8648a0064382dd31b9cb8eba3,
@@ -11283,7 +11383,6 @@ GameObject:
   m_Component:
   - component: {fileID: 989208805}
   - component: {fileID: 989208804}
-  - component: {fileID: 989208806}
   m_Layer: 0
   m_Name: TaskTemperatureManager
   m_TagString: Untagged
@@ -11319,7 +11418,6 @@ MonoBehaviour:
   - description: E
     objectsToOutline:
     - {fileID: 2147061025}
-  spriteAnimation: {fileID: 989208806}
 --- !u!4 &989208805
 Transform:
   m_ObjectHideFlags: 0
@@ -11335,25 +11433,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &989208806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989208803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 940e3acbf316e914cb2e27519d5c62df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Image: {fileID: 0}
-  m_SpriteArray:
-  - {fileID: -1533025225, guid: aacff5903a18de44e892f101452a6df3, type: 3}
-  - {fileID: 421031687, guid: ddd59132b994e4149ab0eb607f50601a, type: 3}
-  m_Speed: 1
-  m_Loop: 1
-  m_PlayOnStart: 0
 --- !u!1 &1000081292
 GameObject:
   m_ObjectHideFlags: 0
@@ -14318,7 +14397,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318281784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -15393,7 +15472,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1435964872}
   - component: {fileID: 1435964873}
-  - component: {fileID: 1435964874}
   m_Layer: 0
   m_Name: TaskWheelsManager
   m_TagString: Untagged
@@ -15458,30 +15536,10 @@ MonoBehaviour:
   - description: H
     objectsToOutline:
     - {fileID: 3529655694711654127}
-  spriteAnimation: {fileID: 1435964874}
   wheels:
   - {fileID: 2114665867}
   minWheelsDes: 1
   maxWheelsDes: 2
---- !u!114 &1435964874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435964871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 940e3acbf316e914cb2e27519d5c62df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Image: {fileID: 0}
-  m_SpriteArray:
-  - {fileID: -456966885, guid: aacff5903a18de44e892f101452a6df3, type: 3}
-  - {fileID: -920356101, guid: ddd59132b994e4149ab0eb607f50601a, type: 3}
-  m_Speed: 1
-  m_Loop: 1
-  m_PlayOnStart: 0
 --- !u!1 &1444155195
 GameObject:
   m_ObjectHideFlags: 0
@@ -16296,6 +16354,7 @@ GameObject:
   - component: {fileID: 1500172754}
   - component: {fileID: 1500172753}
   - component: {fileID: 1500172756}
+  - component: {fileID: 1500172757}
   m_Layer: 0
   m_Name: Black
   m_TagString: Untagged
@@ -16408,6 +16467,120 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &1500172757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500172751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 357901967}
+        m_TargetAssemblyTypeName: TaskStepController, Assembly-CSharp
+        m_MethodName: CompleteStep
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: B
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1504592374
 GameObject:
   m_ObjectHideFlags: 0
@@ -16880,7 +17053,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 357901967}
+        m_TargetAssemblyTypeName: TaskStepController, Assembly-CSharp
+        m_MethodName: CompleteStep
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: C
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -18686,7 +18871,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1652747461}
   - component: {fileID: 1652747460}
-  - component: {fileID: 1652747462}
   m_Layer: 0
   m_Name: TaskWindshieldManager
   m_TagString: Untagged
@@ -18723,7 +18907,6 @@ MonoBehaviour:
   - description: E
     objectsToOutline:
     - {fileID: 1111300229}
-  spriteAnimation: {fileID: 1652747462}
 --- !u!4 &1652747461
 Transform:
   m_ObjectHideFlags: 0
@@ -18739,25 +18922,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1652747462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652747459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 940e3acbf316e914cb2e27519d5c62df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Image: {fileID: 0}
-  m_SpriteArray:
-  - {fileID: 516188556, guid: aacff5903a18de44e892f101452a6df3, type: 3}
-  - {fileID: -1156804217, guid: ddd59132b994e4149ab0eb607f50601a, type: 3}
-  m_Speed: 1
-  m_Loop: 1
-  m_PlayOnStart: 0
 --- !u!1 &1660631083
 GameObject:
   m_ObjectHideFlags: 0
@@ -26203,7 +26367,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &3387963846301102168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26236,6 +26400,12 @@ MonoBehaviour:
   m_AllowGazeAssistance: 0
   m_FirstHoverEntered:
     m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 357901967}
         m_TargetAssemblyTypeName: TaskStepController, Assembly-CSharp
@@ -26249,12 +26419,6 @@ MonoBehaviour:
           m_StringArgument: A
           m_BoolArgument: 0
         m_CallState: 2
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
   m_HoverExited:
     m_PersistentCalls:
       m_Calls: []

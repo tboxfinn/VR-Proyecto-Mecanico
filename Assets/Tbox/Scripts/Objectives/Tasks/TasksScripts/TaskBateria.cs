@@ -21,7 +21,6 @@ public class TaskBateria : TaskStepController
 
     public override void Update()
     {
-        base.Update();
         CheckClampsPlacement();
     }
 
@@ -41,13 +40,8 @@ public class TaskBateria : TaskStepController
 
         if (isRedClampPlaced && isBlackClampPlaced)
         {
-            CompleteTask();
+            CompleteStep("D");
         }
     }
 
-    private void CompleteTask()
-    {
-        Debug.Log("Both clamps placed correctly. Task completed.");
-        CompleteStep("Bateria");
-    }
 }

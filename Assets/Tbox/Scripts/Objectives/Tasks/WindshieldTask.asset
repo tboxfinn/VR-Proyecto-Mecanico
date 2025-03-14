@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78794a3a1736ed6498c7b7d904a61dcc, type: 3}
   m_Name: WindshieldTask
   m_EditorClassIdentifier: 
-  title: Limpia ese parabrisas
+  title: Liquido limpiaparabrisas
   descriptions:
   - Localiza la tapa del tanque de liquido limpia parabrisas
   - Retira la tapa del deposito
@@ -27,3 +27,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e1fb90ecdbbdc6249b8ccb1da26218a9, type: 2}
   - {fileID: 11400000, guid: 7fb023b1c9eff774eb96ff8c9e86bcd8, type: 2}
   - {fileID: 11400000, guid: fba03312ef92ce14f9d8e7d9ff76866c, type: 2}
+  instancedObjectives:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
