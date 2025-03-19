@@ -119,7 +119,7 @@ public class TaskUIManager : MonoBehaviour
         TMP_Text descriptionText = taskUIInstance.transform.Find("ObjectiveDescription").GetComponent<TMP_Text>();
         TMP_Text secondDescriptionText = taskUIInstance.transform.Find("SecondDescription").GetComponent<TMP_Text>();
 
-        // Actualiza la descripción con el siguiente objetivo o indica que el Task está completado
+        // Si el Task está completado, tacha todo y pasa al siguiente Task
         if (task.IsTaskCompleted())
         {
             TMP_Text titleText = taskUIInstance.transform.Find("TaskTitle").GetComponent<TMP_Text>();
@@ -143,10 +143,32 @@ public class TaskUIManager : MonoBehaviour
         }
         else
         {
-            descriptionText.text = "-" + (task.GetCurrentObjective()?.description ?? "No Description");
-            secondTaskIndex++;
-            var secondObjective = task.GetObjective(secondTaskIndex);
-            secondDescriptionText.text = secondObjective != null ? "-" + secondObjective.description : "";
+            // Tacha el texto del objetivo actual antes de pasar al siguiente
+            descriptionText.fontStyle = FontStyles.Strikethrough;
+
+            // Espera un breve momento antes de actualizar al siguiente objetivo
+            StartCoroutine(UpdateObjectiveWithDelay(task, descriptionText, secondDescriptionText));
+        }
+    }
+
+    IEnumerator UpdateObjectiveWithDelay(TaskObjectiveSO task, TMP_Text descriptionText, TMP_Text secondDescriptionText)
+    {
+        yield return new WaitForSeconds(0.5f); // Tiempo de espera antes de actualizar el objetivo
+
+        // Actualiza la descripción con el siguiente objetivo
+        descriptionText.text = "-" + (task.GetCurrentObjective()?.description ?? "No Description");
+        descriptionText.fontStyle = FontStyles.Normal; // Des-tacha el nuevo objetivo
+
+        secondTaskIndex++;
+        var secondObjective = task.GetObjective(secondTaskIndex);
+        if (secondObjective != null)
+        {
+            secondDescriptionText.text = "-" + secondObjective.description;
+            secondDescriptionText.fontStyle = FontStyles.Normal; // Des-tacha el segundo objetivo
+        }
+        else
+        {
+            secondDescriptionText.text = ""; // Limpia el texto si no hay más objetivos
         }
     }
 

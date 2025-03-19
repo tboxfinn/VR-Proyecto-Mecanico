@@ -77,6 +77,20 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void PauseSound(string name)
+    {
+        Sounds sound = System.Array.Find(sounds, s => s.name == name);
+        if (sound != null && soundEffectsSource.isPlaying && soundEffectsSource.clip == sound.clip)
+        {
+            soundEffectsSource.Pause();
+            Debug.Log("Paused sound: " + name);
+        }
+        else
+        {
+            Debug.LogWarning("Sound: " + name + " is not currently playing or not found!");
+        }
+    }
+
     public void PlayRandomSound(List<string> soundNames)
     {
         if (soundNames == null || soundNames.Count == 0)

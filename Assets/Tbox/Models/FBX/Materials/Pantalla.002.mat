@@ -266,7 +266,7 @@ Material:
     - _NoisyOutlineIntensity: 0
     - _NormalMapIntensity: 1
     - _OcclusionStrength: 1
-    - _Opacity: 0.6
+    - _Opacity: 0.858
     - _Oper: 0
     - _OutlineExtrudeMethod: 0
     - _OutlineWidth: 0.5
@@ -345,7 +345,7 @@ Material:
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _Glow_Color: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 0.74735945, g: 0.74735945, b: 0.74735945, a: 1}
+    - _MainColor: {r: 0.07450979, g: 0.20545508, b: 0.627451, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
     - _OverallShadowColor: {r: 0, g: 0, b: 0, a: 1}

@@ -9,10 +9,14 @@ public class TaskBateria : TaskStepController
     public Transform redClampTarget;
     public Transform blackClampTarget;
     public float placementTolerance = 0.1f; // Tolerancia para considerar que la pinza está en el lugar correcto
-    
 
     private bool isRedClampPlaced = false;
     private bool isBlackClampPlaced = false;
+
+    [Header("Battery Charging")]
+    public GameObject BatteryCable;
+    public float chargingTime = 5f; // Tiempo de carga en segundos, configurable desde el inspector
+    private bool isCharging = false;
 
     public override void Start()
     {
@@ -38,10 +42,35 @@ public class TaskBateria : TaskStepController
             Debug.Log("Black clamp placed correctly.");
         }
 
-        if (isRedClampPlaced && isBlackClampPlaced)
+        if (isRedClampPlaced && isBlackClampPlaced && !isCharging)
         {
-            CompleteStep("D");
+            StartCharging();
         }
     }
 
+    public void StartCharging()
+    {
+        if (isRedClampPlaced && isBlackClampPlaced && !isCharging)
+        {
+            SoundManager.instance.PlaySound("BatteryCharging"); // Reproduce el sonido de carga de la batería
+            StartCoroutine(ChargeBattery());
+            BatteryCable.SetActive(true); // Activa el cable de carga
+        }
+        else
+        {
+            Debug.LogWarning("Clamps are not properly placed. Cannot start charging.");
+        }
+    }
+
+    private IEnumerator ChargeBattery()
+    {
+        isCharging = true;
+        Debug.Log("Battery charging started...");
+        yield return new WaitForSeconds(chargingTime);
+        Debug.Log("Battery charging completed!");
+        SoundManager.instance.PauseSound("BatteryCharging"); // Pausa el sonido de carga de la batería
+        SoundManager.instance.PlaySound("BatteryCharged"); // Reproduce el sonido de carga completada
+        CompleteStep("D"); // Completa el paso al finalizar la carga
+        isCharging = false;
+    }
 }
