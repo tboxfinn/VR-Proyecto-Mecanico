@@ -237,21 +237,6 @@ public class TaskUIManager : MonoBehaviour
         }
     }
 
-    // void EnableOutline(TaskObjectiveSO task)
-    // {
-    //     foreach (var objective in task.objectives)
-    //     {
-    //         foreach (var obj in objective.objectsToOutline)
-    //         {
-    //             var outline = obj.GetComponent<Outline>();
-    //             if (outline != null)
-    //             {
-    //                 outline.enabled = true;
-    //             }
-    //         }
-    //     }
-    // }
-
     void DisableOutline(TaskObjectiveSO task)
     {
         foreach (var objective in task.objectives)
