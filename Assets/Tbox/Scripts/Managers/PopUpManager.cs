@@ -10,17 +10,11 @@ public class PopUpManager : MonoBehaviour
     public float popupHeightOffset = 0.2f;
     private GameObject currentPopUp;
 
-    [Header("Advice")]
-    public GameObject adviceHolder;
-    public TMP_Text adviceText;
-    public float adviceDuration = 5f;
-    public float fadeInDuration = 0.2f;
-    public float fadeOutDuration = 0.5f;
-
     public void Start()
     {
-        adviceHolder.SetActive(false);
+        // No initialization needed for advice anymore
     }
+
     public void ShowPopUp(GameObject targetObject)
     {
         if (targetObject == null || popUpPrefab == null)
@@ -62,69 +56,4 @@ public class PopUpManager : MonoBehaviour
             Destroy(currentPopUp);
         }
     }
-
-    public void ShowAdvice(string message)
-    {
-        StopAllCoroutines(); // Stop any existing coroutines to prevent overlapping
-        StartCoroutine(ShowAdviceCoroutine(message, adviceDuration));
-    }
-
-    private IEnumerator ShowAdviceCoroutine(string message, float duration)
-    {
-        adviceText.text = message;
-        yield return StartCoroutine(FadeInAdviceHolder());
-
-        yield return new WaitForSeconds(duration);
-
-        StartCoroutine(FadeOutAdviceHolder());
-    }
-
-    private IEnumerator FadeInAdviceHolder()
-    {
-        CanvasGroup canvasGroup = adviceHolder.GetComponent<CanvasGroup>();
-        if (canvasGroup == null)
-        {
-            canvasGroup = adviceHolder.AddComponent<CanvasGroup>();
-        }
-
-        adviceHolder.SetActive(true);
-        float startAlpha = canvasGroup.alpha;
-        float rate = 1.0f / fadeInDuration;
-        float progress = 0.0f;
-
-        while (progress < 1.0f)
-        {
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, 1, progress);
-            progress += rate * Time.deltaTime;
-
-            yield return null;
-        }
-
-        canvasGroup.alpha = 1;
-    }
-
-    private IEnumerator FadeOutAdviceHolder()
-    {
-        CanvasGroup canvasGroup = adviceHolder.GetComponent<CanvasGroup>();
-        if (canvasGroup == null)
-        {
-            canvasGroup = adviceHolder.AddComponent<CanvasGroup>();
-        }
-
-        float startAlpha = canvasGroup.alpha;
-        float rate = 1.0f / fadeOutDuration;
-        float progress = 0.0f;
-
-        while (progress < 1.0f)
-        {
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0, progress);
-            progress += rate * Time.deltaTime;
-
-            yield return null;
-        }
-
-        canvasGroup.alpha = 0;
-        adviceHolder.SetActive(false);
-    }
-
 }

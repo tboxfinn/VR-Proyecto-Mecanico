@@ -5,10 +5,15 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 570e823b5b2c7bc4d9fc8635652480e9, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: tEXTmAK
-    second: {fileID: 2800000, guid: 975be1074440140429819c1a230f5c2c, type: 3}
+    second: {fileID: 2800000, guid: d7cb1d2df093ffa4993c3843c94530c6, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
