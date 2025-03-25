@@ -85,6 +85,13 @@ public class Wheels : MonoBehaviour
 
     public void DesatornillarPerno(int index)
     {
+        // Verifica si el close-up está activo
+        if (closeUpAttachModifier == null || !closeUpAttachModifier.enabled)
+        {
+            Debug.LogWarning("No puedes quitar los pernos si la llanta no está en close-up.");
+            return;
+        }
+
         if (index >= 0 && index < pernosQuitados.Length)
         {
             pernosQuitados[index] = true;
