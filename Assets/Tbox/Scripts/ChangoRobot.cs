@@ -5,15 +5,18 @@ using DialogueEditor;
 
 public class ChangoRobot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public bool conversationHasStarted = false;
+    public bool conversationHasEnded = false;
+
+    public NPCConversation myConversation;
+
+    public void StartConversation()
     {
-        
+        if (!conversationHasStarted)
+        {
+            conversationHasStarted = true;
+            ConversationManager.Instance.StartConversation(myConversation);
+        }
     }
 }
