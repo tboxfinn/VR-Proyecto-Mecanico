@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI; // Necesario para usar NavMeshAgent
 using DialogueEditor;
 
 public class ChangoRobot : MonoBehaviour
@@ -12,15 +13,24 @@ public class ChangoRobot : MonoBehaviour
 
     [Header("Movement")]
     public bool isWalking = false; // Bool para indicar si está caminando
-    public float moveSpeed = 2f; // Velocidad de movimiento
+    public NavMeshAgent navMeshAgent; // Referencia al NavMeshAgent
     public Animator animator; // Referencia al Animator para controlar la animación
 
     public GameObject targetPosition; // Referencia al objeto objetivo desde la escena
-    private bool shouldMove = false; // Controla si debe moverse
     private Vector3 startPosition; // Posición inicial del ChangoRobot
 
-    private void Start()
+    public void Start()
     {
+        if (navMeshAgent == null)
+        {
+            navMeshAgent = GetComponent<NavMeshAgent>(); // Obtén el NavMeshAgent si no está asignado
+        }
+
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>(); // Obtén el Animator si no está asignado
+        }
+
         // Guarda la posición inicial al inicio del juego
         startPosition = transform.position;
     }
@@ -46,46 +56,66 @@ public class ChangoRobot : MonoBehaviour
         }
     }
 
-    public void WalkTo(Vector3 position)
+    public void WalkTo(Vector3 targetPosition)
     {
-        shouldMove = true; // Activa el movimiento
-        isWalking = true; // Activa el bool de caminando
+        if (navMeshAgent != null)
+        {
+            isWalking = true; // Activa el bool de caminando
+            navMeshAgent.SetDestination(targetPosition); // Establece el destino del NavMeshAgent
+
+            if (animator != null)
+            {
+                animator.SetBool("isWalking", true); // Activa la animación de caminar
+            }
+
+            StartCoroutine(CheckIfArrived(targetPosition)); // Inicia una corrutina para verificar si llegó al destino
+        }
+        else
+        {
+            Debug.LogWarning("NavMeshAgent no está asignado en el ChangoRobot.");
+        }
+    }
+
+    private IEnumerator CheckIfArrived(Vector3 targetPosition)
+    {
+        while (navMeshAgent != null && navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance)
+        {
+            yield return null; // Espera un frame
+        }
+
+        // Cuando llegue al destino, desactiva el bool de caminando
+        isWalking = false;
 
         if (animator != null)
         {
-            animator.SetBool("isWalking", true); // Activa la animación de caminar
+            animator.SetBool("isWalking", false); // Detiene la animación de caminar
         }
 
-        targetPosition = null; // Limpia la referencia para evitar conflictos
-        transform.position = Vector3.MoveTowards(transform.position, position, moveSpeed * Time.deltaTime);
+        Debug.Log("ChangoRobot ha llegado al destino.");
+
+        // Gira hacia la cámara
+        RotateTowardsCamera();
+    }
+
+    private void RotateTowardsCamera()
+    {
+        if (Camera.main != null)
+        {
+            Vector3 direction = (Camera.main.transform.position - transform.position).normalized; // Calcula la dirección hacia la cámara
+            direction.y = 0; // Ignora la rotación en el eje Y para evitar inclinaciones
+            Quaternion targetRotation = Quaternion.LookRotation(direction); // Calcula la rotación hacia la cámara
+            transform.rotation = targetRotation; // Aplica la rotación
+            Debug.Log("ChangoRobot está mirando hacia la cámara.");
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró la cámara principal.");
+        }
     }
 
     public void ReturnToStartPosition()
     {
         // Llama a WalkTo con la posición inicial
         WalkTo(startPosition);
-    }
-
-    private void Update()
-    {
-        if (shouldMove)
-        {
-            // Mueve al ChangoRobot hacia la posición objetivo
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition.transform.position, moveSpeed * Time.deltaTime);
-
-            // Verifica si ha llegado al destino
-            if (Vector3.Distance(transform.position, targetPosition.transform.position) <= 0.1f)
-            {
-                shouldMove = false; // Detiene el movimiento
-                isWalking = false; // Desactiva el bool de caminando
-
-                if (animator != null)
-                {
-                    animator.SetBool("isWalking", false); // Detiene la animación de caminar
-                }
-
-                Debug.Log("ChangoRobot ha llegado al destino.");
-            }
-        }
     }
 }
