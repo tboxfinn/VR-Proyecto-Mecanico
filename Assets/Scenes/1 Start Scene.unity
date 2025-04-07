@@ -2175,6 +2175,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+--- !u!1 &697156110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 697156111}
+  m_Layer: 0
+  m_Name: TargetPositionMono
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &697156111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697156110}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.9196757, z: -0, w: 0.3926788}
+  m_LocalPosition: {x: 2.13, y: 0.312, z: -1.8}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &748388390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3283,7 +3314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1212402843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4857,7 +4888,6 @@ GameObject:
   - component: {fileID: 1788606662}
   - component: {fileID: 1788606661}
   - component: {fileID: 1788606660}
-  - component: {fileID: 1788606659}
   m_Layer: 5
   m_Name: Text UI
   m_TagString: Untagged
@@ -4865,28 +4895,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1788606659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788606658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af07645f3014a1347a5b1232afc24251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenu: {fileID: 0}
-  options: {fileID: 0}
-  about: {fileID: 0}
-  startButton: {fileID: 0}
-  optionButton: {fileID: 0}
-  aboutButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  returnButtons:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1788606660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4959,17 +4967,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788606658}
-  m_LocalRotation: {x: -0, y: 0.44331995, z: -0, w: 0.89636344}
-  m_LocalPosition: {x: 0, y: 0, z: 1.349}
-  m_LocalScale: {x: 0.0016010001, y: 0.0016010001, z: 0.0016010001}
+  m_LocalRotation: {x: -0, y: 0.998446, z: -0, w: -0.05572766}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2253628}
+  m_LocalScale: {x: 0.010673333, y: 0.010673333, z: 0.010673333}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1749248447}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 543450652678224332}
   m_LocalEulerAnglesHint: {x: 0, y: 52.632, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.26, y: 1.466}
+  m_AnchoredPosition: {x: 0.026579142, y: 9.3}
   m_SizeDelta: {x: 1266.7478, y: 1050.6671}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1819476675
@@ -5545,7 +5553,7 @@ MonoBehaviour:
   NodeID: 1
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: baafdeacd1f9189449c39f10feeb194c, type: 3}
-  Audio: {fileID: 8300000, guid: 960822567ca7cbb46960cf5c4b121440, type: 3}
+  Audio: {fileID: 8300000, guid: 4ba81881c2e63504d9c60b6d46ab7906, type: 3}
 --- !u!4 &1985640177
 Transform:
   m_ObjectHideFlags: 0
@@ -5594,7 +5602,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5866666020985054138}
+        m_TargetAssemblyTypeName: ChangoRobot, Assembly-CSharp
+        m_MethodName: WalkToTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1212402841}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   NodeID: 3
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: baafdeacd1f9189449c39f10feeb194c, type: 3}
@@ -5646,7 +5678,7 @@ GameObject:
   - component: {fileID: 2066773381}
   - component: {fileID: 2066773380}
   m_Layer: 0
-  m_Name: TestConversation
+  m_Name: MonoConversation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5671,7 +5703,7 @@ MonoBehaviour:
     este simulador, aprenderas a manejar situaciones comunes respecto a tu auto\\n\\nComo
     por ejemplo:\\nCambio de llantas, recarga de bateria, manejo de liquidos, entre
     otros\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Chango
-    Po Weon\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":182.5,\"yPos\":331},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Estas
+    Po Weon\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":182.5,\"yPos\":330},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Estas
     listo para adentrarte en el conocimiento?\\n\\nSigueme!\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Chango
     Po Weon\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8}]}"
   saveVersion: 110
@@ -5686,7 +5718,31 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5866666020985054138}
+        m_TargetAssemblyTypeName: ChangoRobot, Assembly-CSharp
+        m_MethodName: WalkToTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1212402841}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &2066773381
 Transform:
   m_ObjectHideFlags: 0
@@ -5865,6 +5921,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8879528567512050002}
+  - {fileID: 1788606663}
   - {fileID: 7720740272309425477}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -133.757, z: 0}
@@ -7168,7 +7225,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!136 &5866666020985054136
 CapsuleCollider:
@@ -7322,6 +7379,10 @@ MonoBehaviour:
   conversationHasStarted: 0
   conversationHasEnded: 0
   myConversation: {fileID: 2066773380}
+  isWalking: 0
+  moveSpeed: 2
+  animator: {fileID: 5866666020985054134}
+  targetPosition: {fileID: 697156110}
 --- !u!4 &5920399812196891824
 Transform:
   m_ObjectHideFlags: 0
@@ -9670,7 +9731,6 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 770233794}
   - {fileID: 1212402845}
-  - {fileID: 1788606663}
   - {fileID: 226729186}
   - {fileID: 4134505311032341761}
   - {fileID: 838107453}
@@ -9678,4 +9738,5 @@ SceneRoots:
   - {fileID: 679484670}
   - {fileID: 460554814}
   - {fileID: 2066773381}
+  - {fileID: 697156111}
   - {fileID: 543450652678224332}
