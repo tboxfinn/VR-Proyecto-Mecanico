@@ -128,7 +128,7 @@ public class ChangoRobot : MonoBehaviour
             animator.SetBool("isWalking", false); // Detiene la animación de caminar
         }
 
-        // RotateTowardsPlayer(playerPosition.transform); // Gira hacia el jugador
+        RotateTowardsPlayer(playerPosition.transform); // Gira hacia el jugador
 
         Debug.Log("ChangoRobot ha llegado al destino.");
     }
@@ -139,30 +139,30 @@ public class ChangoRobot : MonoBehaviour
         WalkTo(startPosition);
     }
 
-    // public void RotateTowardsPlayer(Transform playerTransform)
-    // {
-    //     if (playerTransform != null && navMeshAgent != null)
-    //     {
-    //         // Desactiva la rotación automática del NavMeshAgent
-    //         navMeshAgent.updateRotation = false;
+    public void RotateTowardsPlayer(Transform playerTransform)
+    {
+        if (playerTransform != null && navMeshAgent != null)
+        {
+            // Desactiva la rotación automática del NavMeshAgent
+            navMeshAgent.updateRotation = false;
 
-    //         // Calcula la dirección hacia el jugador
-    //         Vector3 direction = (playerTransform.position - transform.position).normalized;
+            // Calcula la dirección hacia el jugador
+            Vector3 direction = (playerTransform.position - transform.position).normalized;
 
-    //         // Ignora la rotación en el eje Y para evitar inclinaciones
-    //         direction.y = 0;
+            // Ignora la rotación en el eje Y para evitar inclinaciones
+            direction.y = 0;
 
-    //         // Calcula la rotación hacia el jugador
-    //         Quaternion targetRotation = Quaternion.LookRotation(direction);
+            // Calcula la rotación hacia el jugador
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-    //         // Aplica la rotación suavemente
-    //         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2f); // Ajusta el factor para controlar la velocidad
+            // Aplica la rotación suavemente
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2f); // Ajusta el factor para controlar la velocidad
 
-    //         Debug.Log("ChangoRobot está rotando suavemente hacia el jugador.");
-    //     }
-    //     else
-    //     {
-    //         Debug.LogWarning("No se encontró la referencia al jugador o NavMeshAgent no está asignado.");
-    //     }
-    // }
+            Debug.Log("ChangoRobot está rotando suavemente hacia el jugador.");
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró la referencia al jugador o NavMeshAgent no está asignado.");
+        }
+    }
 }
