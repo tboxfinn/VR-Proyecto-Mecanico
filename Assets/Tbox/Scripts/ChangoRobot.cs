@@ -18,8 +18,13 @@ public class ChangoRobot : MonoBehaviour
 
     public GameObject targetPosition; // Referencia al objeto objetivo desde la escena
     private Vector3 startPosition; // Posición inicial del ChangoRobot
+    public GameObject playerPosition; // Referencia al jugador
 
-    public void Start()
+    [Header("Raycast")]
+    public float rayDistance = 5f; // Distancia del raycast
+    public LayerMask rayLayerMask; // Capas con las que interactúa el raycast
+
+    private void Start()
     {
         if (navMeshAgent == null)
         {
@@ -35,6 +40,30 @@ public class ChangoRobot : MonoBehaviour
         startPosition = transform.position;
     }
 
+    private void Update()
+    {
+        // Lanza el raycast desde el frente del robot
+        PerformRaycast();
+    }
+
+    private void PerformRaycast()
+    {
+        // Dirección del raycast (frente del robot)
+        Vector3 rayDirection = transform.forward;
+
+        // Origen del raycast (posición del robot)
+        Vector3 rayOrigin = transform.position + Vector3.up * 1f; // Ajusta la altura del rayo si es necesario
+
+        // Lanza el raycast
+        if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, rayDistance, rayLayerMask))
+        {
+            Debug.Log($"Raycast hit: {hit.collider.name} at distance {hit.distance}");
+        }
+
+        // Dibuja el raycast en la escena
+        Debug.DrawRay(rayOrigin, rayDirection * rayDistance, Color.red);
+    }
+
     public void StartConversation()
     {
         if (!conversationHasStarted)
@@ -48,7 +77,8 @@ public class ChangoRobot : MonoBehaviour
     {
         if (targetPosition != null)
         {
-            WalkTo(targetPosition.transform.position); // Usa la posición del objeto objetivo
+            WalkTo(targetPosition.transform.position);
+            animator.SetBool("isWalking", true); // Activa la animación de caminar
         }
         else
         {
@@ -78,12 +108,19 @@ public class ChangoRobot : MonoBehaviour
 
     private IEnumerator CheckIfArrived(Vector3 targetPosition)
     {
+        // Espera hasta que el NavMeshAgent tenga un camino válido y comience a moverse
+        while (navMeshAgent != null && (!navMeshAgent.hasPath || navMeshAgent.velocity.magnitude <= 0))
+        {
+            yield return null; // Espera un frame
+        }
+
+        // Verifica continuamente si ha llegado al destino
         while (navMeshAgent != null && navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance)
         {
             yield return null; // Espera un frame
         }
 
-        // Cuando llegue al destino, desactiva el bool de caminando
+        // Cuando llegue al destino, detén el movimiento y la animación
         isWalking = false;
 
         if (animator != null)
@@ -91,31 +128,41 @@ public class ChangoRobot : MonoBehaviour
             animator.SetBool("isWalking", false); // Detiene la animación de caminar
         }
 
+        RotateTowardsPlayer(playerPosition.transform); // Gira hacia el jugador
+
         Debug.Log("ChangoRobot ha llegado al destino.");
-
-        // Gira hacia la cámara
-        RotateTowardsCamera();
-    }
-
-    private void RotateTowardsCamera()
-    {
-        if (Camera.main != null)
-        {
-            Vector3 direction = (Camera.main.transform.position - transform.position).normalized; // Calcula la dirección hacia la cámara
-            direction.y = 0; // Ignora la rotación en el eje Y para evitar inclinaciones
-            Quaternion targetRotation = Quaternion.LookRotation(direction); // Calcula la rotación hacia la cámara
-            transform.rotation = targetRotation; // Aplica la rotación
-            Debug.Log("ChangoRobot está mirando hacia la cámara.");
-        }
-        else
-        {
-            Debug.LogWarning("No se encontró la cámara principal.");
-        }
     }
 
     public void ReturnToStartPosition()
     {
         // Llama a WalkTo con la posición inicial
         WalkTo(startPosition);
+    }
+
+    public void RotateTowardsPlayer(Transform playerTransform)
+    {
+        if (playerTransform != null && navMeshAgent != null)
+        {
+            // Desactiva la rotación automática del NavMeshAgent
+            navMeshAgent.updateRotation = false;
+
+            // Calcula la dirección hacia el jugador
+            Vector3 direction = (playerTransform.position - transform.position).normalized;
+
+            // Ignora la rotación en el eje Y para evitar inclinaciones
+            direction.y = 0;
+
+            // Calcula la rotación hacia el jugador
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+            // Aplica la rotación suavemente
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2f); // Ajusta el factor para controlar la velocidad
+
+            Debug.Log("ChangoRobot está rotando suavemente hacia el jugador.");
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró la referencia al jugador o NavMeshAgent no está asignado.");
+        }
     }
 }
