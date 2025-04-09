@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf078f9f35338a42ad48a9ce4edad98, type: 3}
   m_Name: Wheel - 5
   m_EditorClassIdentifier: 
-  description: Retira las llantas con fugas y tiralas a la basura
+  description: 5- Retira las llantas con fugas y tiralas a la basura
   isCompleted: 0
   objectsToOutline: []

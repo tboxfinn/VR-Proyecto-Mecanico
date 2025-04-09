@@ -88,14 +88,14 @@ public class TaskUIManager : MonoBehaviour
             // Asigna la descripción del primer objetivo del Task activo si no es nula
             if (descriptionText != null)
             {
-                descriptionText.text = "-" + (task.GetCurrentObjective()?.description ?? "No Description");
+                descriptionText.text = (task.GetCurrentObjective()?.description ?? "No Description");
             }
 
             // Asigna la descripción del segundo objetivo del Task activo si no es nula
             if (secondDescriptionText != null)
             {
                 var secondObjective = task.GetObjective(secondTaskIndex);
-                secondDescriptionText.text = secondObjective != null ? "-" + secondObjective.description : "";
+                secondDescriptionText.text = secondObjective != null ? secondObjective.description : "";
             }
 
             // Asigna la imagen del Task activo si no es nula
@@ -156,14 +156,14 @@ public class TaskUIManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f); // Tiempo de espera antes de actualizar el objetivo
 
         // Actualiza la descripción con el siguiente objetivo
-        descriptionText.text = "-" + (task.GetCurrentObjective()?.description ?? "No Description");
+        descriptionText.text =  (task.GetCurrentObjective()?.description ?? "No Description");
         descriptionText.fontStyle = FontStyles.Normal; // Des-tacha el nuevo objetivo
 
         secondTaskIndex++;
         var secondObjective = task.GetObjective(secondTaskIndex);
         if (secondObjective != null)
         {
-            secondDescriptionText.text = "-" + secondObjective.description;
+            secondDescriptionText.text = secondObjective.description;
             secondDescriptionText.fontStyle = FontStyles.Normal; // Des-tacha el segundo objetivo
         }
         else
@@ -215,9 +215,9 @@ public class TaskUIManager : MonoBehaviour
 
             // Actualiza los textos con la información del nuevo Task
             newTitleText.text = nextTask.title;
-            newDescriptionText.text = "-" + (nextTask.GetCurrentObjective()?.description);
+            newDescriptionText.text = (nextTask.GetCurrentObjective()?.description);
             var secondObjective = nextTask.GetObjective(1); // Reiniciar el índice para el segundo objetivo
-            newSecondDescriptionText.text = secondObjective != null ? "-" + secondObjective.description : "";
+            newSecondDescriptionText.text = secondObjective != null ? secondObjective.description : "";
 
             // Resetear el índice de la segunda tarea
             secondTaskIndex = 1;

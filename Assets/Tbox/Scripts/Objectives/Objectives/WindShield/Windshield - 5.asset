@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf078f9f35338a42ad48a9ce4edad98, type: 3}
   m_Name: Windshield - 5
   m_EditorClassIdentifier: 
-  description: Cierra el deposito con la tapa
+  description: 5- Cierra el deposito con la tapa
   isCompleted: 0
+  objectsToOutline: []

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf078f9f35338a42ad48a9ce4edad98, type: 3}
   m_Name: Battery - 4
   m_EditorClassIdentifier: 
-  description: Coloca las pinzas en las terminales correspondientes
+  description: 4- Coloca las pinzas en las terminales correspondientes
   isCompleted: 0
   objectsToOutline: []
