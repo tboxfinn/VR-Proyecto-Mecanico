@@ -29,14 +29,7 @@ public class ChangoRobot : MonoBehaviour
             animator = GetComponent<Animator>(); // Obtén el Animator si no está asignado
         }
 
-        if (ConversationManager.Instance != null)
-        {
-            ConversationManager.Instance.SetBool("Regado", true);
-        }
-        else
-        {
-            Debug.LogError("ConversationManager.Instance es null. Asegúrate de que el ConversationManager esté en la escena.");
-        }
+        ConversationManager.Instance.SetBool("Regado", true); // Establece el parámetro "robot" en 1 al inicio
     }
 
     private void Update()
