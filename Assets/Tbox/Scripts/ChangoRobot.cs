@@ -20,6 +20,7 @@ public class ChangoRobot : MonoBehaviour
     [Header("Raycast")]
     public float rayDistance = 5f; // Distancia del raycast
     public LayerMask rayLayerMask; // Capas con las que interactúa el raycast
+    
 
     private void Start()
     {
@@ -63,6 +64,7 @@ public class ChangoRobot : MonoBehaviour
         if (index >= 0 && index < objectsToActivate.Length)
         {
             objectsToActivate[index].SetActive(true); // Activa el objeto en el índice especificado
+            
             Debug.Log($"Objeto activado: {objectsToActivate[index].name}");
         }
         else
