@@ -4189,7 +4189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1480134743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5539,7 +5539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1803383167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8276,7 +8276,9 @@ MonoBehaviour:
   myConversation: {fileID: 2066773380}
   animator: {fileID: 5866666020985054134}
   walkDuration: 8
-  objectToActivate: {fileID: 1480134742}
+  objectsToActivate:
+  - {fileID: 1480134742}
+  - {fileID: 1803383166}
   rayDistance: 5
   rayLayerMask:
     serializedVersion: 2

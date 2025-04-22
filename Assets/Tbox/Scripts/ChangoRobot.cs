@@ -15,7 +15,7 @@ public class ChangoRobot : MonoBehaviour
     public float walkDuration = 2f; // Duración del tiempo que caminará el robot (configurable desde el Inspector)
 
     [Header("Animation")]
-    public GameObject objectToActivate; // Objeto que se activará al mirar el robot
+    public GameObject[] objectsToActivate; // Arreglo de objetos que se pueden activar
 
     [Header("Raycast")]
     public float rayDistance = 5f; // Distancia del raycast
@@ -58,9 +58,17 @@ public class ChangoRobot : MonoBehaviour
         }
     }
 
-    public void ActivateObject()
+    public void ActivateObject(int index)
     {
-        objectToActivate.SetActive(true); // Activa el objeto al mirar el robot
+        if (index >= 0 && index < objectsToActivate.Length)
+        {
+            objectsToActivate[index].SetActive(true); // Activa el objeto en el índice especificado
+            Debug.Log($"Objeto activado: {objectsToActivate[index].name}");
+        }
+        else
+        {
+            Debug.LogWarning("Índice fuera de rango. No se pudo activar el objeto.");
+        }
     }
 
     private void PerformRaycast()
