@@ -73,7 +73,7 @@ namespace DialogueEditor
         private eState m_state;
         private float m_stateTime;
         
-        private Conversation m_conversation;
+        public Conversation m_conversation;
         private SpeechNode m_currentSpeech;
         private OptionNode m_selectedOption;
 
@@ -100,6 +100,7 @@ namespace DialogueEditor
             NpcIcon.sprite = BlankSprite;
             DialogueText.text = "";
             TurnOffUI();
+
         }
 
         private void OnDestroy()
@@ -221,6 +222,12 @@ namespace DialogueEditor
         
         public void SetBool(string paramName, bool value)
         {
+            if (m_conversation == null)
+            {
+                Debug.LogError("m_conversation es null. Asegúrate de que una conversación esté activa antes de usar SetBool.");
+                return;
+            }
+
             eParamStatus status;
             m_conversation.SetBool(paramName, value, out status);
 

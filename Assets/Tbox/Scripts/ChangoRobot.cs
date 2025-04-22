@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DialogueEditor;
+using DialogueEditor; // Asegúrate de que la ruta del espacio de nombres sea correcta para tu proyecto
 
 public class ChangoRobot : MonoBehaviour
 {
@@ -27,6 +27,15 @@ public class ChangoRobot : MonoBehaviour
         if (animator == null)
         {
             animator = GetComponent<Animator>(); // Obtén el Animator si no está asignado
+        }
+
+        if (ConversationManager.Instance != null)
+        {
+            ConversationManager.Instance.SetBool("Regado", true);
+        }
+        else
+        {
+            Debug.LogError("ConversationManager.Instance es null. Asegúrate de que el ConversationManager esté en la escena.");
         }
     }
 
