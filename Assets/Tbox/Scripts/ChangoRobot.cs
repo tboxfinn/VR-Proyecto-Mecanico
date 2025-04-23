@@ -9,6 +9,9 @@ public class ChangoRobot : MonoBehaviour
     public bool conversationHasEnded = false;
 
     public NPCConversation myConversation;
+    public NPCConversation myConversation2; // Conversación adicional (si es necesario)
+    public NPCConversation myConversation3; // Conversación adicional (si es necesario)
+    public NPCConversation myConversation4; // Conversación adicional (si es necesario)
 
     [Header("Movement")]
     public Animator animator; // Referencia al Animator para controlar la animación
