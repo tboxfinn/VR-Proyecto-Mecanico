@@ -7367,6 +7367,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: vfx_ElectricArc
       objectReference: {fileID: 0}
+    - target: {fileID: 3747773951475679562, guid: 67781117557679945b99c6e5adfbeb1f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100238227134994683, guid: 67781117557679945b99c6e5adfbeb1f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5070494786148196673, guid: 67781117557679945b99c6e5adfbeb1f,
         type: 3}
       propertyPath: m_LocalPosition.x

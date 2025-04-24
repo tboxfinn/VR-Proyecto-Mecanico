@@ -13,6 +13,8 @@ public class ChangoRobot : MonoBehaviour
     public NPCConversation myConversation3; // Conversación adicional (si es necesario)
     public NPCConversation myConversation4; // Conversación adicional (si es necesario)
 
+    private HashSet<int> completedConversations = new HashSet<int>(); // Registro de conversaciones completadas
+
     [Header("Movement")]
     public Animator animator; // Referencia al Animator para controlar la animación
     public float walkDuration = 2f; // Duración del tiempo que caminará el robot (configurable desde el Inspector)
@@ -64,6 +66,37 @@ public class ChangoRobot : MonoBehaviour
         }
     }
 
+    public void ActivateAnimation(string animationName)
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger(animationName); // Activa la animación especificada
+            Debug.Log($"Animación activada: {animationName}");
+        }
+        else
+        {
+            Debug.LogWarning("Animator no asignado. No se pudo activar la animación.");
+        }
+    }
+
+    public void ActivateAnimationTrigger(string triggerName)
+    {
+        if (animator != null)
+        {
+            // Reinicia el trigger antes de activarlo
+            animator.ResetTrigger(triggerName);
+
+            // Activa el trigger
+            animator.SetTrigger(triggerName);
+
+            Debug.Log($"Trigger de animación activado: {triggerName}");
+        }
+        else
+        {
+            Debug.LogWarning("Animator no asignado. No se pudo activar el trigger.");
+        }
+    }
+
     public void ActivateObject(int index)
     {
         if (index >= 0 && index < objectsToActivate.Length)
@@ -96,12 +129,77 @@ public class ChangoRobot : MonoBehaviour
         Debug.DrawRay(rayOrigin, rayDirection * rayDistance, Color.red);
     }
 
-    public void StartConversation()
+    public void StartConversation(int conversationIndex)
     {
-        if (!conversationHasStarted)
+        // Verifica si la conversación ya ocurrió
+        if (completedConversations.Contains(conversationIndex))
+        {
+            Debug.LogWarning($"La conversación {conversationIndex} ya se ha producido y no puede repetirse.");
+            return;
+        }
+
+        NPCConversation selectedConversation = null;
+
+        // Selecciona la conversación según el índice
+        switch (conversationIndex)
+        {
+            case 1:
+                selectedConversation = myConversation;
+                break;
+            case 2:
+                selectedConversation = myConversation2;
+                break;
+            case 3:
+                selectedConversation = myConversation3;
+                break;
+            case 4:
+                selectedConversation = myConversation4;
+                break;
+            default:
+                Debug.LogWarning("Índice de conversación inválido.");
+                return;
+        }
+
+        // Inicia la conversación seleccionada
+        if (!conversationHasStarted && selectedConversation != null)
         {
             conversationHasStarted = true;
-            ConversationManager.Instance.StartConversation(myConversation);
+            ConversationManager.Instance.StartConversation(selectedConversation);
+            Debug.Log($"Iniciando conversación: {selectedConversation.name}");
+
+            // Marca la conversación como completada
+            completedConversations.Add(conversationIndex);
         }
+        else
+        {
+            Debug.LogWarning("No se pudo iniciar la conversación. Ya comenzó o no es válida.");
+        }
+    }
+
+    public void StartConversation1()
+    {
+        StartConversation(1);
+    }
+
+    public void StartConversation2()
+    {
+        StartConversation(2);
+    }
+
+    public void StartConversation3()
+    {
+        StartConversation(3);
+    }
+
+    public void StartConversation4()
+    {
+        StartConversation(4);
+    }
+
+    public void ResetConversationState()
+    {
+        conversationHasStarted = false;
+        conversationHasEnded = false;
+        Debug.Log("Estado de la conversación reiniciado. Ahora puedes iniciar otra conversación.");
     }
 }
