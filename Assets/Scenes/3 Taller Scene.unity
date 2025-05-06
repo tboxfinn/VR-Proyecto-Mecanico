@@ -18091,7 +18091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDesinflando: 0
-  desinflandoPrefab: {fileID: 1014252301174022, guid: 76ef43c1bd544924b8aeb115e01163b5,
+  desinflandoPrefab: {fileID: 4418567640629443546, guid: a7d1f906ce644734e823ac4e42801eec,
     type: 3}
   desinflandoSpawnPoint: {fileID: 944583710}
   grabInteractable: {fileID: 2114665864}

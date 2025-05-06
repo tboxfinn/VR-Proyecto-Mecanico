@@ -156,7 +156,7 @@ public class TaskUIManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f); // Tiempo de espera antes de actualizar el objetivo
 
         // Actualiza la descripción con el siguiente objetivo
-        descriptionText.text =  (task.GetCurrentObjective()?.description ?? "No Description");
+        descriptionText.text = (task.GetCurrentObjective()?.description ?? "No Description");
         descriptionText.fontStyle = FontStyles.Normal; // Des-tacha el nuevo objetivo
 
         secondTaskIndex++;
@@ -200,7 +200,7 @@ public class TaskUIManager : MonoBehaviour
             TaskObjectiveSO nextTask = selectedTasks[0];
 
             // Inicializa el Task antes de tomar el primer objetivo
-            nextTask.InitializeTask();
+            nextTask.InitializeTask(); // Asegúrate de reiniciar correctamente la tarea
             nextTask.isVisible = true;
 
             // Instancia el prefab en el holder
@@ -226,8 +226,6 @@ public class TaskUIManager : MonoBehaviour
             {
                 newTaskImage.sprite = nextTask.taskImage ?? null; // Puedes asignar una imagen por defecto si es nula
             }
-
-            // EnableOutline(nextTask);
 
             // Suscríbete al evento para actualizar la UI cuando un objetivo sea completado
             nextTask.ObjectiveCompletedEvent += () => UpdateTaskUI(nextTask, taskUIInstance);
