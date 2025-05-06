@@ -22,7 +22,12 @@ public class ChangoRobot : MonoBehaviour
     [Header("Raycast")]
     public float rayDistance = 5f; // Distancia del raycast
     public LayerMask rayLayerMask; // Capas con las que interactúa el raycast
-    
+
+    [Header("Random Trigger Settings")]
+    public string[] animationTriggers; // Lista de triggers de animación
+    public float triggerInterval = 5f; // Intervalo de tiempo entre activaciones aleatorias
+
+    private float timeSinceLastTrigger = 0f; // Temporizador para controlar el intervalo
 
     private void Start()
     {
@@ -38,6 +43,16 @@ public class ChangoRobot : MonoBehaviour
     {
         // Lanza el raycast desde el frente del robot
         PerformRaycast();
+
+        // Incrementa el temporizador
+        timeSinceLastTrigger += Time.deltaTime;
+
+        // Activa un trigger aleatorio si ha pasado el intervalo
+        if (timeSinceLastTrigger >= triggerInterval)
+        {
+            ActivateRandomTrigger();
+            timeSinceLastTrigger = 0f; // Reinicia el temporizador
+        }
     }
 
     public void StartWalking()
@@ -60,6 +75,7 @@ public class ChangoRobot : MonoBehaviour
         if (animator != null)
         {
             animator.SetBool("isWalking", false); // Cambia el parámetro del Animator para detener la animación de caminar
+            ActivateAnimation("Turn"); // Activa la animación de inactividad (Idle)
         }
     }
 
@@ -94,6 +110,19 @@ public class ChangoRobot : MonoBehaviour
         }
     }
 
+    public void ResetAnimationTrigger(string triggerName)
+    {
+        if (animator != null)
+        {
+            animator.ResetTrigger(triggerName); // Resetea el trigger especificado
+            Debug.Log($"Trigger de animación reseteado: {triggerName}");
+        }
+        else
+        {
+            Debug.LogWarning("Animator no asignado. No se pudo resetear el trigger.");
+        }
+    }
+
     private void PerformRaycast()
     {
         // Dirección del raycast (frente del robot)
@@ -110,6 +139,23 @@ public class ChangoRobot : MonoBehaviour
 
         // Dibuja el raycast en la escena
         Debug.DrawRay(rayOrigin, rayDirection * rayDistance, Color.red);
+    }
+
+    private void ActivateRandomTrigger()
+    {
+        if (animationTriggers.Length > 0 && animator != null)
+        {
+            // Selecciona un trigger aleatorio de la lista
+            string randomTrigger = animationTriggers[Random.Range(0, animationTriggers.Length)];
+
+            // Activa el trigger
+            animator.SetTrigger(randomTrigger);
+            Debug.Log($"Trigger aleatorio activado: {randomTrigger}");
+        }
+        else
+        {
+            Debug.LogWarning("No hay triggers configurados o el Animator no está asignado.");
+        }
     }
 
     public void StartConversation(int conversationIndex)
