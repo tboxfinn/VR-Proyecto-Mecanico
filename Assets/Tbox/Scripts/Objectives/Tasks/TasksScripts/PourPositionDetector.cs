@@ -8,7 +8,7 @@ public class PourPositionDetector : MonoBehaviour
     public TaskStepController taskToComplete;
 
     // Este método se llama automáticamente cuando otro objeto con un Collider entra en contacto con este Trigger
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         // Verifica si el objeto que entra en contacto tiene el tag especificado
         if (other.CompareTag(targetTag))

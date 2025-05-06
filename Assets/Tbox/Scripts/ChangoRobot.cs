@@ -17,10 +17,7 @@ public class ChangoRobot : MonoBehaviour
 
     [Header("Movement")]
     public Animator animator; // Referencia al Animator para controlar la animación
-    public float walkDuration = 2f; // Duración del tiempo que caminará el robot (configurable desde el Inspector)
-
-    [Header("Animation")]
-    public GameObject[] objectsToActivate; // Arreglo de objetos que se pueden activar
+    public float walkDuration = 2f; // Duración del tiempo que caminará el robot (configurable desde el Inspector) // Arreglo de objetos que se pueden activar
 
     [Header("Raycast")]
     public float rayDistance = 5f; // Distancia del raycast
@@ -94,20 +91,6 @@ public class ChangoRobot : MonoBehaviour
         else
         {
             Debug.LogWarning("Animator no asignado. No se pudo activar el trigger.");
-        }
-    }
-
-    public void ActivateObject(int index)
-    {
-        if (index >= 0 && index < objectsToActivate.Length)
-        {
-            objectsToActivate[index].SetActive(true); // Activa el objeto en el índice especificado
-            
-            Debug.Log($"Objeto activado: {objectsToActivate[index].name}");
-        }
-        else
-        {
-            Debug.LogWarning("Índice fuera de rango. No se pudo activar el objeto.");
         }
     }
 
