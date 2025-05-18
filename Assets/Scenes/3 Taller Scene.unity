@@ -1188,7 +1188,6 @@ MonoBehaviour:
     m_Bits: 0
   animationTriggers:
   - Manos
-  - Drunk
   - Talk1
   - Talk2
   triggerInterval: 8
@@ -1889,7 +1888,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3582,13 +3581,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 22
-  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":21}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-201,\"yPos\":471},\"ID\":7,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Adelante!\",\"parentUIDs\":[9],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":41,\"yPos\":474},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No
-    gracias, llevame al taller\",\"parentUIDs\":[9],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":-65,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Esta
-    es la mec\xE1nica b\xE1sica de un simulador de realidad virtual.\\r\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":9}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-65.5,\"yPos\":164},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Familiarizarte
+  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":21}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":96,\"yPos\":399},\"ID\":7,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Adelante!\",\"parentUIDs\":[9],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":338,\"yPos\":402},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No
+    gracias, llevame al taller\",\"parentUIDs\":[9],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":232,\"yPos\":-50},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Esta
+    es la mec\xE1nica b\xE1sica de un simulador de realidad virtual.\\r\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":9}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":231.5,\"yPos\":92},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Familiarizarte
     con tomar objetos es primordial para poder manejarte correctamente dentro del
     simulador.\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"
-    Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":7},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-66,\"yPos\":319},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xBFTe
-    parece si probamos algo m\xE1s avanzado?\",\"parentUIDs\":[6],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-201,\"yPos\":579},\"ID\":21,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"!Perfecto!\\n\\nToma
+    Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":7},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":231,\"yPos\":247},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xBFTe
+    parece si probamos algo m\xE1s avanzado?\",\"parentUIDs\":[6],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":96,\"yPos\":507},\"ID\":21,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"!Perfecto!\\n\\nToma
     la bombilla y col\xF3cala en la l\xE1mpara.\\r\",\"parentUIDs\":[7],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8}]}"
   saveVersion: 110
   DefaultName: Bonzo
@@ -3605,7 +3604,31 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 105502046}
+        m_TargetAssemblyTypeName: ChangoRobot, Assembly-CSharp
+        m_MethodName: ResetConversationState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1684664367}
+        m_TargetAssemblyTypeName: DialogueEditor.ConversationManager, Assembly-CSharp
+        m_MethodName: EndConversation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &385526221
 Transform:
   m_ObjectHideFlags: 0
@@ -5409,9 +5432,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentIDCounter: 21
-  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":true,\"xPos\":271,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Eso
-    ha sido todo de mi parte!.\\n\\r\\n\xA1Adelante!, a reparar ese auto\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0.8}]}"
+  CurrentIDCounter: 23
+  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":21}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":402,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Eso
+    ha sido todo de mi parte!.\\n\\r\\n\xA1Adelante!, a reparar ese auto\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":3,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":22}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":402,\"yPos\":153},\"ID\":21,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Casi
+    lo olvido!\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":401,\"yPos\":319},\"ID\":22,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Toma
+    esta tableta digital En ella podr\xE1s ver las tareas que debes realizar, as\xED
+    como los pasos de cada una T\xF3mala y col\xF3cala donde m\xE1s te guste, ahora
+    si, mucha suerte!\",\"parentUIDs\":[21],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8}]}"
   saveVersion: 110
   DefaultName: Bonzo
   DefaultSprite: {fileID: 21300000, guid: baafdeacd1f9189449c39f10feeb194c, type: 3}
@@ -5419,12 +5446,26 @@ MonoBehaviour:
   NodeSerializedDataList:
   - {fileID: 1984831336}
   - {fileID: 1984831334}
+  - {fileID: 1984831338}
+  - {fileID: 1984831337}
   ContinueFont: {fileID: 0}
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 105502046}
+        m_TargetAssemblyTypeName: ChangoRobot, Assembly-CSharp
+        m_MethodName: ActivateAnimationTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Give
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8064145350681238193}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -6043,7 +6084,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8064145350681238193}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   NodeID: 0
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: baafdeacd1f9189449c39f10feeb194c, type: 3}
@@ -8767,7 +8820,7 @@ MonoBehaviour:
   NodeID: 0
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: baafdeacd1f9189449c39f10feeb194c, type: 3}
-  Audio: {fileID: 8300000, guid: 28afcae42625e334e948068ac216dc79, type: 3}
+  Audio: {fileID: 8300000, guid: d78a64ff65573314b949234322f0c3fc, type: 3}
 --- !u!1001 &1040099654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10153,13 +10206,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 21
-  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":125.5,\"yPos\":351},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Adelante!!\",\"parentUIDs\":[1],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":396.5,\"yPos\":351},\"ID\":18,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No
-    gracias\",\"parentUIDs\":[1],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":271,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Bienvenido
-    al Simulador de Mec\xE1nica B\xE1sica\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":18}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":271,\"yPos\":163},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"En
+  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":170.5,\"yPos\":396},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Adelante!!\",\"parentUIDs\":[1],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":441.5,\"yPos\":396},\"ID\":18,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No
+    gracias\",\"parentUIDs\":[1],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":316,\"yPos\":67},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Bienvenido
+    al Simulador de Mec\xE1nica B\xE1sica\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":18}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":316,\"yPos\":208},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"En
     este simulador, aprenderas a manejar situaciones comunes respecto a tu auto\\n\\nComo
     por ejemplo:\\nCambio de llantas, recarga de bateria, manejo de liquidos, entre
-    otros\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":222,\"yPos\":505},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ven
-    conmigo!\",\"parentUIDs\":[17],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":11,\"Volume\":0.8},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":527.5,\"yPos\":508},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Acercate
+    otros\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":267,\"yPos\":550},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ven
+    conmigo!\",\"parentUIDs\":[17],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":11,\"Volume\":0.8},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":572.5,\"yPos\":553},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Acercate
     e intenta tomar estos desarmadores\",\"parentUIDs\":[3],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0.8}]}"
   saveVersion: 110
   DefaultName: Bonzo
@@ -10177,22 +10230,10 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 105502046}
-        m_TargetAssemblyTypeName: ChangoRobot, Assembly-CSharp
-        m_MethodName: ResetConversationState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1684664367}
-        m_TargetAssemblyTypeName: DialogueEditor.ConversationManager, Assembly-CSharp
-        m_MethodName: EndConversation
-        m_Mode: 1
+      - m_Target: {fileID: 8064145350681238193}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11015,7 +11056,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0044845794, y: 0.005561903, z: 0.007849942}
+  m_Size: {x: 0.007393782, y: 0.008478136, z: 0.007849942}
   m_Center: {x: 0, y: 7.105427e-17, z: 0.0050602304}
 --- !u!1001 &1269543869
 PrefabInstance:
@@ -13575,12 +13616,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 21
-  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":13}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":117,\"yPos\":-173},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"As\xED
+  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":13}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":375,\"yPos\":171},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"As\xED
     como puedes tomar objetos, tambi\xE9n puedes colocarlos en sitios espec\xEDficos.\\r\\n\\r\\nRecuerda
-    muy bien esto, pues te ser\xE1 de mucha utilidad m\xE1s adelante\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":14}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":121.5,\"yPos\":-24},\"ID\":13,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Quiero
-    mostrarte una \xFAltima cosa antes de dejarte por tu cuenta\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":3,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":119.5,\"yPos\":173},\"ID\":14,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"As\xED
+    muy bien esto, pues te ser\xE1 de mucha utilidad m\xE1s adelante\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":14}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":379.5,\"yPos\":320},\"ID\":13,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Quiero
+    mostrarte una \xFAltima cosa antes de dejarte por tu cuenta\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":true,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":3,\"Volume\":0.8},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":377.5,\"yPos\":517},\"ID\":14,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"As\xED
     como tu puedes interactuar con objetos y entidades en el mapa.\\r\\nEstas tambi\xE9n
-    pueden interactuar entre si.\",\"parentUIDs\":[13],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":116.5,\"yPos\":347},\"ID\":15,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Prueba
+    pueden interactuar entre si.\",\"parentUIDs\":[13],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":374.5,\"yPos\":691},\"ID\":15,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Prueba
     regando esta peque\xF1a planta, con este envase de agua\",\"parentUIDs\":[14],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Bonzo\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0.8}]}"
   saveVersion: 110
   DefaultName: Bonzo
@@ -13595,31 +13636,7 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 105502046}
-        m_TargetAssemblyTypeName: ChangoRobot, Assembly-CSharp
-        m_MethodName: ResetConversationState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1684664367}
-        m_TargetAssemblyTypeName: DialogueEditor.ConversationManager, Assembly-CSharp
-        m_MethodName: EndConversation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!4 &1604671735
 Transform:
   m_ObjectHideFlags: 0
@@ -18139,6 +18156,8 @@ GameObject:
   - component: {fileID: 1984831335}
   - component: {fileID: 1984831336}
   - component: {fileID: 1984831334}
+  - component: {fileID: 1984831338}
+  - component: {fileID: 1984831337}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -18211,6 +18230,68 @@ MonoBehaviour:
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: baafdeacd1f9189449c39f10feeb194c, type: 3}
   Audio: {fileID: 8300000, guid: ce61d6a2729af3249866ed13c5de5990, type: 3}
+--- !u!114 &1984831337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984831333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 105502046}
+        m_TargetAssemblyTypeName: ChangoRobot, Assembly-CSharp
+        m_MethodName: ActivateAnimationTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Give
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8064145350681238193}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  NodeID: 22
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baafdeacd1f9189449c39f10feeb194c, type: 3}
+  Audio: {fileID: 8300000, guid: e733741d85c4b5e4682bdab818fe8a1e, type: 3}
+--- !u!114 &1984831338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984831333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 21
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baafdeacd1f9189449c39f10feeb194c, type: 3}
+  Audio: {fileID: 8300000, guid: 24e79c38297e04142a2fd7e84f9fc69e, type: 3}
 --- !u!1 &2000030224
 GameObject:
   m_ObjectHideFlags: 0
@@ -25023,7 +25104,7 @@ Transform:
   m_GameObject: {fileID: 8064145350681238193}
   serializedVersion: 2
   m_LocalRotation: {x: -0.099085264, y: 0, z: 0, w: 0.995079}
-  m_LocalPosition: {x: -0.82538, y: 1.1281, z: -2.8437}
+  m_LocalPosition: {x: 1.118, y: 0.937, z: -2.254}
   m_LocalScale: {x: 0.3679867, y: 0.3679867, z: 0.3679867}
   m_ConstrainProportionsScale: 1
   m_Children:
